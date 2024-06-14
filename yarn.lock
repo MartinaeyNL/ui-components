@@ -1808,7 +1808,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-button@workspace:packages/components/ui-button":
+"@martinaeynl/ui-components-button@workspace:*, @martinaeynl/ui-components-button@workspace:packages/components/ui-button":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-button@workspace:packages/components/ui-button"
   dependencies:
@@ -1818,7 +1818,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-icon@workspace:packages/components/ui-icon":
+"@martinaeynl/ui-components-icon@workspace:*, @martinaeynl/ui-components-icon@workspace:packages/components/ui-icon":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-icon@workspace:packages/components/ui-icon"
   dependencies:
@@ -1829,7 +1829,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-popover@workspace:packages/components/ui-popover":
+"@martinaeynl/ui-components-popover@workspace:*, @martinaeynl/ui-components-popover@workspace:packages/components/ui-popover":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-popover@workspace:packages/components/ui-popover"
   dependencies:
@@ -1839,7 +1839,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-select@workspace:packages/components/ui-select":
+"@martinaeynl/ui-components-select@workspace:*, @martinaeynl/ui-components-select@workspace:packages/components/ui-select":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-select@workspace:packages/components/ui-select"
   dependencies:
@@ -1849,7 +1849,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-table@workspace:packages/components/ui-table":
+"@martinaeynl/ui-components-table@workspace:*, @martinaeynl/ui-components-table@workspace:packages/components/ui-table":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-table@workspace:packages/components/ui-table"
   dependencies:
@@ -1877,6 +1877,13 @@ __metadata:
   resolution: "@martinaeynl/ui-docs-storybook@workspace:dev/apps/storybook"
   dependencies:
     "@chromatic-com/storybook": "npm:1.5.0"
+    "@martinaeynl/ui-component-models": "workspace:*"
+    "@martinaeynl/ui-component-utils": "workspace:*"
+    "@martinaeynl/ui-components-button": "workspace:*"
+    "@martinaeynl/ui-components-icon": "workspace:*"
+    "@martinaeynl/ui-components-popover": "workspace:*"
+    "@martinaeynl/ui-components-select": "workspace:*"
+    "@martinaeynl/ui-components-table": "workspace:*"
     "@storybook/addon-essentials": "npm:^8.1.5"
     "@storybook/addon-links": "npm:^8.1.5"
     "@storybook/addon-webpack5-compiler-swc": "npm:1.0.3"
