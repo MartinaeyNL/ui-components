@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Storybook documentation",
   "type": "module",
+  "dependencies": {
+    "@martinaeynl/ui-component-models": "workspace:*",
+    "@martinaeynl/ui-component-utils": "workspace:*",
+    "@martinaeynl/ui-components-button": "workspace:*",
+    "@martinaeynl/ui-components-icon": "workspace:*",
+    "@martinaeynl/ui-components-popover": "workspace:*",
+    "@martinaeynl/ui-components-select": "workspace:*",
+    "@martinaeynl/ui-components-table": "workspace:*"
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "1.5.0",
     "@storybook/addon-essentials": "^8.1.5",
