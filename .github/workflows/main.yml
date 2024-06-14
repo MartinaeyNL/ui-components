@@ -34,7 +34,11 @@ jobs:
       - name: Install Yarn dependencies
         run: yarn install
 
+      - name: Verify Yarn workspaces and their dependencies
+        run: yarn dlx @yarnpkg/doctor .
+
       - name: Build Yarn packages
+        uses: ./
         run: yarn workspaces foreach --topological-dev --all --exclude @martinaeynl/ui-docs-storybook run build
         
       #- name: Build
