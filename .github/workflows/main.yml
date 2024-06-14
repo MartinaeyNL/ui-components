@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - name: Manual checkout
+      - name: Check out Git repository
         uses: actions/checkout@v4
 
       - name: Set up Node
@@ -29,10 +29,16 @@ jobs:
 
       - name: Activate latest Yarn
         run: yarn set version stable
+
+      - name: Install Yarn dependencies
+        run: yarn install
+
+      - name: Build Yarn packages
+        run: yarn build
         
-      - name: Build
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-        with:
-          install_command: yarn install
-          build_command: yarn build
-          path: dev/apps/storybook/dist
+      #- name: Build
+      #  uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+      #  with:
+      #    install_command: yarn install
+      #    build_command: yarn build
+      #    path: dev/apps/storybook/dist
