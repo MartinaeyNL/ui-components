@@ -1,0 +1,25 @@
+import {Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
+
+import * as TableStories from '../../stories/table.stories';
+
+<Meta title="Components/Table" />
+
+<Title>Table</Title>
+<Subtitle of={TableStories}></Subtitle>
+
+Data tables display information in a grid-like format of rows and columns.<br />
+They organize information in a way that’s easy to scan so that users can look for patterns and develop insights from data.
+
+<Canvas of={TableStories.Primary} />
+
+
+## Examples
+
+<br />
+
+### Sizes
+
+Use the `size` attribute to configure a table’s size. Default: `medium`<br />
+
+<Canvas of={TableStories.SizeExample} />
+

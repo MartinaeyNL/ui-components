@@ -1,0 +1,15 @@
+{
+  "name": "@martinaeynl/ui-component-models",
+  "version": "1.0.0",
+  "description": "UI component models",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b .",
+    "watch": "tsc -b --watch .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@martinaeynl/ui-component-utils": "workspace:*"
+  }
+}

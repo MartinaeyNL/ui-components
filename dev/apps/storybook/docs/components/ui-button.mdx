@@ -1,0 +1,32 @@
+import {Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
+
+import * as ButtonStories from '../../stories/button.stories';
+
+<Meta title="Components/Button" />
+
+<Title>Button</Title>
+<Subtitle of={ButtonStories}></Subtitle>
+
+Buttons communicate actions that users can take.<br />
+They are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.
+
+<Canvas of={ButtonStories.Primary} />
+
+
+## Examples
+
+<br />
+
+### Variants
+
+Use the `variant` attribute to set the button’s variant / color. Default: `primary`<br />
+To override the color for an individual button, use the `--ui-button-color` CSS variable.
+
+<Canvas of={ButtonStories.VariantExample} />
+
+### Sizes
+
+Use the `size` attribute to configure a button’s size. Default: `medium`<br />
+
+<Canvas of={ButtonStories.SizeExample} />
+

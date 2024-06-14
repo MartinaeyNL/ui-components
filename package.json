@@ -1,0 +1,26 @@
+{
+  "name": "@martinaeynl/ui-components",
+  "packageManager": "yarn@4.2.2",
+  "private": true,
+  "workspaces": [
+    "dev/apps/*",
+    "packages/components/*",
+    "packages/themes/*",
+    "packages/util/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach --topological-dev --all run build",
+    "generateDocs": "cem analyze --config util/custom-elements-manifest.config.js",
+    "storybook": "node scripts/storybook.js",
+    "storybookOnly": "yarn workspace @martinaeynl/ui-docs-storybook run storybook",
+    "watch": "yarn workspaces foreach --all -p -i run watch"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.2",
+    "@types/node": "^20.14.2",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

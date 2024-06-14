@@ -1,0 +1,23 @@
+{
+  "name": "@martinaeynl/ui-components-table",
+  "version": "1.0.0",
+  "description": "Table UI component",
+  "type": "module",
+  "main": "dist/table.component.js",
+  "module": "./dist/table.component.js",
+  "types": "./dist/table.component.d.ts",
+  "exports": {
+    ".": "./dist/table.component.js",
+    "./*": "./dist/*.js"
+  },
+  "scripts": {
+    "build": "tsc -b .",
+    "watch": "tsc -b --watch .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@martinaeynl/ui-component-models": "workspace:*",
+    "@martinaeynl/ui-component-utils": "workspace:*",
+    "lit": "^3.1.4"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@martinaeynl/ui-components-button",
+  "version": "1.0.0",
+  "description": "Button UI component",
+  "type": "module",
+  "main": "dist/button.component.js",
+  "module": "./dist/button.component.js",
+  "types": "./dist/button.component.d.ts",
+  "exports": {
+    ".": "./dist/button.component.js",
+    "./*": "./dist/*.js"
+  },
+  "scripts": {
+    "build": "tsc -b .",
+    "watch": "tsc -b --watch .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@martinaeynl/ui-component-models": "workspace:*",
+    "@martinaeynl/ui-component-utils": "workspace:*",
+    "lit": "^3.1.4"
+  }
+}
