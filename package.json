@@ -12,6 +12,7 @@
     "build": "yarn workspaces foreach --topological-dev --all run build",
     "generateDocs": "cem analyze --config util/custom-elements-manifest.config.js",
     "storybook": "node scripts/storybook.js",
+    "storybookBuild": "yarn workspace @martinaeynl/ui-docs-storybook build",
     "storybookOnly": "yarn workspace @martinaeynl/ui-docs-storybook run storybook",
     "watch": "yarn workspaces foreach --all -p -i run watch"
   },

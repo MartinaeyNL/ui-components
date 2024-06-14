@@ -18,6 +18,6 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006 --no-open --no-version-updates --disable-telemetry",
-    "build-storybook": "storybook build"
+    "build": "storybook build -o dist"
   }
 }
