@@ -1895,6 +1895,7 @@ __metadata:
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
+    "@martinaeynl/ui-components-icon": "workspace:*"
     "@martinaeynl/ui-components-popover": "workspace:*"
     lit: "npm:^3.1.4"
   languageName: unknown
