@@ -1,0 +1,40 @@
+import {Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
+
+import * as IconStories from '../../stories/icon.stories';
+
+<Meta title="Components/Icon" />
+
+<Title>Icon</Title>
+<Subtitle of={IconStories}></Subtitle>
+
+Icons are symbols that can be used to represent various options within an application..<br />
+By default, the [Bootstrap Icons](https://icons.getbootstrap.com) set is used.
+
+<Canvas of={IconStories.Primary} />
+
+
+## Examples
+
+<br />
+
+### Variants
+
+Use the `variant` attribute to set the button’s variant / color. Default: `primary`<br />
+To override the color for an individual button, use the `--ui-button-color` CSS variable.
+
+<Canvas of={IconStories.VariantExample} />
+
+### Sizes
+
+Use the `size` attribute to configure a button’s size. Default: `medium`<br />
+
+<Canvas of={IconStories.SizeExample} />
+
+### Custom Icon Set
+
+The `set` attribute can be used to configure a custom Icon Set. (that is supported by [Iconify]https://github.com/iconify/iconify).<br />
+It expects an 'icon set prefix', for example `mdi` (Material Design), `bi` (Bootstrap Icons), `ant-design`, etc
+> Be aware: this will dynamically load SVG through the public API of Iconify.<br />
+> By default we will use [Bootstrap Icons](https://icons.getbootstrap.com), that is generated locally without fetching an API.
+
+<Canvas of={IconStories.SetExample} />

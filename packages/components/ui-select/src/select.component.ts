@@ -5,6 +5,7 @@ import {classMap} from "lit/directives/class-map.js";
 import {until} from "lit/directives/until.js";
 import {PopoverComponent} from "@martinaeynl/ui-components-popover";
 import "@martinaeynl/ui-components-popover";
+import "@martinaeynl/ui-components-icon";
 
 // @ts-ignore
 import getSelectStyles from "./select.styles";
@@ -62,17 +63,25 @@ export class SelectComponent extends UiComponent {
         }
     }
 
+    protected _getContentClasses() {
+        return {
+            'ui-select-content': true
+        }
+    }
+
     protected render(): TemplateResult {
         const classes = this.getClasses();
         const anchorClasses = this._getAnchorClasses();
+        const contentClasses = this._getContentClasses();
+        const rotation = this._active ? -180 : undefined;
         return html`
             <div class=${classMap(classes)}>
                 <ui-popover>
                     <div slot="anchor" class=${classMap(anchorClasses)} @click=${this._onAnchorClick}>
                         <span>John Doe</span>
-                        <span>Open</span>
+                        <ui-icon icon="chevron-down" size="small" .rotation=${rotation} style="--ui-icon-transition-ms: 200ms"></ui-icon>
                     </div>
-                    <div>
+                    <div class=${classMap(contentClasses)}>
                         <span>Content</span>
                     </div>
                 </ui-popover>
