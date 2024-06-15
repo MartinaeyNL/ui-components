@@ -27,6 +27,12 @@ export default () => css`
         gap: var(--ui-select-gap, var(--size-px-3));
         text-decoration: none;
     }
+    
+    .ui-select-content {
+        border: var(--ui-select-border, 1px solid var(--ui-grayscale-100));
+        padding: var(--ui-select-padding, var(--size-px-1) var(--size-px-3));
+        border-top: none;
+    }
 
     .ui-size-small {
         --ui-select-height: var(--ui-size-5);

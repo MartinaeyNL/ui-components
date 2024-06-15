@@ -50,11 +50,11 @@ export const VariantExample: Story = {
         </div>
     `,
     args: [
-        {title: "Primary", variant: UiVariant.PRIMARY},
-        {title: "Success", variant: UiVariant.SUCCESS},
-        {title: "Neutral", variant: UiVariant.NEUTRAL},
-        {title: "Warning", variant: UiVariant.WARNING},
-        {title: "Danger", variant: UiVariant.DANGER},
+        {title: "Primary", icon: "check-circle", variant: UiVariant.PRIMARY},
+        {title: "Success", icon: "check-circle", variant: UiVariant.SUCCESS},
+        {title: "Neutral", icon: "check-circle", variant: UiVariant.NEUTRAL},
+        {title: "Warning", icon: "check-circle", variant: UiVariant.WARNING},
+        {title: "Danger", icon: "check-circle", variant: UiVariant.DANGER},
     ]
 }
 
@@ -68,10 +68,10 @@ export const SizeExample: Story = {
         </div>
     `,
     args: [
-        {title: "X Large", size: UiSize.XLARGE},
-        {title: "Large", size: UiSize.LARGE},
-        {title: "Medium", size: UiSize.MEDIUM},
-        {title: "Small", size: UiSize.SMALL}
+        {title: "X Large", icon: "check-circle", size: UiSize.XLARGE},
+        {title: "Large", icon: "check-circle", size: UiSize.LARGE},
+        {title: "Medium", icon: "check-circle", size: UiSize.MEDIUM},
+        {title: "Small", icon: "check-circle", size: UiSize.SMALL}
     ]
 }
 

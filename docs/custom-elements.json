@@ -758,6 +758,62 @@
           "members": [
             {
               "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string | undefined"
+              },
+              "privacy": "public",
+              "attribute": "icon"
+            },
+            {
+              "kind": "field",
+              "name": "set",
+              "type": {
+                "text": "string | undefined"
+              },
+              "privacy": "public",
+              "attribute": "set"
+            },
+            {
+              "kind": "method",
+              "name": "getClasses",
+              "return": {
+                "type": {
+                  "text": "{[name: string]: boolean}"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_getIconTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<TemplateResult>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "iconName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "iconSet",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
               "name": "variant",
               "type": {
                 "text": "UiVariant"
@@ -877,28 +933,23 @@
                 "name": "UiComponent",
                 "module": "packages/util/ui-component/src/index.ts"
               }
-            },
-            {
-              "kind": "method",
-              "name": "getClasses",
-              "return": {
-                "type": {
-                  "text": "{[name: string]: boolean}"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
             }
           ],
-          "superclass": {
-            "name": "UiComponent",
-            "package": "@martinaeynl/ui-component-utils"
-          },
-          "tagName": "ui-icon",
-          "customElement": true,
           "attributes": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "icon"
+            },
+            {
+              "name": "set",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "set"
+            },
             {
               "name": "variant",
               "type": {
@@ -993,7 +1044,13 @@
                 "module": "packages/util/ui-component/src/index.ts"
               }
             }
-          ]
+          ],
+          "superclass": {
+            "name": "UiComponent",
+            "package": "@martinaeynl/ui-component-utils"
+          },
+          "tagName": "ui-icon",
+          "customElement": true
         }
       ],
       "exports": [
