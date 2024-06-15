@@ -45,4 +45,4 @@ jobs:
         with:
           install_command: yarn install
           build_command: yarn build
-          path: dev/apps/storybook/dist
+          path: /dev/apps/storybook/dist
