@@ -9,7 +9,7 @@
     "packages/util/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach --topological-dev --all --exclude @martinaeynl/ui-docs-storybook run build",
+    "build": "yarn workspaces foreach --topological-dev --all run build",
     "generateDocs": "cem analyze --config util/custom-elements-manifest.config.js",
     "storybook": "node scripts/storybook.js",
     "storybookOnly": "yarn workspace @martinaeynl/ui-docs-storybook run storybook",
