@@ -5,7 +5,6 @@
   "type": "module",
   "dependencies": {
     "@martinaeynl/ui-component-models": "workspace:*",
-    "@martinaeynl/ui-component-utils": "workspace:*",
     "@martinaeynl/ui-components-button": "workspace:*",
     "@martinaeynl/ui-components-icon": "workspace:*",
     "@martinaeynl/ui-components-popover": "workspace:*",
