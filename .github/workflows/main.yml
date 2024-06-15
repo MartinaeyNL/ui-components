@@ -33,12 +33,15 @@ jobs:
       - name: Install Yarn dependencies
         run: yarn install
 
-      - name: Build Yarn packages
-        run: yarn build
+      - name: Verify Yarn workspaces and their dependencies
+        run: yarn dlx @yarnpkg/doctor .
+
+      #- name: Build Yarn packages
+      #  run: yarn workspaces foreach --topological-dev --all --exclude @martinaeynl/ui-docs-storybook run build
         
-      #- name: Build
-      #  uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-      #  with:
-      #    install_command: yarn install
-      #    build_command: yarn build
-      #    path: dev/apps/storybook/dist
+      - name: Build packages and deploy Storybook
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          install_command: yarn install
+          build_command: yarn build
+          path: dev/apps/storybook/dist

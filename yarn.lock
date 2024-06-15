@@ -1794,8 +1794,6 @@ __metadata:
 "@martinaeynl/ui-component-models@workspace:*, @martinaeynl/ui-component-models@workspace:packages/util/models":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-component-models@workspace:packages/util/models"
-  dependencies:
-    "@martinaeynl/ui-component-utils": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -1803,6 +1801,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-component-utils@workspace:packages/util/ui-component"
   dependencies:
+    "@martinaeynl/ui-component-models": "workspace:*"
     lit: "npm:^3.1.4"
     open-props: "npm:^1.7.4"
   languageName: unknown
@@ -1845,6 +1844,7 @@ __metadata:
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
+    "@martinaeynl/ui-components-popover": "workspace:*"
     lit: "npm:^3.1.4"
   languageName: unknown
   linkType: soft
@@ -1878,7 +1878,6 @@ __metadata:
   dependencies:
     "@chromatic-com/storybook": "npm:1.5.0"
     "@martinaeynl/ui-component-models": "workspace:*"
-    "@martinaeynl/ui-component-utils": "workspace:*"
     "@martinaeynl/ui-components-button": "workspace:*"
     "@martinaeynl/ui-components-icon": "workspace:*"
     "@martinaeynl/ui-components-popover": "workspace:*"

@@ -18,6 +18,7 @@
   "dependencies": {
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
+    "@martinaeynl/ui-components-popover": "workspace:*",
     "lit": "^3.1.4"
   }
 }
