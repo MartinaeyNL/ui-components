@@ -79,10 +79,10 @@ export const SizeExample: Story = {
         </div>
     `,
     args: [
-        {title: "X Large", icon: "check-circle", size: UiSize.XLARGE},
-        {title: "Large", icon: "check-circle", size: UiSize.LARGE},
-        {title: "Medium", icon: "check-circle", size: UiSize.MEDIUM},
-        {title: "Small", icon: "check-circle", size: UiSize.SMALL}
+        {title: "X Large", icon: "gear-fill", size: UiSize.XLARGE},
+        {title: "Large", icon: "gear-fill", size: UiSize.LARGE},
+        {title: "Medium", icon: "gear-fill", size: UiSize.MEDIUM},
+        {title: "Small", icon: "gear-fill", size: UiSize.SMALL}
     ]
 }
 

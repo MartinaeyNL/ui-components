@@ -1,4 +1,4 @@
-import {Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
+import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
 
 import * as ButtonStories from '../../stories/button.stories';
 
@@ -24,9 +24,21 @@ To override the color for an individual button, use the `--ui-button-color` CSS 
 
 <Canvas of={ButtonStories.VariantExample} />
 
+### Outlined
+
+Use the `outlined` attribute to set toggle between a filled and outlined variant. Default: `false`
+
+<Canvas of={ButtonStories.OutlinedExample} />
+
 ### Sizes
 
 Use the `size` attribute to configure a button’s size. Default: `medium`<br />
 
 <Canvas of={ButtonStories.SizeExample} />
+
+<br />
+
+## API Specification
+
+<ArgTypes of={ButtonStories} />
 

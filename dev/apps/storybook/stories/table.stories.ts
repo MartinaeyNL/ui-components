@@ -27,6 +27,11 @@ const meta: Meta = {
         rows: {
             control: 'object'
         }
+    },
+    parameters: {
+        docs: {
+            subtitle: "<ui-table>"
+        }
     }
 };
 

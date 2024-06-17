@@ -1,9 +1,8 @@
-import type {Args, Meta, StoryObj} from '@storybook/web-components';
+import type {Meta, StoryObj} from '@storybook/web-components';
 import "@martinaeynl/ui-components-button";
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 import {html} from "lit";
-import {map} from "lit/directives/map.js";
 
 const helpers = getWcStorybookHelpers("ui-button");
 
@@ -55,6 +54,25 @@ export const VariantExample: Story = {
         {title: "Neutral", variant: UiVariant.NEUTRAL},
         {title: "Warning", variant: UiVariant.WARNING},
         {title: "Danger", variant: UiVariant.DANGER},
+    ]
+}
+
+export const OutlinedExample: Story = {
+    render: (args) => html`
+        <div style="display: flex; gap: 12px;">
+            ${helpers.template(args[0])}
+            ${helpers.template(args[1])}
+            ${helpers.template(args[2])}
+            ${helpers.template(args[3])}
+            ${helpers.template(args[4])}
+        </div>
+    `,
+    args: [
+        {title: "Primary", variant: UiVariant.PRIMARY, outlined: true},
+        {title: "Success", variant: UiVariant.SUCCESS, outlined: true},
+        {title: "Neutral", variant: UiVariant.NEUTRAL, outlined: true},
+        {title: "Warning", variant: UiVariant.WARNING, outlined: true},
+        {title: "Danger", variant: UiVariant.DANGER, outlined: true},
     ]
 }
 

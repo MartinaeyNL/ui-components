@@ -1,4 +1,4 @@
-import {Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
+import {ArgTypes, Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
 
 import * as IconStories from '../../stories/icon.stories';
 
@@ -32,9 +32,15 @@ Use the `size` attribute to configure a button’s size. Default: `medium`<br />
 
 ### Custom Icon Set
 
-The `set` attribute can be used to configure a custom Icon Set. (that is supported by [Iconify]https://github.com/iconify/iconify).<br />
+The `set` attribute can be used to configure a custom Icon Set. (that is supported by [Iconify](https://github.com/iconify/iconify)).<br />
 It expects an 'icon set prefix', for example `mdi` (Material Design), `bi` (Bootstrap Icons), `ant-design`, etc
 > Be aware: this will dynamically load SVG through the public API of Iconify.<br />
 > By default we will use [Bootstrap Icons](https://icons.getbootstrap.com), that is generated locally without fetching an API.
 
 <Canvas of={IconStories.SetExample} />
+
+<br />
+
+## API Specification
+
+<ArgTypes of={IconStories} />

@@ -24,14 +24,14 @@ export default () => css`
     }
 
     .ui-size-medium {
-        --ui-icon-size: var(--ui-font-size-3);
-    }
-
-    .ui-size-large {
         --ui-icon-size: var(--ui-font-size-5);
     }
 
+    .ui-size-large {
+        --ui-icon-size: var(--ui-font-size-6);
+    }
+
     .ui-size-xlarge {
-        --ui-icon-size: var(--ui-font-size-7);
+        --ui-icon-size: var(--ui-font-size-8);
     }
 `;
