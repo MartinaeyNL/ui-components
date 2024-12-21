@@ -1,0 +1,25 @@
+{
+  "name": "@martinaeynl/ui-components-progress",
+  "version": "1.0.0",
+  "description": "Progress UI component",
+  "type": "module",
+  "main": "dist/progress.component.js",
+  "module": "./dist/progress.component.js",
+  "types": "./dist/progress.component.d.ts",
+  "exports": {
+    ".": "./dist/progress.component.js",
+    "./*": "./dist/*.js"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -b .",
+    "watch": "tsc -b --watch .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@martinaeynl/ui-component-models": "workspace:*",
+    "@martinaeynl/ui-component-utils": "workspace:*",
+    "@shoelace-style/shoelace": "^2.19.1",
+    "lit": "^3.1.4"
+  }
+}

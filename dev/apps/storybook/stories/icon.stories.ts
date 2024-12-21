@@ -15,7 +15,7 @@ const meta: Meta = {
         ...(helpers.argTypes as any),
         variant: {
             control: 'select',
-            options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.WARNING, UiVariant.DANGER]
+            options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
         },
         size: {
             control: 'select',
@@ -64,7 +64,6 @@ export const VariantExample: Story = {
         {title: "Primary", icon: "check-circle", variant: UiVariant.PRIMARY},
         {title: "Success", icon: "check-circle", variant: UiVariant.SUCCESS},
         {title: "Neutral", icon: "check-circle", variant: UiVariant.NEUTRAL},
-        {title: "Warning", icon: "check-circle", variant: UiVariant.WARNING},
         {title: "Danger", icon: "check-circle", variant: UiVariant.DANGER},
     ]
 }

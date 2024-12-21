@@ -1,0 +1,27 @@
+
+.sbdocs-wrapper > * > div {
+    width: auto;
+}
+
+.sbdocs-content {
+    margin-bottom: 40vh;
+}
+
+/*.node-name--H1 {
+    font-size: 16px;
+    font-weight: bold;
+}*/
+
+.toc-list {
+    margin: 4px 0;
+}
+
+.node-name--H2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.toc-list-item:has(> .node-name--H2) {
+    margin: 8px 0;
+}
+

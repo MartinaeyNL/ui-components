@@ -1,9 +1,13 @@
 import {setWcStorybookHelpersConfig} from "wc-storybook-helpers";
 import {setCustomElementsManifest} from "@storybook/web-components";
+import {themes} from '@storybook/theming';
 import customElements from "../../../../docs/custom-elements.json";
 
+import './styles.css';
+
 setWcStorybookHelpersConfig({
-  hideArgRef: true
+  hideArgRef: true,
+  typeRef: "expandedType"
 });
 
 setCustomElementsManifest(customElements);
@@ -17,6 +21,14 @@ const preview = {
         date: /Date$/i,
       },
     },
+    docs: {
+      theme: themes.light,
+      toc: {
+        disable: false,
+        headingSelector: 'h2, h3',
+        /*ignoreSelector: ".sbdocs-subtitle"*/
+      }
+    }
   },
   /*tags: ['autodocs'],*/
 };

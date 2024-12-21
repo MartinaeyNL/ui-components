@@ -1,0 +1,69 @@
+import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
+import * as CheckboxStories from "../../stories/checkbox.stories";
+
+<Meta title="Components/Checkbox" />
+
+<Title>Checkbox</Title>
+<Subtitle of={CheckboxStories}></Subtitle>
+
+<div style={{display: "flex", gap: 6}}>
+    <img src="https://badgen.net/badge/Accessibility/WCAG 2.1 - Level AA/green?scale=1.2"
+         onClick={() => window.open("https://vaadin.com/accessibility")}
+         style={{cursor: "pointer"}} role={"button"} alt={"Accessibility statement"}
+    ></img>
+</div>
+
+Checkboxes allow the user to toggle an option on or off.<br />
+
+> This checkbox component uses the [Vaadin Web Components](https://github.com/vaadin/web-components) library.<br />
+> For the full documentation, check their website here: [https://vaadin.com/docs/latest/components/checkbox](https://vaadin.com/docs/latest/components/checkbox)
+
+<Canvas of={CheckboxStories.Primary} />
+
+## Examples
+
+### Variants
+
+Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`<br />
+
+<Canvas of={CheckboxStories.VariantExample} />
+
+### Readonly
+
+Use the `readonly` attribute to mark the checkbox as unavailable. Default: `false`<br />
+
+<Canvas of={CheckboxStories.ReadonlyExample} />
+
+### Disabled
+
+Use the `disabled` attribute to mark the checkbox as unavailable.<br />
+Compared to `readonly`, this element can not be focussed by keyboards and mice.<br />
+
+<Canvas of={CheckboxStories.DisabledExample} />
+
+### Required
+
+Use the `required` attribute to mark the checkbox as required to be checked by the user<br />
+You can set the error message using the `error-message` attribute.
+
+<Canvas of={CheckboxStories.RequiredExample} />
+
+### Helper text
+
+Use the `helper-text` attribute to display text below the checkbox<br />
+
+<Canvas of={CheckboxStories.HelperTextExample} />
+
+### Indeterminate
+
+Use the `indeterminate` attribute to mark the checkbox as indeterminate. Default: `false`<br />
+Once clicked, it will, from then onwards, toggle the `checked` state instead.
+
+<Canvas of={CheckboxStories.IndeterminateExample} />
+
+<br />
+
+## API Specification
+
+<ArgTypes of={CheckboxStories} />
+

@@ -89,52 +89,52 @@ export default () => css`
     }
     
     .ui-success {
-        --ui-color-10: var(--green-0);
-        --ui-color-25: var(--green-1);
-        --ui-color-50: var(--green-2);
-        --ui-color-100: var(--green-4);
-        --ui-color-200: var(--green-5);
-        --ui-color-300: var(--green-6);
-        --ui-color-400: var(--green-7);
-        --ui-color-500: var(--green-8);
-        --ui-color-600: var(--green-9);
-        --ui-color-700: var(--green-10);
-        --ui-color-800: var(--green-11);
-        --ui-color-900: var(--green-12);
-        --ui-color-950: var(--green-12);
+        --ui-color-10: hsl(var(--green-0-hsl));
+        --ui-color-25: hsl(var(--green-1-hsl));
+        --ui-color-50: hsl(var(--green-3-hsl));
+        --ui-color-100: hsl(var(--green-5-hsl));
+        --ui-color-200: hsl(var(--green-7-hsl));
+        --ui-color-300: hsl(var(--green-8-hsl));
+        --ui-color-400: hsl(var(--green-9-hsl));
+        --ui-color-500: hsl(var(--green-10-hsl));
+        --ui-color-600: hsl(var(--green-11-hsl));
+        --ui-color-700: hsl(var(--green-12-hsl));
+        --ui-color-800: hsl(var(--green-12-hsl));
+        --ui-color-900: hsl(var(--green-12-hsl));
+        --ui-color-950: hsl(var(--green-12-hsl));
     }
 
     .ui-neutral {
-        --ui-color-10: var(--gray-0);
-        --ui-color-25: var(--gray-1);
-        --ui-color-50: var(--gray-2);
-        --ui-color-100: var(--gray-4);
-        --ui-color-200: var(--gray-5);
-        --ui-color-300: var(--gray-6);
-        --ui-color-400: var(--gray-7);
-        --ui-color-500: var(--gray-8);
-        --ui-color-600: var(--gray-9);
-        --ui-color-700: var(--gray-10);
+        --ui-color-10: var(--gray-3);
+        --ui-color-25: var(--gray-4);
+        --ui-color-50: var(--gray-5);
+        --ui-color-100: var(--gray-6);
+        --ui-color-200: var(--gray-7);
+        --ui-color-300: var(--gray-8);
+        --ui-color-400: var(--gray-9);
+        --ui-color-500: var(--gray-10);
+        --ui-color-600: var(--gray-10);
+        --ui-color-700: var(--gray-11);
         --ui-color-800: var(--gray-11);
         --ui-color-900: var(--gray-12);
         --ui-color-950: var(--gray-12);
     }
 
-    .ui-warning {
-        --ui-color-10: var(--yellow-0);
-        --ui-color-25: var(--yellow-1);
-        --ui-color-50: var(--yellow-2);
-        --ui-color-100: var(--yellow-4);
-        --ui-color-200: var(--yellow-5);
-        --ui-color-300: var(--yellow-6);
-        --ui-color-400: var(--yellow-7);
-        --ui-color-500: var(--yellow-8);
-        --ui-color-600: var(--yellow-9);
-        --ui-color-700: var(--yellow-10);
-        --ui-color-800: var(--yellow-11);
-        --ui-color-900: var(--yellow-12);
-        --ui-color-950: var(--yellow-12);
-    }
+    /*.ui-warning {
+        --ui-color-10: hsl(var(--yellow-0-hsl));
+        --ui-color-25: hsl(var(--yellow-1-hsl));
+        --ui-color-50: hsl(var(--yellow-2-hsl));
+        --ui-color-100: hsl(var(--yellow-4-hsl));
+        --ui-color-200: hsl(var(--yellow-5-hsl));
+        --ui-color-300: hsl(var(--yellow-6-hsl));
+        --ui-color-400: hsl(var(--yellow-7-hsl));
+        --ui-color-500: hsl(var(--yellow-8-hsl));
+        --ui-color-600: hsl(var(--yellow-9-hsl));
+        --ui-color-700: hsl(var(--yellow-10-hsl));
+        --ui-color-800: hsl(var(--yellow-11-hsl));
+        --ui-color-900: hsl(var(--yellow-12-hsl));
+        --ui-color-950: hsl(var(--yellow-12-hsl));
+    }*/
     
     .ui-danger {
         --ui-color-10: var(--red-0);
