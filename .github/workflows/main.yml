@@ -45,3 +45,6 @@ jobs:
           install_command: yarn install
           build_command: yarn build
           path: dev/apps/storybook/dist
+
+      - name: Publish packages to NPM
+        run: yarn publish
