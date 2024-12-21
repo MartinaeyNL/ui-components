@@ -546,7 +546,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-badge@workspace:packages/components/ui-badge":
+"@martinaeynl/ui-components-badge@workspace:*, @martinaeynl/ui-components-badge@workspace:packages/components/ui-badge":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-badge@workspace:packages/components/ui-badge"
   dependencies:
@@ -567,7 +567,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-checkbox@workspace:packages/components/ui-checkbox":
+"@martinaeynl/ui-components-checkbox@workspace:*, @martinaeynl/ui-components-checkbox@workspace:packages/components/ui-checkbox":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-checkbox@workspace:packages/components/ui-checkbox"
   dependencies:
@@ -592,7 +592,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-map@workspace:packages/components/ui-map":
+"@martinaeynl/ui-components-map@workspace:*, @martinaeynl/ui-components-map@workspace:packages/components/ui-map":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-map@workspace:packages/components/ui-map"
   dependencies:
@@ -614,7 +614,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@martinaeynl/ui-components-progress@workspace:packages/components/ui-progress":
+"@martinaeynl/ui-components-progress@workspace:*, @martinaeynl/ui-components-progress@workspace:packages/components/ui-progress":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components-progress@workspace:packages/components/ui-progress"
   dependencies:
@@ -668,9 +668,13 @@ __metadata:
   dependencies:
     "@chromatic-com/storybook": "npm:3.2.2"
     "@martinaeynl/ui-component-models": "workspace:*"
+    "@martinaeynl/ui-components-badge": "workspace:*"
     "@martinaeynl/ui-components-button": "workspace:*"
+    "@martinaeynl/ui-components-checkbox": "workspace:*"
     "@martinaeynl/ui-components-icon": "workspace:*"
+    "@martinaeynl/ui-components-map": "workspace:*"
     "@martinaeynl/ui-components-popover": "workspace:*"
+    "@martinaeynl/ui-components-progress": "workspace:*"
     "@martinaeynl/ui-components-select": "workspace:*"
     "@martinaeynl/ui-components-table": "workspace:*"
     "@storybook/addon-a11y": "npm:^8.4.7"

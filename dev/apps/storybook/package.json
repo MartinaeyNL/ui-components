@@ -10,8 +10,8 @@
     "@martinaeynl/ui-components-checkbox": "workspace:*",
     "@martinaeynl/ui-components-icon": "workspace:*",
     "@martinaeynl/ui-components-map": "workspace:*",
-    "@martinaeynl/ui-components-progress": "workspace:*",
     "@martinaeynl/ui-components-popover": "workspace:*",
+    "@martinaeynl/ui-components-progress": "workspace:*",
     "@martinaeynl/ui-components-select": "workspace:*",
     "@martinaeynl/ui-components-table": "workspace:*"
   },
