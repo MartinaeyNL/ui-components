@@ -552,6 +552,7 @@ __metadata:
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
+    "@martinaeynl/ui-components-icon": "workspace:*"
     "@vaadin/vaadin-lumo-styles": "npm:^24.6.0"
     lit: "npm:^3.1.4"
   languageName: unknown
@@ -563,6 +564,7 @@ __metadata:
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
+    "@martinaeynl/ui-components-icon": "workspace:*"
     lit: "npm:^3.1.4"
   languageName: unknown
   linkType: soft
@@ -631,6 +633,7 @@ __metadata:
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
+    "@martinaeynl/ui-components-button": "workspace:*"
     "@martinaeynl/ui-components-icon": "workspace:*"
     "@martinaeynl/ui-components-popover": "workspace:*"
     lit: "npm:^3.1.4"
