@@ -1,9 +1,7 @@
 name: Build and publish NPM packages
 
 on:
-  push:
-    branches:
-      - 'workflow/npm-publish'
+  workflow_dispatch:
 
 permissions:
   contents: read
