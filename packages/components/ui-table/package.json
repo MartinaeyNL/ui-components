@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-table",
   "version": "0.0.1",
   "description": "Table UI component",
+  "repository": "https://github.com/martinaeynl/ui-components",
   "license": "MIT",
   "type": "module",
   "main": "dist/table.component.js",

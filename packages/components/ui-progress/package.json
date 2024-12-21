@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-progress",
   "version": "0.0.1",
   "description": "Progress UI component",
+  "repository": "https://github.com/martinaeynl/ui-components",
   "license": "MIT",
   "type": "module",
   "main": "dist/progress.component.js",
