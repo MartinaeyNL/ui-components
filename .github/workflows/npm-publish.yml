@@ -1,21 +1,19 @@
-name: Build and Publish Storybook to GitHub Pages
+name: Build and publish NPM packages
 
 on:
   push:
     branches:
-      - 'develop'
+      - 'workflow/npm-publish'
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # List of jobs
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      
+
       - name: Check out Git repository
         uses: actions/checkout@v4
 
@@ -36,12 +34,8 @@ jobs:
       - name: Verify Yarn workspaces and their dependencies
         run: yarn dlx @yarnpkg/doctor .
 
-      #- name: Build Yarn packages
-      #  run: yarn workspaces foreach --topological-dev --all --exclude @martinaeynl/ui-docs-storybook run build
-        
-      - name: Build packages and deploy Storybook
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
-        with:
-          install_command: yarn install
-          build_command: yarn build
-          path: dev/apps/storybook/dist
+      - name: Build packages
+        run: yarn buildComponents
+
+      - name: Publish packages
+        run: yarn publish
