@@ -1,6 +1,6 @@
 {
   "name": "@martinaeynl/ui-components-checkbox",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Checkbox UI component",
   "type": "module",
   "main": "dist/checkbox.component.js",

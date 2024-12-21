@@ -1,6 +1,6 @@
 {
   "name": "@martinaeynl/ui-components-icon",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Icon UI component",
   "type": "module",
   "main": "dist/icon.component.js",

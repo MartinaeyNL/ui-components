@@ -1,6 +1,6 @@
 {
   "name": "@martinaeynl/ui-components-select",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Select UI component",
   "type": "module",
   "main": "dist/index.js",

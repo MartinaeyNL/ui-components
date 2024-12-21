@@ -1,6 +1,6 @@
 {
   "name": "@martinaeynl/ui-components-map",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Map UI component",
   "type": "module",
   "main": "dist/index.js",
