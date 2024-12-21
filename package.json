@@ -14,7 +14,7 @@
     "build": "yarn workspaces foreach --topological-dev --all run build",
     "buildComponents": "yarn cleanComponents && yarn workspaces foreach --exclude @martinaeynl/ui-components --exclude @martinaeynl/ui-docs-storybook --topological-dev --all run build",
     "generateDocs": "cem analyze --config util/custom-elements-manifest.config.js",
-    "publish": "yarn workspaces foreach --exclude @martinaeynl/ui-components --exclude @martinaeynl/ui-docs-storybook --since --topological-dev npm publish --tolerate-republish",
+    "publish": "yarn workspaces foreach --exclude @martinaeynl/ui-components --exclude @martinaeynl/ui-docs-storybook --all --topological-dev npm publish --tolerate-republish",
     "storybook": "node scripts/storybook.js",
     "storybookOnly": "yarn workspace @martinaeynl/ui-docs-storybook run storybook",
     "watch": "yarn workspaces foreach --all -j unlimited -p -i run watch"
