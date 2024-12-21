@@ -11,11 +11,13 @@
     "./*": "./dist/*.js"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "build": "tsc -b .",
     "watch": "tsc -b --watch .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.6.5",
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
     "lit": "^3.1.4"

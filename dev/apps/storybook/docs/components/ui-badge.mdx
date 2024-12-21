@@ -1,0 +1,57 @@
+import {ArgTypes, Canvas, Controls, Markdown, Meta, Subtitle, Title} from '@storybook/blocks';
+import * as BadgeStories from "../../stories/badge.stories";
+import {getComponentAttribute, getComponentMember} from "../../util/component-utils";
+
+<Meta title="Components/Badge" />
+
+<Title>Badge</Title>
+<Subtitle of={BadgeStories}></Subtitle>
+
+<div style={{display: "flex", gap: 6}}>
+    <img src="https://badgen.net/badge/Accessibility/WCAG 2.1 - Level AA/green?scale=1.2"
+         onClick={() => window.open("https://vaadin.com/accessibility")}
+         style={{cursor: "pointer"}} role={"button"} alt={"Accessibility statement"}
+    ></img>
+</div>
+
+Insert text here<br />
+
+<Canvas of={BadgeStories.Primary} />
+
+## Examples
+
+### Variants
+
+<Markdown>{getComponentAttribute(BadgeStories.docs, "variant")?.summary}</Markdown>
+<Canvas of={BadgeStories.VariantExample} />
+
+### Icon with text
+
+<Markdown>{getComponentMember(BadgeStories.docs, "_prefixSlot")?.summary}</Markdown>
+<Canvas of={BadgeStories.IconWithTextExample} />
+
+### Icon only
+
+You can leave out the label to only show an icon inside the badge.<br />
+
+<Canvas of={BadgeStories.IconOnlyExample} />
+
+### Small version
+
+<Markdown>{getComponentAttribute(BadgeStories.docs, "small")?.summary}</Markdown>
+<Canvas of={BadgeStories.SmallExample} />
+
+### Filled
+
+<Markdown>{getComponentAttribute(BadgeStories.docs, "filled")?.summary}</Markdown>
+<Canvas of={BadgeStories.FilledExample} />
+
+### Pill
+
+<Markdown>{getComponentAttribute(BadgeStories.docs, "pill")?.summary}</Markdown>
+<Canvas of={BadgeStories.PillExample} />
+
+## API Specification
+
+<ArgTypes of={BadgeStories} />
+

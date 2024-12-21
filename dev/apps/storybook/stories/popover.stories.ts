@@ -18,7 +18,7 @@ const meta: Meta = {
         ...(helpers.argTypes as any),
         variant: {
             control: 'select',
-            options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.WARNING, UiVariant.DANGER]
+            options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
         },
         size: {
             control: 'select',
@@ -27,7 +27,10 @@ const meta: Meta = {
     },
     parameters: {
         docs: {
-            subtitle: "<ui-select>"
+            subtitle: "<ui-popover>",
+            story: {
+                height: "180px"
+            }
         }
     }
 };
@@ -36,61 +39,74 @@ type Story = StoryObj;
 
 export const Primary: Story = {
     render: (args) => {
-        return getPopoverTemplate(async (slot) => helpers.template(args, slot))
+        /*return html`
+            <ui-popover title="Popover" placement="bottom">
+                <ui-button slot="anchor">Open</ui-button>
+                <span>This is very special Content</span>
+            </ui-popover>
+        `;*/
+        return getPopoverWrapperTemplate((slot) => helpers.template(args, slot))
     },
     args: {
-        title: "Popover"
-    },
+        title: "Popover",
+        placement: "bottom"
+    }
 };
 
-export const VariantExample: Story = {
-    render: (args) => html`
-        <div style="display: flex; gap: 12px;">
-            ${helpers.template(args[0])}
-            ${helpers.template(args[1])}
-            ${helpers.template(args[2])}
-            ${helpers.template(args[3])}
-            ${helpers.template(args[4])}
-        </div>
-    `,
-    args: [
-        {title: "Primary", variant: UiVariant.PRIMARY},
-        {title: "Success", variant: UiVariant.SUCCESS},
-        {title: "Neutral", variant: UiVariant.NEUTRAL},
-        {title: "Warning", variant: UiVariant.WARNING},
-        {title: "Danger", variant: UiVariant.DANGER},
-    ]
-}
+export const PlacementExample: Story = {
+    render: (args) => {
+        return html`
+            <div style="height: 150px; display: flex; justify-content: center; align-items: center; gap: 12px;">
+                <ui-popover title="Bottom" placement="bottom">
+                    <ui-button slot="anchor">Bottom</ui-button>
+                    <span>This is bottom content</span>
+                </ui-popover>
+                <ui-popover title="Top" placement="top">
+                    <ui-button slot="anchor">Top</ui-button>
+                    <span>This is top content</span>
+                </ui-popover>
+                <ui-popover title="Left" placement="left">
+                    <ui-button slot="anchor">Left</ui-button>
+                    <span>This is left content</span>
+                </ui-popover>
+                <ui-popover title="Right" placement="right">
+                    <ui-button slot="anchor">Right</ui-button>
+                    <span>This is right content</span>
+                </ui-popover>
+            </div>
+        `;
+    }
+};
 
-export const SizeExample: Story = {
-    render: (args) => html`
-        <div style="display: flex; gap: 12px;">
-            ${helpers.template(args[0])}
-            ${helpers.template(args[1])}
-            ${helpers.template(args[2])}
-            ${helpers.template(args[3])}
-        </div>
-    `,
-    args: [
-        {title: "X Large", size: UiSize.XLARGE},
-        {title: "Large", size: UiSize.LARGE},
-        {title: "Medium", size: UiSize.MEDIUM},
-        {title: "Small", size: UiSize.SMALL}
-    ]
-}
+export const SyncExample: Story = {
+    render: (args) => {
+        return html`
+            <div style="height: 150px; display: flex; justify-content: center; align-items: center; gap: 12px;">
+                <ui-popover title="Default" placement="bottom">
+                    <ui-button slot="anchor">Default</ui-button>
+                    <span>This is bottom content</span>
+                </ui-popover>
+                <ui-popover title="Synchronized" placement="bottom" sync>
+                    <ui-button slot="anchor">Synchronized</ui-button>
+                    <span>This is bottom content</span>
+                </ui-popover>
+            </div>
+        `;
+    }
+};
 
-function getPopoverTemplate(content: (slotContent?: TemplateResult) => Promise<TemplateResult>): TemplateResult {
-    const onButtonClick = (event: PointerEvent) => {
+function getPopoverWrapperTemplate(content: (slotContent?: TemplateResult) => TemplateResult): TemplateResult {
+    /*const onButtonClick = (event: PointerEvent) => {
         const parentElem = (event.target as HTMLElement).parentElement as HTMLElement;
         const elem = parentElem.querySelector('ui-popover') as PopoverComponent;
         elem.toggle();
-    }
+    };*/
     return html`
-        <ui-button @click="${onButtonClick}">Open</ui-button>
-        ${until(content(html`
-            <span>Content</span>
-        `))}
-    `
+        ${content(html`
+            <ui-button slot="anchor">Open</ui-button>
+            <span>Content of the popover</span>
+        `)}
+    `;
 }
 
 export default meta;

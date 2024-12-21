@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Select UI component",
   "type": "module",
-  "main": "dist/select.component.js",
-  "module": "./dist/select.component.js",
-  "types": "./dist/select.component.d.ts",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/select.component.js",
-    "./*": "./dist/*.js"
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "build": "tsc -b .",
     "watch": "tsc -b --watch .",
     "test": "echo \"Error: no test specified\" && exit 1"

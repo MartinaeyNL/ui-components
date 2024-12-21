@@ -1,0 +1,34 @@
+import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
+import * as ProgressStories from "../../stories/progress.stories";
+
+<Meta title="Components/Progress" />
+
+<Title>Progress</Title>
+<Subtitle of={ProgressStories}></Subtitle>
+
+<div style={{display: "flex", gap: 6}}>
+    <img src="https://badgen.net/badge/Accessibility/WCAG 2.1 - Level AA/green?scale=1.2"
+         onClick={() => window.open("https://vaadin.com/accessibility")}
+         style={{cursor: "pointer"}} role={"button"} alt={"Accessibility statement"}
+    ></img>
+</div>
+
+Checkboxes allow the user to toggle an option on or off.<br />
+Utilizes the [Shoelace](https://shoelace.style/components/progress-bar) library.
+
+<Canvas of={ProgressStories.Primary} />
+
+## Examples
+
+### Variants
+
+Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`<br />
+
+<Canvas of={ProgressStories.VariantExample} />
+
+<br />
+
+## API Specification
+
+<ArgTypes of={ProgressStories} />
+

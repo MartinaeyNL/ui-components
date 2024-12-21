@@ -1,4 +1,5 @@
-const {executeCmd} = require("./executor");
+/*const {executeCmd} = require("./executor");*/
+import { executeCmd } from "./executor.js";
 
 async function run() {
 

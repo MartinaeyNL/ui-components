@@ -1,0 +1,53 @@
+import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
+
+import * as MapStories from "../../stories/map.stories";
+import * as MapMarkerStories from "../../stories/map-marker.stories";
+
+<Meta title="Components/Map" />
+
+<Title>Map</Title>
+<Subtitle of={MapStories}></Subtitle>
+
+Map is a component for displaying geographical maps from various sources.<br />
+It supports multiple layers, tiled and full-image sources, adding markers, and interaction through events.<br />
+
+
+<Canvas of={MapStories.Primary} />
+
+
+## Examples
+
+<br />
+
+### Coordinates / zoom
+
+With the `lat` and `lng` attributes, you can adjust the coordinates that is centered on the map.<br />
+The `zoom` attribute (a value between 1 and 20) configures the default zoom; `1` is world-view, and `20` street level.
+
+<Canvas of={MapStories.CenterZoomExample} />
+
+### Map Style / options
+
+Using the `mapStyle` attribute, you can provide a URL to a MapLibre `style.json` specification file.<br />
+The specification of this JSON file can be found [here](https://maplibre.org/maplibre-style-spec/).<br />
+
+Default: `https://demotiles.maplibre.org/style.json`
+
+<Canvas of={MapStories.MapStyleExample} />
+
+<br />
+
+## Using markers with `ui-map-marker`
+
+WIP
+
+<Canvas of={MapMarkerStories.Primary} />
+
+<Canvas of={MapStories.MapMarkerExample} />
+
+<br />
+
+## API Specification
+
+<ArgTypes of={MapStories} />
+

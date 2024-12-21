@@ -1,5 +1,5 @@
 import {customElement, property, query, state} from "lit/decorators.js";
-import {UiComponent} from "@martinaeynl/ui-component-utils";
+import {ResizableUiComponent} from "@martinaeynl/ui-component-utils";
 import {html, PropertyValues, TemplateResult, unsafeCSS} from "lit";
 import {classMap} from "lit/directives/class-map.js";
 import {until} from "lit/directives/until.js";
@@ -12,7 +12,7 @@ import 'iconify-icon';
 import getIconStyles from "./icon.styles" assert {type: "css"};
 
 @customElement("ui-icon")
-export class IconComponent extends UiComponent {
+export class IconComponent extends ResizableUiComponent {
 
     @property({type: String})
     public icon?: string;
@@ -21,7 +21,7 @@ export class IconComponent extends UiComponent {
     public set?: string;
 
     @property({type: Number})
-    public rotation?: string;
+    public rotation?: number;
 
     @query(".ui-icon")
     protected _iconElem?: HTMLElement;
@@ -51,7 +51,6 @@ export class IconComponent extends UiComponent {
     }
 
     protected render(): TemplateResult {
-        console.log("render()");
         if (!this.icon) {
             return html``;
         } else {
@@ -95,7 +94,7 @@ export class IconComponent extends UiComponent {
      */
     protected async _doIconExitTransition(): Promise<void> {
         if(this._iconElem) {
-            console.log(getComputedStyle(this.shadowRoot!.firstElementChild!))
+            /*console.log(getComputedStyle(this.shadowRoot!.firstElementChild!))*/
             await new Promise(resolve => setTimeout(resolve, 100));
         }
     }

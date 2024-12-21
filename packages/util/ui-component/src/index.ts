@@ -1,4 +1,4 @@
-import {LitElement, PropertyValues, unsafeCSS} from "lit";
+import {html, LitElement, PropertyValues, ReactiveElement, unsafeCSS} from "lit";
 import {property, state} from "lit/decorators.js";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 
@@ -7,9 +7,14 @@ import getGlobalStyle from "./styles";
 
 // @ts-ignore
 import * as propsCss from "open-props/open-props.min.css";
+// @ts-ignore
+import * as colorsHslCss from "open-props/colors-hsl.min.css";
 
 export abstract class UiComponent extends LitElement {
 
+    /**
+     * @summary Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`
+     */
     @property({type: String})
     public variant: UiVariant = UiVariant.DEFAULT;
 
@@ -23,61 +28,101 @@ export abstract class UiComponent extends LitElement {
     public neutral = false;
 
     @property({type: Boolean})
-    public warning = false;
-
-    @property({type: Boolean})
     public danger = false;
 
-    @property({type: String})
-    public size: UiSize = UiSize.DEFAULT;
+    @property({type: Boolean})
+    public dark = false;
 
     @property({type: Boolean})
     public disabled = false;
+
+    @property({type: Boolean})
+    public readonly = false;
 
     @state()
     protected _variantOverride?: UiVariant;
 
 
-    static get styles() {
-        return [getGlobalStyle(), unsafeCSS(propsCss)]
+    static override get styles() {
+        return [getGlobalStyle(), unsafeCSS(colorsHslCss), unsafeCSS(propsCss)];
     }
 
-    protected willUpdate(changedProps: PropertyValues) {
-        if(changedProps.has("primary") && this.primary != null) {
+    protected override shouldUpdate(changedProps: PropertyValues): boolean {
+        super.shouldUpdate(changedProps);
+        return changedProps.size > 0;
+    }
+
+    protected override willUpdate(changedProps: PropertyValues) {
+        if (changedProps.has("primary") && this.primary != null) {
             this._variantOverride = this.primary ? UiVariant.PRIMARY : undefined;
         }
-        if(changedProps.has("success") && this.success != null) {
+        if (changedProps.has("success") && this.success != null) {
             this._variantOverride = this.success ? UiVariant.SUCCESS : undefined;
         }
-        if(changedProps.has("neutral") && this.neutral != null) {
+        if (changedProps.has("neutral") && this.neutral != null) {
             this._variantOverride = this.neutral ? UiVariant.NEUTRAL : undefined;
         }
-        if(changedProps.has("warning") && this.warning != null) {
-            this._variantOverride = this.warning ? UiVariant.WARNING : undefined;
-        }
-        if(changedProps.has("danger") && this.danger != null) {
+        if (changedProps.has("danger") && this.danger != null) {
             this._variantOverride = this.danger ? UiVariant.DANGER : undefined;
         }
         return super.willUpdate(changedProps);
     }
 
-    getClasses(): {[name: string]: boolean} {
-        const variant = this._variantOverride || this.variant;
-        const classes = {
+    getClasses(): { [name: string]: boolean } {
+        const variant = this.getVariant();
+        return {
 
             // Colors
-            'ui-primary': variant === UiVariant.PRIMARY,
-            'ui-success': variant === UiVariant.SUCCESS,
-            'ui-neutral': variant === UiVariant.NEUTRAL,
-            'ui-warning': variant === UiVariant.WARNING,
-            'ui-danger': variant === UiVariant.DANGER,
+            "ui-primary": variant === UiVariant.PRIMARY,
+            "ui-success": variant === UiVariant.SUCCESS,
+            "ui-neutral": variant === UiVariant.NEUTRAL,
+            "ui-danger": variant === UiVariant.DANGER,
+
+            "ui-dark": this.dark,
 
             // Sizes
-            'ui-size-small': this.size === UiSize.SMALL,
+            /*'ui-size-small': this.size === UiSize.SMALL,
             'ui-size-medium': this.size === UiSize.MEDIUM || this.size === UiSize.DEFAULT,
             'ui-size-large': this.size === UiSize.LARGE,
-            'ui-size-xlarge': this.size === UiSize.XLARGE
-        }
-        return classes;
+            'ui-size-xlarge': this.size === UiSize.XLARGE*/
+        };
+    }
+
+    public getVariant(): UiVariant {
+        return this._variantOverride || this.variant;
+    }
+
+    public isPrimary(): boolean {
+        return this.getVariant() === UiVariant.PRIMARY;
+    }
+
+    public isSuccess(): boolean {
+        return this.getVariant() === UiVariant.SUCCESS;
+    }
+
+    public isNeutral(): boolean {
+        return this.getVariant() === UiVariant.NEUTRAL;
+    }
+
+    public isDanger(): boolean {
+        return this.getVariant() === UiVariant.DANGER;
+    }
+}
+
+export abstract class ResizableUiComponent extends UiComponent {
+
+    @property({type: String})
+    public size: UiSize = UiSize.DEFAULT;
+
+}
+
+
+export abstract class VaadinComponent extends UiComponent {
+
+    connectedCallback() {
+        super.connectedCallback();
+        const observer = new MutationObserver(() => {
+
+        })
     }
 }

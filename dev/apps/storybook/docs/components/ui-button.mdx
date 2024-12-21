@@ -1,4 +1,4 @@
-import {Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
+import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
 
 import * as ButtonStories from '../../stories/button.stories';
 
@@ -6,6 +6,15 @@ import * as ButtonStories from '../../stories/button.stories';
 
 <Title>Button</Title>
 <Subtitle of={ButtonStories}></Subtitle>
+
+<div style={{display: "flex", gap: 6}}>
+    <img src="https://badgen.net/badge/Version/1.0.0/gray?scale=1.2"></img>
+    <img src="https://badgen.net/badge/Accessibility/WCAG 2.2 - Level AAA/green?scale=1.2"></img>
+    <img src="https://badgen.net/github/last-commit/martinaeynl/ui-components?scale=1.2"
+         onClick={() => window.open('https://github.com/MartinaeyNL/ui-components')}
+         style={{cursor: "pointer"}} role={"button"} alt={"GitHub repository"}
+    ></img>
+</div>
 
 Buttons communicate actions that users can take.<br />
 They are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.
@@ -24,9 +33,28 @@ To override the color for an individual button, use the `--ui-button-color` CSS 
 
 <Canvas of={ButtonStories.VariantExample} />
 
+### Outlined
+
+Use the `outlined` attribute to set toggle between a filled and outlined variant. Default: `false`<br />
+
+<Canvas of={ButtonStories.OutlinedExample} />
+
 ### Sizes
 
 Use the `size` attribute to configure a button’s size. Default: `medium`<br />
 
 <Canvas of={ButtonStories.SizeExample} />
+
+### Icons
+
+To add an icon to buttons, place an `<ui-icon>` element in the slot of the button.<br />
+You can configure the location using the `slot` attribute, such as `slot="prefix"`.
+
+<Canvas of={ButtonStories.IconExample} />
+
+<br />
+
+## API Specification
+
+<ArgTypes of={ButtonStories} />
 

@@ -1,6 +1,7 @@
-const { spawn } = require("node:child_process");
+/*const { spawn } = require("node:child_process");*/
+import { spawn } from "node:child_process";
 
-async function executeCmd(command, args, cwd, env, doLogging) {
+export async function executeCmd(command, args, cwd, env, doLogging) {
     const ls = spawn(command, args, { cwd: cwd, env: { ...process.env, ...env }, shell: true })
     if(doLogging) {
         ls.stdout.pipe(process.stdout);
@@ -8,6 +9,7 @@ async function executeCmd(command, args, cwd, env, doLogging) {
     for await (const data of ls.stdout) {}
 }
 
+/*
 module.exports = {
     executeCmd: executeCmd
-}
+}*/

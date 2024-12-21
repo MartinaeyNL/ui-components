@@ -1,0 +1,37 @@
+import {ArgTypes, Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
+
+import * as PopoverStories from "../../stories/popover.stories";
+
+<Meta title="Internal/Popover" />
+
+<Title>Popover</Title>
+<Subtitle of={PopoverStories}></Subtitle>
+
+Internal popover component for use in dropdowns, tooltips and dialogs. <br />
+Makes use of the [Floating UI](https://github.com/floating-ui/floating-ui) JavaScript library.
+
+<Canvas of={PopoverStories.Primary} />
+
+
+## Examples
+
+<br />
+
+### Placement
+
+Use the `placement` attribute to set the direction of a popover container. Default: `bottom`<br />
+
+<Canvas of={PopoverStories.PlacementExample} />
+
+### Sync
+
+The `sync` attribute sets the popover width to be identical to the anchor width<br />
+
+<Canvas of={PopoverStories.SyncExample} />
+
+<br />
+
+## API Specification
+
+<ArgTypes of={PopoverStories} />
+

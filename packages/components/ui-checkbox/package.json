@@ -1,0 +1,25 @@
+{
+  "name": "@martinaeynl/ui-components-checkbox",
+  "version": "1.0.0",
+  "description": "Checkbox UI component",
+  "type": "module",
+  "main": "dist/checkbox.component.js",
+  "module": "./dist/checkbox.component.js",
+  "types": "./dist/checkbox.component.d.ts",
+  "exports": {
+    ".": "./dist/checkbox.component.js",
+    "./*": "./dist/*.js"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -b .",
+    "watch": "tsc -b --watch .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@martinaeynl/ui-component-models": "workspace:*",
+    "@martinaeynl/ui-component-utils": "workspace:*",
+    "@vaadin/checkbox": "^24.5.5",
+    "lit": "^3.1.4"
+  }
+}

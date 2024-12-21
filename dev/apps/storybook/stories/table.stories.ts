@@ -15,7 +15,7 @@ const meta: Meta = {
         ...(helpers.argTypes as any),
         variant: {
             control: 'select',
-            options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.WARNING, UiVariant.DANGER]
+            options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
         },
         size: {
             control: 'select',
@@ -26,6 +26,11 @@ const meta: Meta = {
         },
         rows: {
             control: 'object'
+        }
+    },
+    parameters: {
+        docs: {
+            subtitle: "<ui-table>"
         }
     }
 };
@@ -45,19 +50,19 @@ export const SizeExample: Story = {
     render: (args) => html`
         <div style="display: flex; flex-direction: column; gap: 12px;">
             <div style="display: flex; gap: 36px; align-items: center;">
-                <span>X Large</span>
+                <span style="flex: 0 0 60px;">X Large</span>
                 ${helpers.template(args[0])}
             </div>
             <div style="display: flex; gap: 36px; align-items: center;">
-                <span>Large</span>
+                <span style="flex: 0 0 60px;">Large</span>
                 ${helpers.template(args[1])}
             </div>
             <div style="display: flex; gap: 36px; align-items: center;">
-                <span>Medium</span>
+                <span style="flex: 0 0 60px;">Medium</span>
                 ${helpers.template(args[2])}
             </div>
             <div style="display: flex; gap: 36px; align-items: center;">
-                <span>Small</span>
+                <span style="flex: 0 0 60px;">Small</span>
                 ${helpers.template(args[3])}
             </div>
         </div>
