@@ -1,7 +1,10 @@
 {
   "name": "@martinaeynl/ui-components-checkbox",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Checkbox UI component",
+  "repository": "https://github.com/martinaeynl/ui-components",
+  "homepage": "https://martinaeynl.github.io/ui-components",
+  "license": "MIT",
   "type": "module",
   "main": "dist/checkbox.component.js",
   "module": "./dist/checkbox.component.js",
