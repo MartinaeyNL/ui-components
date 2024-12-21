@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-select",
   "version": "0.0.1",
   "description": "Select UI component",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "module": "./dist/index.js",

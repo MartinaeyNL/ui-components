@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-component-models",
   "version": "0.0.1",
   "description": "UI component models",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {

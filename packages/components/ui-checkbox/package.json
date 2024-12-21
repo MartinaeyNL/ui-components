@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-checkbox",
   "version": "0.0.1",
   "description": "Checkbox UI component",
+  "license": "MIT",
   "type": "module",
   "main": "dist/checkbox.component.js",
   "module": "./dist/checkbox.component.js",

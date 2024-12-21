@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-popover",
   "version": "0.0.1",
   "description": "Popover UI component",
+  "license": "MIT",
   "type": "module",
   "main": "dist/popover.component.js",
   "module": "./dist/popover.component.js",

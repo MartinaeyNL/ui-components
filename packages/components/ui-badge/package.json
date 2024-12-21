@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-badge",
   "version": "0.0.1",
   "description": "Badge UI component",
+  "license": "MIT",
   "type": "module",
   "main": "dist/badge.component.js",
   "module": "./dist/badge.component.js",

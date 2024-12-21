@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-icon",
   "version": "0.0.1",
   "description": "Icon UI component",
+  "license": "MIT",
   "type": "module",
   "main": "dist/icon.component.js",
   "module": "./dist/icon.component.js",

@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-component-utils",
   "version": "0.0.1",
   "description": "UI component utils",
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {

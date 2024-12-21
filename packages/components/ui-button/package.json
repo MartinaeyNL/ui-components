@@ -2,6 +2,7 @@
   "name": "@martinaeynl/ui-components-button",
   "version": "0.0.1",
   "description": "Button UI component",
+  "license": "MIT",
   "type": "module",
   "main": "dist/button.component.js",
   "module": "./dist/button.component.js",
