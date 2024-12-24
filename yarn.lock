@@ -541,7 +541,7 @@ __metadata:
   resolution: "@martinaeynl/ui-component-utils@workspace:packages/util/ui-component"
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
     open-props: "npm:^1.7.9"
   languageName: unknown
   linkType: soft
@@ -554,7 +554,7 @@ __metadata:
     "@martinaeynl/ui-component-utils": "workspace:*"
     "@martinaeynl/ui-components-icon": "workspace:*"
     "@vaadin/vaadin-lumo-styles": "npm:^24.6.0"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -565,7 +565,7 @@ __metadata:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
     "@martinaeynl/ui-components-icon": "workspace:*"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -576,7 +576,7 @@ __metadata:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
     "@vaadin/checkbox": "npm:^24.5.5"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -590,7 +590,7 @@ __metadata:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
     iconify-icon: "npm:^2.1.0"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -600,7 +600,7 @@ __metadata:
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
     maplibre-gl: "npm:^4.6.0"
   languageName: unknown
   linkType: soft
@@ -612,7 +612,7 @@ __metadata:
     "@floating-ui/dom": "npm:^1.6.5"
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -623,7 +623,7 @@ __metadata:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
     "@shoelace-style/shoelace": "npm:^2.19.1"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -636,7 +636,7 @@ __metadata:
     "@martinaeynl/ui-components-button": "workspace:*"
     "@martinaeynl/ui-components-icon": "workspace:*"
     "@martinaeynl/ui-components-popover": "workspace:*"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -646,7 +646,7 @@ __metadata:
   dependencies:
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
-    lit: "npm:^3.1.4"
+    lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
@@ -690,7 +690,7 @@ __metadata:
     "@storybook/theming": "npm:^8.4.7"
     "@storybook/web-components": "npm:^8.4.7"
     "@storybook/web-components-webpack5": "npm:^8.4.7"
-    lit: "npm:3.1.4"
+    lit: "npm:3.2.1"
     storybook: "npm:^8.4.7"
     wc-storybook-helpers: "npm:^2.0.4"
   languageName: unknown
@@ -3944,7 +3944,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-element@npm:^4.0.4, lit-element@npm:^4.1.0":
+"lit-element@npm:^4.1.0":
   version: 4.1.1
   resolution: "lit-element@npm:4.1.1"
   dependencies:
@@ -3955,7 +3955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-html@npm:^3.1.2, lit-html@npm:^3.2.0":
+"lit-html@npm:^3.2.0":
   version: 3.2.1
   resolution: "lit-html@npm:3.2.1"
   dependencies:
@@ -3964,18 +3964,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit@npm:3.1.4":
-  version: 3.1.4
-  resolution: "lit@npm:3.1.4"
-  dependencies:
-    "@lit/reactive-element": "npm:^2.0.4"
-    lit-element: "npm:^4.0.4"
-    lit-html: "npm:^3.1.2"
-  checksum: 10c0/afa4954638e80f627c60bcbd2d800af710b9b3394a36cee9865b5ea5de95b4ec6d33de43ac0bf256b5b7c981d45c7c8ac0c7ddba6fcbd0c67d65986b0279b960
-  languageName: node
-  linkType: hard
-
-"lit@npm:^3.0.0, lit@npm:^3.1.4, lit@npm:^3.2.1":
+"lit@npm:3.2.1, lit@npm:^3.0.0, lit@npm:^3.2.1":
   version: 3.2.1
   resolution: "lit@npm:3.2.1"
   dependencies:
