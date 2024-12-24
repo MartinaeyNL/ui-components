@@ -4,9 +4,9 @@ import {html, PropertyValues, TemplateResult, unsafeCSS} from "lit";
 import {classMap} from "lit/directives/class-map.js";
 import {until} from "lit/directives/until.js";
 import {unsafeSVG} from "lit/directives/unsafe-svg.js";
-import {getIconData, iconToSVG, iconToHTML, replaceIDs} from '@iconify/utils';
-import {icons} from '@iconify-json/bi';
-import 'iconify-icon';
+import {getIconData, iconToSVG, iconToHTML, replaceIDs} from "@iconify/utils";
+import {icons} from "@iconify-json/bi";
+import "iconify-icon";
 
 // @ts-ignore
 import getIconStyles from "./icon.styles";
