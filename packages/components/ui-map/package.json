@@ -22,7 +22,7 @@
   "dependencies": {
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
-    "lit": "^3.1.4",
+    "lit": "^3.2.1",
     "maplibre-gl": "^4.6.0"
   }
 }
