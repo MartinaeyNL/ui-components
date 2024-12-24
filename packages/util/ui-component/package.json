@@ -15,6 +15,6 @@
   "dependencies": {
     "@martinaeynl/ui-component-models": "workspace:*",
     "lit": "^3.1.4",
-    "open-props": "^1.7.7"
+    "open-props": "^1.7.9"
   }
 }
