@@ -1,15 +1,19 @@
 name: Build and publish NPM packages
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - 'develop'
 
 permissions:
   contents: read
+  id-token: write
 
 # List of jobs
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: "npm-publish"
     steps:
 
       - name: Check out Git repository
@@ -37,3 +41,5 @@ jobs:
 
       - name: Publish packages
         run: yarn publish
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.YARN_NPM_AUTH_TOKEN }}
