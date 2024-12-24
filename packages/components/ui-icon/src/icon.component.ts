@@ -9,7 +9,7 @@ import {icons} from '@iconify-json/bi';
 import 'iconify-icon';
 
 // @ts-ignore
-import getIconStyles from "./icon.styles" assert {type: "css"};
+import getIconStyles from "./icon.styles";
 
 @customElement("ui-icon")
 export class IconComponent extends ResizableUiComponent {
