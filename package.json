@@ -23,7 +23,7 @@
     "@custom-elements-manifest/analyzer": "^0.10.4",
     "@types/node": "^20.14.2",
     "cem-plugin-expanded-types": "^1.3.3",
-    "concurrently": "^8.2.2",
+    "concurrently": "^9.1.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.7.2",
     "webpack": "^5.97.1",
