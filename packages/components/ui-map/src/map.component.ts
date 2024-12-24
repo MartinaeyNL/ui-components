@@ -5,7 +5,7 @@ import {UiComponent} from "@martinaeynl/ui-component-utils";
 import maplibregl from "maplibre-gl";
 
 // @ts-ignore
-import getMapStyles from "./map.styles" assert {type: "css"};
+import getMapStyles from "./map.styles";
 
 // @ts-ignore
 import * as maplibreGlStyles from "maplibre-gl/dist/maplibre-gl.css";
