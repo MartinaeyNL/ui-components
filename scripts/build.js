@@ -11,14 +11,16 @@ async function run() {
     entryPoints: [
       process.cwd() + "/src/*",
     ],
-    bundle: true,
-    minify: false,
-    treeShaking: false, // true
     outdir: "dist",
-    allowOverwrite: true,
+    /*bundle: true,
+    minify: false,
+    treeShaking: true, // true
+    /!*splitting: true,*!/
+    allowOverwrite: true,*/
+    /*keepNames: true,*/
     plugins: [
       clean({ patterns: ["./dist/*"]}),
-      dtsPlugin()
+      /*dtsPlugin()*/
     ],
   })
 
