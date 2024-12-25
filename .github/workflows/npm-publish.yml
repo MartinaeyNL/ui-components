@@ -1,9 +1,13 @@
 name: Build and publish NPM packages
 
 on:
+  # When pushing to top level branch
   push:
     branches:
       - 'develop'
+
+  # Manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: read
