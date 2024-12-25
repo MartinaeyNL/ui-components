@@ -1,4 +1,4 @@
-import {html, LitElement, PropertyValues, ReactiveElement, unsafeCSS} from "lit";
+import {LitElement, PropertyValues, unsafeCSS} from "lit";
 import {property, state} from "lit/decorators.js";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 

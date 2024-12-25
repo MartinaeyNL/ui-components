@@ -1,6 +1,6 @@
 {
   "name": "@martinaeynl/ui-components-button",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Button UI component",
   "repository": "https://github.com/martinaeynl/ui-components",
   "homepage": "https://martinaeynl.github.io/ui-components",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "tsc -b .",
+    "build": "node ../../../scripts/build.js",
     "watch": "tsc -b --watch .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
