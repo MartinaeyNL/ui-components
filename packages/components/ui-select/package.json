@@ -1,6 +1,6 @@
 {
   "name": "@martinaeynl/ui-components-select",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "Select UI component",
   "repository": "https://github.com/martinaeynl/ui-components",
   "homepage": "https://martinaeynl.github.io/ui-components",
@@ -10,13 +10,11 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*"
+    ".": "./dist/index.js"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "tsc -b .",
-    "watch": "tsc -b --watch .",
+    "build": "rsbuild build --config ../rsbuild.config.ts",
+    "watch": "rsbuild build --config ../rsbuild.config.ts -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

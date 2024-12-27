@@ -107,6 +107,10 @@ export abstract class UiComponent extends LitElement {
     public isDanger(): boolean {
         return this.getVariant() === UiVariant.DANGER;
     }
+
+    protected _isSlotEmpty(nodes: Array<Node>): boolean {
+        return nodes.length === 0;
+    }
 }
 
 export abstract class ResizableUiComponent extends UiComponent {

@@ -1,13 +1,13 @@
 import {html, PropertyValues, TemplateResult} from "lit";
 import {customElement, property, query, queryAssignedNodes} from "lit/decorators.js";
 import {ResizableUiComponent} from "@martinaeynl/ui-component-utils";
+import IconComponent from "@martinaeynl/ui-components-icon";
+import {UiSize} from "@martinaeynl/ui-component-models";
 import {classMap} from "lit/directives/class-map.js";
 import {until} from "lit/directives/until.js";
 
 // @ts-ignore
 import getButtonStyles from "./button.styles";
-import {IconComponent} from "@martinaeynl/ui-components-icon";
-import {UiSize} from "@martinaeynl/ui-component-models";
 
 @customElement("ui-button")
 export class ButtonComponent extends ResizableUiComponent {
@@ -45,9 +45,11 @@ export class ButtonComponent extends ResizableUiComponent {
             this._buttonElem?.classList.add("ui-button--prefixed");
 
             if(this._prefixSlot.length === 1) {
-                if(this._prefixSlot[0] instanceof IconComponent) {
+
+                // TODO: Fix this
+                /*if(this._prefixSlot[0] instanceof IconComponent) {
                     this._buttonElem?.classList.add("ui-button--prefixed-icon");
-                }
+                }*/
             }
         }
         return super.firstUpdated(changedProps);
@@ -92,12 +94,13 @@ export class ButtonComponent extends ResizableUiComponent {
             this._buttonElem?.classList.add("ui-button--prefixed");
             const elem = prefixSlot[0] as HTMLElement;
 
-            if(elem instanceof IconComponent) {
+            // TODO: Fix this
+            /*if(elem instanceof IconComponent) {
                 this._buttonElem?.classList.add("ui-button--prefixed-icon");
                 elem.size = this.size === UiSize.XLARGE ? UiSize.MEDIUM : UiSize.SMALL;
                 elem.variant = this.variant;
                 elem.dark = !this.outlined;
-            }
+            }*/
         }
     }
 
@@ -117,12 +120,13 @@ export class ButtonComponent extends ResizableUiComponent {
             this._buttonElem?.classList.add("ui-button--suffixed");
             const elem = suffixSlot[0] as HTMLElement;
 
-            if(elem instanceof IconComponent) {
+            // TODO: Fix this
+            /*if(elem instanceof IconComponent) {
                 this._buttonElem?.classList.add("ui-button--suffixed-icon");
                 elem.size = this.size === UiSize.XLARGE ? UiSize.MEDIUM : UiSize.SMALL;
                 elem.variant = this.variant;
                 elem.dark = !this.outlined;
-            }
+            }*/
         }
     }
 

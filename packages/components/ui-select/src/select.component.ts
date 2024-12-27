@@ -2,7 +2,6 @@ import {customElement, property, query, queryAssignedNodes, state} from "lit/dec
 import {UiComponent} from "@martinaeynl/ui-component-utils";
 import {html, TemplateResult} from "lit";
 import {classMap} from "lit/directives/class-map.js";
-import {PopoverComponent} from "@martinaeynl/ui-components-popover";
 import "@martinaeynl/ui-components-popover";
 import "@martinaeynl/ui-components-icon";
 import "@martinaeynl/ui-components-button";
@@ -31,7 +30,7 @@ export class SelectComponent extends UiComponent {
     protected _anchorSlot?: Array<Node>;
 
     @query("ui-popover")
-    protected _popoverElem?: PopoverComponent;
+    protected _popoverElem?: HTMLElement /*PopoverComponent; TODO: Fix this */
 
     static get styles() {
         return [...super.styles, getSelectStyles()];

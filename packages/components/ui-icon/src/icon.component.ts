@@ -12,7 +12,7 @@ import "iconify-icon";
 import getIconStyles from "./icon.styles";
 
 @customElement("ui-icon")
-export class IconComponent extends ResizableUiComponent {
+export default class IconComponent extends ResizableUiComponent {
 
     @property({type: String})
     public icon?: string;
@@ -29,7 +29,7 @@ export class IconComponent extends ResizableUiComponent {
     protected _loadedIcon?: string;
 
     static get styles() {
-        return [...super.styles, getIconStyles()]
+        return [...super.styles, getIconStyles()];
     }
 
     protected shouldUpdate(changedProps: PropertyValues): boolean {

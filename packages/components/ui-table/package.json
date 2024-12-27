@@ -1,22 +1,20 @@
 {
   "name": "@martinaeynl/ui-components-table",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Table UI component",
   "repository": "https://github.com/martinaeynl/ui-components",
   "homepage": "https://martinaeynl.github.io/ui-components",
   "license": "MIT",
   "type": "module",
-  "main": "dist/table.component.js",
-  "module": "./dist/table.component.js",
-  "types": "./dist/table.component.d.ts",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/table.component.js",
-    "./*": "./dist/*.js"
+    ".": "./dist/index.js"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "tsc -b .",
-    "watch": "tsc -b --watch .",
+    "build": "rsbuild build --config ../rsbuild.config.ts",
+    "watch": "rsbuild build --config ../rsbuild.config.ts -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

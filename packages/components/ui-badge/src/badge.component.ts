@@ -1,6 +1,5 @@
 import {customElement, property, query, queryAssignedNodes} from "lit/decorators.js";
 import {UiComponent} from "@martinaeynl/ui-component-utils";
-import {IconComponent} from "@martinaeynl/ui-components-icon";
 import {badge} from "@vaadin/vaadin-lumo-styles/badge.js";
 import {classMap} from "lit/directives/class-map.js";
 import {when} from "lit/directives/when.js";
@@ -10,7 +9,7 @@ import {html, PropertyValues} from "lit";
 import getBadgeStyles from "./badge.styles";
 
 @customElement("ui-badge")
-export class BadgeComponent extends UiComponent {
+export default class BadgeComponent extends UiComponent {
 
     /**
      * Test
@@ -74,10 +73,12 @@ export class BadgeComponent extends UiComponent {
     protected _applyPostUpdateClasses(): void {
 
         // Apply "Icon only" badge styling, if ui-icon the only slot
-        if (this._prefixSlot.length === 0 && this._suffixSlot.length === 0 && this._defaultSlot.length === 1) {
-            if (this._defaultSlot[0] instanceof IconComponent && this.badge) {
+        if (this._isSlotEmpty(this._prefixSlot) && this._isSlotEmpty(this._suffixSlot) && !this._isSlotEmpty(this._defaultSlot)) {
+
+            // TODO: Fix this
+            /*if (this._defaultSlot[0] instanceof IconComponent && this.badge) {
                 this.badge.classList.add("ui-badge-icon");
-            }
+            }*/
         }
     }
 
