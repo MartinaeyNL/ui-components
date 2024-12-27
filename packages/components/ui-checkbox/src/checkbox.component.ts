@@ -1,4 +1,4 @@
-import {customElement, query} from "lit/decorators.js";
+import {query} from "lit/decorators.js";
 import {UiComponent} from "@martinaeynl/ui-component-utils";
 import {classMap} from "lit/directives/class-map.js";
 import {html} from "lit";
@@ -19,7 +19,6 @@ import getCheckboxStyles from "./checkbox.styles";
  * @attribute {boolean} disabled - Set when the checkbox is disabled.
  * @attribute {boolean} indeterminate - Sets when the checkbox is in the indeterminate state.
  */
-@customElement("ui-checkbox")
 export class CheckboxComponent extends UiComponent {
 
     @query("vaadin-checkbox")
