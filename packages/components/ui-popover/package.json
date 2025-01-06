@@ -1,22 +1,22 @@
 {
   "name": "@martinaeynl/ui-components-popover",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Popover UI component",
   "repository": "https://github.com/martinaeynl/ui-components",
   "homepage": "https://martinaeynl.github.io/ui-components",
   "license": "MIT",
   "type": "module",
-  "main": "dist/popover.component.js",
-  "module": "./dist/popover.component.js",
-  "types": "./dist/popover.component.d.ts",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/popover.component.js",
-    "./*": "./dist/*.js"
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "tsc -b .",
-    "watch": "tsc -b --watch .",
+    "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
+    "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",
+    "watch": "rsbuild build --config ../rsbuild.config.ts -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

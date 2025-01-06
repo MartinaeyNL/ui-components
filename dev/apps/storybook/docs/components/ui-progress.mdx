@@ -1,5 +1,9 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
 import * as ProgressStories from "../../stories/progress.stories";
+import {getBundleReportCollapsible} from "../../util/mdx-utils.mdx";
+import {getPackageTotalSizeKb} from "../../util/component-utils";
+import ProgressReportHtml from '../../../../../packages/components/ui-progress/dist/report.html';
+import ProgressReportJson from "../../../../../packages/components/ui-progress/dist/stats.json";
 
 <Meta title="Components/Progress" />
 
@@ -27,6 +31,17 @@ Utilizes the [Shoelace](https://shoelace.style/components/progress-bar) library.
 Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`<br />
 
 <Canvas of={ProgressStories.VariantExample} />
+
+<br />
+
+## Documentation
+
+<div className="details-section">
+    {getBundleReportCollapsible(1,
+        <ui-badge label={getPackageTotalSizeKb(ProgressReportJson) + " KB"}></ui-badge>,
+        <iframe className="details-content" loading={"lazy"} srcDoc={ProgressReportHtml}></iframe>
+    )}
+</div>
 
 <br />
 

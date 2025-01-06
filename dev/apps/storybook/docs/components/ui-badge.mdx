@@ -1,23 +1,25 @@
 import {ArgTypes, Canvas, Controls, Markdown, Meta, Subtitle, Title} from '@storybook/blocks';
 import * as BadgeStories from "../../stories/badge.stories";
-import {getComponentAttribute, getComponentMember} from "../../util/component-utils";
+import {
+    getComponentAttribute,
+    getComponentMember,
+    getPackageTotalSizeKb,
+    getPackageVersion
+} from "../../util/component-utils";
+import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import BadgeReportHtml from '../../../../../packages/components/ui-badge/dist/report.html';
+import BadgeReportJson from "../../../../../packages/components/ui-badge/dist/stats.json";
 
 <Meta title="Components/Badge" />
 
 <Title>Badge</Title>
 <Subtitle of={BadgeStories}></Subtitle>
 
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-badge"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-badge?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
-    <a href={"https://vaadin.com/accessibility"}>
-        <img src="https://badgen.net/badge/Accessibility/WCAG 2.1 - Level AA/green?scale=1.2" alt={"Accessibility statement"}></img>
-    </a>
-</div>
+<span>{getPackageVersion(BadgeReportJson)}</span>
+
+[![npm version](https://badgen.net/npm/v/@martinaeynl/ui-components-badge?scale=1.2)](https://npmjs.com/package/@martinaeynl/ui-components-badge)
+[![license](https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2)](https://github.com/martinaeynl/ui-components)
+[![accessibility](https://badgen.net/badge/Accessibility/WCAG%202.1%20-%20Level%20AA/green?scale=1.2)](https://vaadin.com/accessibility)
 
 Insert text here<br />
 
@@ -55,6 +57,17 @@ You can leave out the label to only show an icon inside the badge.<br />
 
 <Markdown>{getComponentAttribute(BadgeStories.docs, "pill")?.summary}</Markdown>
 <Canvas of={BadgeStories.PillExample} />
+
+## Documentation
+
+<div className="details-section">
+    {getBundleReportCollapsible(1,
+        <ui-badge label={getPackageTotalSizeKb(BadgeReportJson) + " KB"}></ui-badge>,
+        <iframe className="details-content" loading={"lazy"} srcDoc={BadgeReportHtml}></iframe>
+    )}
+</div>
+
+<br />
 
 ## API Specification
 

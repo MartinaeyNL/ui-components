@@ -1,0 +1,18 @@
+import "@martinaeynl/ui-components-badge";
+
+export function getCollapsibleElement(index, title, titleSuffix, content) {
+    return <div className="details-item">
+        <input type="checkbox" id={"details-" + index} />
+        <label htmlFor={"details-" + index}>
+            <span>{title}</span>
+            {titleSuffix}
+        </label>
+        <div className="details-content">
+            {content}
+        </div>
+    </div>
+}
+
+export function getBundleReportCollapsible(index, badge, content) {
+    return getCollapsibleElement(index, "Bundle report", badge, content)
+}

@@ -1,7 +1,10 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
-
 import * as MapStories from "../../stories/map.stories";
 import * as MapMarkerStories from "../../stories/map-marker.stories";
+import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import MapReportHtml from '../../../../../packages/components/ui-map/dist/report.html';
+import MapReportJson from "../../../../../packages/components/ui-map/dist/stats.json";
+import {getPackageTotalSizeKb} from "../../util/component-utils";
 
 <Meta title="Components/Map" />
 
@@ -53,6 +56,17 @@ WIP
 <Canvas of={MapMarkerStories.Primary} />
 
 <Canvas of={MapStories.MapMarkerExample} />
+
+<br />
+
+## Documentation
+
+<div className="details-section">
+    {getBundleReportCollapsible(1,
+        <ui-badge label={getPackageTotalSizeKb(MapReportJson) + " KB"}></ui-badge>,
+        <iframe className="details-content" loading={"lazy"} srcDoc={MapReportHtml}></iframe>
+    )}
+</div>
 
 <br />
 

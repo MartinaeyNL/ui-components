@@ -1,22 +1,22 @@
 {
   "name": "@martinaeynl/ui-components-button",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "Button UI component",
   "repository": "https://github.com/martinaeynl/ui-components",
   "homepage": "https://martinaeynl.github.io/ui-components",
   "license": "MIT",
   "type": "module",
-  "main": "dist/button.component.js",
-  "module": "./dist/button.component.js",
-  "types": "./dist/button.component.d.ts",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/button.component.js",
-    "./*": "./dist/*.js"
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "tsc -b .",
-    "watch": "tsc -b --watch .",
+    "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
+    "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",
+    "watch": "rsbuild build --config ../rsbuild.config.ts -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

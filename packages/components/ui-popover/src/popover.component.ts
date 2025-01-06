@@ -1,5 +1,5 @@
 import {customElement, property, query} from "lit/decorators.js";
-import {autoPlacement, AutoPlacementOptions, autoUpdate, computePosition, flip, FloatingElement, offset, ReferenceElement, size} from "@floating-ui/dom";
+import {autoPlacement, autoUpdate, computePosition, flip, FloatingElement, offset, ReferenceElement, size} from "@floating-ui/dom";
 import {html, PropertyValues, TemplateResult} from "lit";
 import {classMap} from "lit/directives/class-map.js";
 import {UiPlacement} from "@martinaeynl/ui-component-models";
@@ -18,7 +18,7 @@ export class PopoverComponent extends UiComponent {
     public placement: UiPlacement = UiPlacement.AUTO;
 
     @property({type: Object})
-    public placementOptions?: AutoPlacementOptions;
+    public placementOptions?: any; // TODO: Fix this
 
     /**
      * Synchronizes the width of the popover with the anchor

@@ -26,5 +26,9 @@ const config = {
     name: getAbsolutePath("@storybook/web-components-webpack5"),
     options: {},
   },
+  webpackFinal: async (config) => {
+    config.module.rules.push({ test: /\.html$/i, use: 'html-loader' })
+    return config;
+  }
 };
 export default config;

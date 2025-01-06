@@ -1,15 +1,8 @@
-import {
-    customElement,
-    property,
-    query,
-    queryAssignedNodes,
-} from "lit/decorators.js";
+import {query} from "lit/decorators.js";
 import {UiComponent} from "@martinaeynl/ui-component-utils";
 import {classMap} from "lit/directives/class-map.js";
-import {ifDefined} from "lit/directives/if-defined.js";
-import {html, PropertyValues} from "lit";
-import {Checkbox} from "@vaadin/checkbox";
-import "@vaadin/checkbox";
+import {html} from "lit";
+import "@vaadin/checkbox/vaadin-lit-checkbox.js";
 
 // @ts-ignore
 import getCheckboxStyles from "./checkbox.styles";
@@ -26,11 +19,10 @@ import getCheckboxStyles from "./checkbox.styles";
  * @attribute {boolean} disabled - Set when the checkbox is disabled.
  * @attribute {boolean} indeterminate - Sets when the checkbox is in the indeterminate state.
  */
-@customElement("ui-checkbox")
 export class CheckboxComponent extends UiComponent {
 
     @query("vaadin-checkbox")
-    public checkbox?: Checkbox;
+    public checkbox?: HTMLElement;
 
     static get observedAttributes() {
         return [...super.observedAttributes, 'label', 'required', 'error-message', 'helper-text', 'active', 'checked', 'disabled', 'indeterminate'];
@@ -50,7 +42,7 @@ export class CheckboxComponent extends UiComponent {
                     this.checkbox.removeAttribute(name);
                 }
             }
-        })
+        });
     }
 
     override render() {

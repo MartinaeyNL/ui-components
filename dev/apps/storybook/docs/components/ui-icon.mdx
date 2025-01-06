@@ -1,6 +1,9 @@
 import {ArgTypes, Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
-
+import IconReportHtml from '../../../../../packages/components/ui-icon/dist/report.html';
+import IconReportJson from "../../../../../packages/components/ui-icon/dist/stats.json";
 import * as IconStories from '../../stories/icon.stories';
+import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import {getPackageTotalSizeKb} from "../../util/component-utils";
 
 <Meta title="Components/Icon" />
 
@@ -47,6 +50,17 @@ It expects an 'icon set prefix', for example `mdi` (Material Design), `bi` (Boot
 > By default we will use [Bootstrap Icons](https://icons.getbootstrap.com), that is generated locally without fetching an API.
 
 <Canvas of={IconStories.SetExample} />
+
+<br />
+
+## Documentation
+
+<div className="details-section">
+    {getBundleReportCollapsible(1,
+        <ui-badge label={getPackageTotalSizeKb(IconReportJson) + " KB"}></ui-badge>,
+        <iframe className="details-content" loading={"lazy"} srcDoc={IconReportHtml}></iframe>
+    )}
+</div>
 
 <br />
 

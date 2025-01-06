@@ -6,7 +6,9 @@ import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 import getGlobalStyle from "./styles";
 
 // @ts-ignore
-import * as propsCss from "open-props/open-props.min.css";
+import * as sizesCss from "open-props/sizes.min.css";
+// @ts-ignore
+import * as fontsCss from "open-props/fonts.min.css";
 // @ts-ignore
 import * as colorsHslCss from "open-props/colors-hsl.min.css";
 
@@ -44,7 +46,7 @@ export abstract class UiComponent extends LitElement {
 
 
     static override get styles() {
-        return [getGlobalStyle(), unsafeCSS(colorsHslCss), unsafeCSS(propsCss)];
+        return [getGlobalStyle(), unsafeCSS(colorsHslCss), unsafeCSS(fontsCss), unsafeCSS(sizesCss)];
     }
 
     protected override shouldUpdate(changedProps: PropertyValues): boolean {
@@ -106,6 +108,10 @@ export abstract class UiComponent extends LitElement {
 
     public isDanger(): boolean {
         return this.getVariant() === UiVariant.DANGER;
+    }
+
+    protected _isSlotEmpty(nodes: Array<Node>): boolean {
+        return nodes.length === 0;
     }
 }
 

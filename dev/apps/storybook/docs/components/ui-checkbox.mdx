@@ -1,22 +1,20 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
 import * as CheckboxStories from "../../stories/checkbox.stories";
+import CheckboxDemo from "../demo/ui-checkbox.html";
+import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import CheckboxReportHtml from '../../../../../packages/components/ui-checkbox/dist/report.html';
+import CheckboxReportJson from "../../../../../packages/components/ui-checkbox/dist/stats.json";
+import {getPackageTotalSizeKb} from "../../util/component-utils";
 
 <Meta title="Components/Checkbox" />
 
 <Title>Checkbox</Title>
 <Subtitle of={CheckboxStories}></Subtitle>
 
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-checkbox"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-checkbox?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
-    <a href={"https://vaadin.com/accessibility"}>
-        <img src="https://badgen.net/badge/Accessibility/WCAG 2.1 - Level AA/green?scale=1.2" alt={"Accessibility statement"}></img>
-    </a>
-</div>
+
+[![npm version](https://badgen.net/npm/v/@martinaeynl/ui-components-checkbox?scale=1.2)](https://npmjs.com/package/@martinaeynl/ui-components-checkbox)
+[![license](https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2)](https://github.com/martinaeynl/ui-components)
+[![accessibility](https://badgen.net/badge/Accessibility/WCAG%202.1%20-%20Level%20AA/green?scale=1.2)](https://vaadin.com/accessibility)
 
 Checkboxes allow the user to toggle an option on or off.<br />
 
@@ -68,7 +66,21 @@ Once clicked, it will, from then onwards, toggle the `checked` state instead.
 
 <br />
 
+## Documentation
+
+<div className="details-section">
+    {getBundleReportCollapsible(1,
+        <ui-badge label={getPackageTotalSizeKb(CheckboxReportJson) + " KB"}></ui-badge>,
+        <iframe className="details-content" loading={"lazy"} srcDoc={CheckboxReportHtml}></iframe>
+    )}
+</div>
+
+<br />
+
 ## API Specification
 
 <ArgTypes of={CheckboxStories} />
 
+## Iframe demo
+
+<iframe srcDoc={CheckboxDemo}></iframe>
