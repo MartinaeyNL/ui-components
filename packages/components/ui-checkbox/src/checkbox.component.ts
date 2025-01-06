@@ -2,7 +2,7 @@ import {query} from "lit/decorators.js";
 import {UiComponent} from "@martinaeynl/ui-component-utils";
 import {classMap} from "lit/directives/class-map.js";
 import {html} from "lit";
-import "@vaadin/checkbox";
+import "@vaadin/checkbox/vaadin-lit-checkbox.js";
 
 // @ts-ignore
 import getCheckboxStyles from "./checkbox.styles";
@@ -42,7 +42,7 @@ export class CheckboxComponent extends UiComponent {
                     this.checkbox.removeAttribute(name);
                 }
             }
-        })
+        });
     }
 
     override render() {

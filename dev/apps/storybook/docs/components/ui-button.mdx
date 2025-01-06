@@ -1,20 +1,18 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
+import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
 
 import * as ButtonStories from '../../stories/button.stories';
+import ButtonReportHtml from '../../../../../packages/components/ui-button/dist/report.html';
+import ButtonReportJson from "../../../../../packages/components/ui-button/dist/stats.json";
+import {getPackageTotalSizeKb} from "../../util/component-utils";
 
 <Meta title="Components/Button" />
 
 <Title>Button</Title>
 <Subtitle of={ButtonStories}></Subtitle>
 
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-button"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-button?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
-</div>
+[![npm version](https://badgen.net/npm/v/@martinaeynl/ui-components-button?scale=1.2)](https://npmjs.com/package/@martinaeynl/ui-components-button)
+[![license](https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2)](https://github.com/martinaeynl/ui-components)
 
 Buttons communicate actions that users can take.<br />
 They are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.
@@ -51,6 +49,17 @@ To add an icon to buttons, place an `<ui-icon>` element in the slot of the butto
 You can configure the location using the `slot` attribute, such as `slot="prefix"`.
 
 <Canvas of={ButtonStories.IconExample} />
+
+<br />
+
+## Documentation
+
+<div className="details-section">
+    {getBundleReportCollapsible(1,
+        <ui-badge label={getPackageTotalSizeKb(ButtonReportJson) + " KB"}></ui-badge>,
+        <iframe className="details-content" loading={"lazy"} srcDoc={ButtonReportHtml}></iframe>
+    )}
+</div>
 
 <br />
 

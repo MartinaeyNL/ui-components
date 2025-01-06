@@ -13,3 +13,11 @@ export function getComponentMember(docs: any, member: string) {
     return (docs.members as any[]).find(a => a.name === member);
 }
 
+export function getPackageVersion(statsJson: any): string {
+    return statsJson.version;
+}
+
+export function getPackageTotalSizeKb(statsJson: any): string {
+    return ((statsJson.assets?.find(x => x.name === "index.js")?.size || 0) / 1000).toFixed(2);
+}
+

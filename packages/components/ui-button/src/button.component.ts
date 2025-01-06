@@ -1,7 +1,6 @@
 import {html, PropertyValues, TemplateResult} from "lit";
 import {customElement, property, query, queryAssignedNodes} from "lit/decorators.js";
-import {ResizableUiComponent} from "@martinaeynl/ui-component-utils";
-import IconComponent from "@martinaeynl/ui-components-icon";
+import {ResizableUiComponent, UiComponent} from "@martinaeynl/ui-component-utils";
 import {UiSize} from "@martinaeynl/ui-component-models";
 import {classMap} from "lit/directives/class-map.js";
 import {until} from "lit/directives/until.js";
@@ -11,6 +10,8 @@ import getButtonStyles from "./button.styles";
 
 @customElement("ui-button")
 export class ButtonComponent extends ResizableUiComponent {
+
+    protected ICON_TAG_NAME = "ui-icon";
 
     @property({type: String})
     public title: string = "Button";
@@ -42,14 +43,12 @@ export class ButtonComponent extends ResizableUiComponent {
 
     protected firstUpdated(changedProps: PropertyValues) {
         if(this._prefixSlot?.length) {
-            this._buttonElem?.classList.add("ui-button--prefixed");
 
             if(this._prefixSlot.length === 1) {
-
-                // TODO: Fix this
-                /*if(this._prefixSlot[0] instanceof IconComponent) {
+                const tagName = (this._prefixSlot[0] as HTMLElement).tagName.toLowerCase();
+                if(tagName === this.ICON_TAG_NAME) {
                     this._buttonElem?.classList.add("ui-button--prefixed-icon");
-                }*/
+                }
             }
         }
         return super.firstUpdated(changedProps);
@@ -92,15 +91,15 @@ export class ButtonComponent extends ResizableUiComponent {
 
         if(prefixSlot?.length === 1) {
             this._buttonElem?.classList.add("ui-button--prefixed");
-            const elem = prefixSlot[0] as HTMLElement;
+            const elem = prefixSlot[0] as UiComponent;
 
-            // TODO: Fix this
-            /*if(elem instanceof IconComponent) {
+            if(elem.tagName.toLowerCase() === this.ICON_TAG_NAME) {
+                const iconElem = elem as ResizableUiComponent;
                 this._buttonElem?.classList.add("ui-button--prefixed-icon");
-                elem.size = this.size === UiSize.XLARGE ? UiSize.MEDIUM : UiSize.SMALL;
-                elem.variant = this.variant;
-                elem.dark = !this.outlined;
-            }*/
+                iconElem.size = this.size === UiSize.XLARGE ? UiSize.MEDIUM : UiSize.SMALL;
+                iconElem.variant = this.variant;
+                iconElem.dark = !this.outlined;
+            }
         }
     }
 
@@ -120,13 +119,13 @@ export class ButtonComponent extends ResizableUiComponent {
             this._buttonElem?.classList.add("ui-button--suffixed");
             const elem = suffixSlot[0] as HTMLElement;
 
-            // TODO: Fix this
-            /*if(elem instanceof IconComponent) {
+            if(elem.tagName.toLowerCase() === this.ICON_TAG_NAME) {
+                const iconElem = elem as ResizableUiComponent;
                 this._buttonElem?.classList.add("ui-button--suffixed-icon");
-                elem.size = this.size === UiSize.XLARGE ? UiSize.MEDIUM : UiSize.SMALL;
-                elem.variant = this.variant;
-                elem.dark = !this.outlined;
-            }*/
+                iconElem.size = this.size === UiSize.XLARGE ? UiSize.MEDIUM : UiSize.SMALL;
+                iconElem.variant = this.variant;
+                iconElem.dark = !this.outlined;
+            }
         }
     }
 

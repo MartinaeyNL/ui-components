@@ -1,6 +1,9 @@
-import {Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
-
+import {ArgTypes, Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
 import * as TableStories from '../../stories/table.stories';
+import {getPackageTotalSizeKb} from "../../util/component-utils";
+import {getBundleReportCollapsible} from "../../util/mdx-utils.mdx";
+import TableReportHtml from '../../../../../packages/components/ui-table/dist/report.html';
+import TableReportJson from "../../../../../packages/components/ui-table/dist/stats.json";
 
 <Meta title="Components/Table" />
 
@@ -31,4 +34,21 @@ They organize information in a way that’s easy to scan so that users can look 
 Use the `size` attribute to configure a table’s size. Default: `medium`<br />
 
 <Canvas of={TableStories.SizeExample} />
+
+<br />
+
+## Documentation
+
+<div className="details-section">
+    {getBundleReportCollapsible(1,
+        <ui-badge label={getPackageTotalSizeKb(TableReportJson) + " KB"}></ui-badge>,
+        <iframe className="details-content" loading={"lazy"} srcDoc={TableReportHtml}></iframe>
+    )}
+</div>
+
+<br />
+
+## API Specification
+
+<ArgTypes of={TableStories} />
 

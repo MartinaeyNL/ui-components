@@ -1,4 +1,4 @@
-import {SlProgressBar} from "@shoelace-style/shoelace";
+import SlProgressBar from "@shoelace-style/shoelace/dist/components/progress-bar/progress-bar.js";
 import {customElement, property} from "lit/decorators.js";
 import {PropertyValues} from "lit";
 

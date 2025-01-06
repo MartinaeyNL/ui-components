@@ -1,6 +1,6 @@
 {
   "name": "@martinaeynl/ui-components-progress",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Progress UI component",
   "repository": "https://github.com/martinaeynl/ui-components",
   "homepage": "https://martinaeynl.github.io/ui-components",
@@ -10,10 +10,12 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
   },
   "scripts": {
-    "build": "rsbuild build --config ../rsbuild.config.ts",
+    "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
+    "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",
     "watch": "rsbuild build --config ../rsbuild.config.ts -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

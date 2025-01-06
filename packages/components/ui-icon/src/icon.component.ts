@@ -1,11 +1,8 @@
-import {customElement, property, query, state} from "lit/decorators.js";
+import {customElement, property, query} from "lit/decorators.js";
 import {ResizableUiComponent} from "@martinaeynl/ui-component-utils";
-import {html, PropertyValues, TemplateResult, unsafeCSS} from "lit";
+import {html, PropertyValues, TemplateResult} from "lit";
 import {classMap} from "lit/directives/class-map.js";
 import {until} from "lit/directives/until.js";
-import {unsafeSVG} from "lit/directives/unsafe-svg.js";
-import {getIconData, iconToSVG, iconToHTML, replaceIDs} from "@iconify/utils";
-import {icons} from "@iconify-json/bi";
 import "iconify-icon";
 
 // @ts-ignore
@@ -13,6 +10,8 @@ import getIconStyles from "./icon.styles";
 
 @customElement("ui-icon")
 export default class IconComponent extends ResizableUiComponent {
+
+    public static DEFAULT_ICONSET = "bi";
 
     @property({type: String})
     public icon?: string;
@@ -62,27 +61,12 @@ export default class IconComponent extends ResizableUiComponent {
         }
     }
 
-    protected async _getIconTemplate(iconName: string, iconSet?: string): Promise<TemplateResult> {
-        let template;
+    protected async _getIconTemplate(iconName: string, iconSet = IconComponent.DEFAULT_ICONSET): Promise<TemplateResult> {
         if(this._loadedIcon) {
             await this._doIconExitTransition();
         }
-        if (iconSet) {
-            const icon = iconSet + ":" + iconName
-            template = html`
-                <iconify-icon icon=${icon}></iconify-icon>
-            `;
-        } else {
-            // Get content for icon
-            const iconData = getIconData(icons, iconName);
-            if (!iconData) {
-                throw new Error(`Icon "${iconName}" does not exist.`);
-            }
-            // Use it to generate SVG string
-            const renderData = iconToSVG(iconData, {height: 'unset', width: 'unset'});
-            const svg = iconToHTML(replaceIDs(renderData.body), renderData.attributes);
-            template = html`${unsafeSVG(svg)}`;
-        }
+        const icon = `${iconSet}:${iconName}`;
+        const template = html`<iconify-icon icon=${icon}></iconify-icon>`;
 
         this._loadedIcon = iconName;
         this._doIconEnterTransition();
@@ -94,7 +78,6 @@ export default class IconComponent extends ResizableUiComponent {
      */
     protected async _doIconExitTransition(): Promise<void> {
         if(this._iconElem) {
-            /*console.log(getComputedStyle(this.shadowRoot!.firstElementChild!))*/
             await new Promise(resolve => setTimeout(resolve, 100));
         }
     }
