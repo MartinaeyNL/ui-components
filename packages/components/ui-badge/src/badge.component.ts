@@ -11,6 +11,8 @@ import getBadgeStyles from "./badge.styles";
 @customElement("ui-badge")
 export default class BadgeComponent extends UiComponent {
 
+    protected ICON_TAG_NAME = "ui-icon";
+
     /**
      * Test
      * @description Text visible in the badge
@@ -75,10 +77,10 @@ export default class BadgeComponent extends UiComponent {
         // Apply "Icon only" badge styling, if ui-icon the only slot
         if (this._isSlotEmpty(this._prefixSlot) && this._isSlotEmpty(this._suffixSlot) && !this._isSlotEmpty(this._defaultSlot)) {
 
-            // TODO: Fix this
-            /*if (this._defaultSlot[0] instanceof IconComponent && this.badge) {
+            const slotElem = this._defaultSlot[0] as HTMLElement;
+            if (this.badge && slotElem.tagName.toLowerCase() === this.ICON_TAG_NAME) {
                 this.badge.classList.add("ui-badge-icon");
-            }*/
+            }
         }
     }
 
