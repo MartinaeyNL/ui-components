@@ -13,7 +13,10 @@
     ".": "./dist/index.js",
     "./*": "./dist/*"
   },
-  "files": ["dist/*.js", "dist/*.js.map"],
+  "files": [
+    "dist/*.js",
+    "dist/*.js.map"
+  ],
   "scripts": {
     "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
     "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",

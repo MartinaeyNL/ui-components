@@ -9,8 +9,6 @@ import {getComponentDocs} from "../util/component-utils";
 export const helpers = getWcStorybookHelpers("ui-badge");
 export const docs = getComponentDocs("ui-badge");
 
-console.log(docs);
-
 // This default export determines where your story goes in the story list
 const meta: Meta = {
     title: "Playground/Badge/ui-badge",

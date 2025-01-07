@@ -1,14 +1,13 @@
 {
-  "name": "@martinaeynl/ui-components-checkbox",
-  "version": "0.0.7",
-  "description": "Checkbox UI component",
+  "name": "@martinaeynl/ui-components-combobox",
+  "version": "0.0.1",
+  "description": "Combobox UI component",
   "repository": "https://github.com/martinaeynl/ui-components",
   "homepage": "https://martinaeynl.github.io/ui-components",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/*"
@@ -26,7 +25,8 @@
   "dependencies": {
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
-    "@vaadin/checkbox": "^24.5.5",
+    "@martinaeynl/ui-components-icon": "workspace:*",
+    "@vaadin/combo-box": "^24.6.0",
     "lit": "^3.2.1"
   }
 }

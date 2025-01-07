@@ -26,6 +26,12 @@
     margin: 8px 0;
 }
 
+.badge-section {
+    display: flex;
+    align-items: start;
+    gap: 4px;
+}
+
 .details-section {
     margin: 16px 0 !important;
     display: flex;

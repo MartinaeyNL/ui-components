@@ -1,9 +1,15 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
 import * as CheckboxStories from "../../stories/checkbox.stories";
 import CheckboxDemo from "../demo/ui-checkbox.html";
-import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import {
+    getAccessibilityBadge,
+    getBundleReportCollapsible,
+    getLicenseBadge,
+    getNPMVersionBadge
+} from "../../util/mdx-utils.mdx";
 import CheckboxReportHtml from '../../../../../packages/components/ui-checkbox/dist/report.html';
 import CheckboxReportJson from "../../../../../packages/components/ui-checkbox/dist/stats.json";
+import CheckboxPackageJson from "../../../../../packages/components/ui-checkbox/package.json";
 import {getPackageTotalSizeKb} from "../../util/component-utils";
 
 <Meta title="Components/Checkbox" />
@@ -11,10 +17,11 @@ import {getPackageTotalSizeKb} from "../../util/component-utils";
 <Title>Checkbox</Title>
 <Subtitle of={CheckboxStories}></Subtitle>
 
-
-[![npm version](https://badgen.net/npm/v/@martinaeynl/ui-components-checkbox?scale=1.2)](https://npmjs.com/package/@martinaeynl/ui-components-checkbox)
-[![license](https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2)](https://github.com/martinaeynl/ui-components)
-[![accessibility](https://badgen.net/badge/Accessibility/WCAG%202.1%20-%20Level%20AA/green?scale=1.2)](https://vaadin.com/accessibility)
+<div className="badge-section">
+    {getNPMVersionBadge(CheckboxPackageJson)}
+    {getLicenseBadge(CheckboxPackageJson)}
+    {getAccessibilityBadge("vaadin-WCAG2.1-AA")}
+</div>
 
 Checkboxes allow the user to toggle an option on or off.<br />
 

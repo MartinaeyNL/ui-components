@@ -1,46 +1,43 @@
 import {ArgTypes, Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
 import IconReportHtml from '../../../../../packages/components/ui-icon/dist/report.html';
 import IconReportJson from "../../../../../packages/components/ui-icon/dist/stats.json";
+import IconPackageJson from "../../../../../packages/components/ui-icon/package.json";
 import * as IconStories from '../../stories/icon.stories';
-import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import {getBundleReportCollapsible, getLicenseBadge, getNPMVersionBadge} from "../../util/mdx-utils.mdx";
 import {getPackageTotalSizeKb} from "../../util/component-utils";
 
-<Meta title="Components/Icon" />
+<Meta title="Components/Icon"/>
 
 <Title>Icon</Title>
 <Subtitle of={IconStories}></Subtitle>
 
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-icon"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-icon?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
+<div className="badge-section">
+    {getNPMVersionBadge(IconPackageJson)}
+    {getLicenseBadge(IconPackageJson)}
 </div>
 
 Icons are symbols that can be used to represent various options within an application..<br />
 By default, the [Bootstrap Icons](https://icons.getbootstrap.com) set is used.
 
-<Canvas of={IconStories.Primary} />
+<Canvas of={IconStories.Primary}/>
 
 
 ## Examples
 
-<br />
+<br/>
 
 ### Variants
 
 Use the `variant` attribute to set the button’s variant / color. Default: `primary`<br />
 To override the color for an individual button, use the `--ui-button-color` CSS variable.
 
-<Canvas of={IconStories.VariantExample} />
+<Canvas of={IconStories.VariantExample}/>
 
 ### Sizes
 
 Use the `size` attribute to configure a button’s size. Default: `medium`<br />
 
-<Canvas of={IconStories.SizeExample} />
+<Canvas of={IconStories.SizeExample}/>
 
 ### Custom Icon Set
 
@@ -49,9 +46,9 @@ It expects an 'icon set prefix', for example `mdi` (Material Design), `bi` (Boot
 > Be aware: this will dynamically load SVG through the public API of Iconify.<br />
 > By default we will use [Bootstrap Icons](https://icons.getbootstrap.com), that is generated locally without fetching an API.
 
-<Canvas of={IconStories.SetExample} />
+<Canvas of={IconStories.SetExample}/>
 
-<br />
+<br/>
 
 ## Documentation
 
@@ -62,8 +59,8 @@ It expects an 'icon set prefix', for example `mdi` (Material Design), `bi` (Boot
     )}
 </div>
 
-<br />
+<br/>
 
 ## API Specification
 
-<ArgTypes of={IconStories} />
+<ArgTypes of={IconStories}/>
