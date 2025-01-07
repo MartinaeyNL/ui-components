@@ -8,6 +8,7 @@
     "@martinaeynl/ui-components-badge": "workspace:*",
     "@martinaeynl/ui-components-button": "workspace:*",
     "@martinaeynl/ui-components-checkbox": "workspace:*",
+    "@martinaeynl/ui-components-combobox": "workspace:*",
     "@martinaeynl/ui-components-icon": "workspace:*",
     "@martinaeynl/ui-components-map": "workspace:*",
     "@martinaeynl/ui-components-popover": "workspace:*",
