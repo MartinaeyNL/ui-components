@@ -3,23 +3,28 @@ import * as BadgeStories from "../../stories/badge.stories";
 import {
     getComponentAttribute,
     getComponentMember,
-    getPackageTotalSizeKb,
-    getPackageVersion
+    getPackageTotalSizeKb
 } from "../../util/component-utils";
-import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import {
+    getAccessibilityBadge,
+    getBundleReportCollapsible,
+    getLicenseBadge,
+    getNPMVersionBadge
+} from "../../util/mdx-utils.mdx";
 import BadgeReportHtml from '../../../../../packages/components/ui-badge/dist/report.html';
 import BadgeReportJson from "../../../../../packages/components/ui-badge/dist/stats.json";
+import BadgePackageJson from "../../../../../packages/components/ui-badge/package.json";
 
 <Meta title="Components/Badge" />
 
 <Title>Badge</Title>
 <Subtitle of={BadgeStories}></Subtitle>
 
-<span>{getPackageVersion(BadgeReportJson)}</span>
-
-[![npm version](https://badgen.net/npm/v/@martinaeynl/ui-components-badge?scale=1.2)](https://npmjs.com/package/@martinaeynl/ui-components-badge)
-[![license](https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2)](https://github.com/martinaeynl/ui-components)
-[![accessibility](https://badgen.net/badge/Accessibility/WCAG%202.1%20-%20Level%20AA/green?scale=1.2)](https://vaadin.com/accessibility)
+<div className="badge-section">
+    {getNPMVersionBadge(BadgePackageJson)}
+    {getLicenseBadge(BadgePackageJson)}
+    {getAccessibilityBadge("vaadin-WCAG2.1-AA")}
+</div>
 
 Insert text here<br />
 

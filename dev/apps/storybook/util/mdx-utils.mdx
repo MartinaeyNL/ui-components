@@ -1,5 +1,30 @@
 import "@martinaeynl/ui-components-badge";
 
+export function getNPMVersionBadge(packageJson) {
+    return <a href={`https://npmjs.com/package/${packageJson.name}`}>
+        <img alt="NPM version" src={`https://badgen.net/badge/npm/v${packageJson.version}?scale=1.2&color=orange`}></img>
+    </a>
+}
+
+export function getLicenseBadge(packageJson) {
+    return <a href={packageJson.repository}>
+        <img alt="License" src={`https://badgen.net/badge/license/${packageJson.license}?scale=1.2&color=blue`}></img>
+    </a>
+}
+
+export function getAccessibilityBadge(type) {
+    let url;
+    let text;
+    switch (type) {
+        case "vaadin-WCAG2.1-AA":
+            text = "WCAG%202.1%20-%20Level%20AA"
+            url = "https://vaadin.com/accessibility"
+    }
+    return <a href={url}>
+        <img alt="Accessibility" src={`https://badgen.net/badge/Accessibility/${text}?scale=1.2&color=green`}></img>
+    </a>
+}
+
 export function getCollapsibleElement(index, title, titleSuffix, content) {
     return <div className="details-item">
         <input type="checkbox" id={"details-" + index} />

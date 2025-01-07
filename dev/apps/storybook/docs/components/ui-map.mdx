@@ -1,9 +1,10 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
 import * as MapStories from "../../stories/map.stories";
 import * as MapMarkerStories from "../../stories/map-marker.stories";
-import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
+import {getBundleReportCollapsible, getLicenseBadge, getNPMVersionBadge} from "../../util/mdx-utils.mdx";
 import MapReportHtml from '../../../../../packages/components/ui-map/dist/report.html';
 import MapReportJson from "../../../../../packages/components/ui-map/dist/stats.json";
+import MapPackageJson from "../../../../../packages/components/ui-map/package.json";
 import {getPackageTotalSizeKb} from "../../util/component-utils";
 
 <Meta title="Components/Map" />
@@ -11,13 +12,9 @@ import {getPackageTotalSizeKb} from "../../util/component-utils";
 <Title>Map</Title>
 <Subtitle of={MapStories}></Subtitle>
 
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-map"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-map?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
+<div className="badge-section">
+    {getNPMVersionBadge(MapPackageJson)}
+    {getLicenseBadge(MapPackageJson)}
 </div>
 
 Map is a component for displaying geographical maps from various sources.<br />

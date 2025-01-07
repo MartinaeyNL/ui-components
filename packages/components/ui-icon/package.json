@@ -13,7 +13,10 @@
     ".": "./dist/index.js",
     "./*": "./dist/*"
   },
-  "files": ["dist/*.js", "dist/*.js.map"],
+  "files": [
+    "dist/*.js",
+    "dist/*.js.map"
+  ],
   "scripts": {
     "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
     "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",
@@ -21,7 +24,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.288",
     "@iconify/utils": "^2.1.24",
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
@@ -29,7 +31,6 @@
     "lit": "^3.2.1"
   },
   "devDependencies": {
-    "@iconify-json/bi": "^1.1.23",
     "@iconify/types": "^2.0.0"
   }
 }

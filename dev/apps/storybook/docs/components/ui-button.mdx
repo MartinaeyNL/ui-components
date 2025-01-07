@@ -1,9 +1,13 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
-import {getBundleReportCollapsible, getCollapsibleElement} from "../../util/mdx-utils.mdx";
-
+import {
+    getBundleReportCollapsible,
+    getLicenseBadge,
+    getNPMVersionBadge
+} from "../../util/mdx-utils.mdx";
 import * as ButtonStories from '../../stories/button.stories';
 import ButtonReportHtml from '../../../../../packages/components/ui-button/dist/report.html';
 import ButtonReportJson from "../../../../../packages/components/ui-button/dist/stats.json";
+import ButtonPackageJson from "../../../../../packages/components/ui-button/package.json";
 import {getPackageTotalSizeKb} from "../../util/component-utils";
 
 <Meta title="Components/Button" />
@@ -11,8 +15,10 @@ import {getPackageTotalSizeKb} from "../../util/component-utils";
 <Title>Button</Title>
 <Subtitle of={ButtonStories}></Subtitle>
 
-[![npm version](https://badgen.net/npm/v/@martinaeynl/ui-components-button?scale=1.2)](https://npmjs.com/package/@martinaeynl/ui-components-button)
-[![license](https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2)](https://github.com/martinaeynl/ui-components)
+<div className="badge-section">
+    {getNPMVersionBadge(ButtonPackageJson)}
+    {getLicenseBadge(ButtonPackageJson)}
+</div>
 
 Buttons communicate actions that users can take.<br />
 They are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.

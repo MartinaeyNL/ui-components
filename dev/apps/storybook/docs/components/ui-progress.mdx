@@ -1,22 +1,19 @@
 import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
 import * as ProgressStories from "../../stories/progress.stories";
-import {getBundleReportCollapsible} from "../../util/mdx-utils.mdx";
+import {getBundleReportCollapsible, getLicenseBadge, getNPMVersionBadge} from "../../util/mdx-utils.mdx";
 import {getPackageTotalSizeKb} from "../../util/component-utils";
 import ProgressReportHtml from '../../../../../packages/components/ui-progress/dist/report.html';
 import ProgressReportJson from "../../../../../packages/components/ui-progress/dist/stats.json";
+import ProgressPackageJson from "../../../../../packages/components/ui-progress/package.json";
 
 <Meta title="Components/Progress" />
 
 <Title>Progress</Title>
 <Subtitle of={ProgressStories}></Subtitle>
 
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-progress"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-progress?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
+<div className="badge-section">
+    {getNPMVersionBadge(ProgressPackageJson)}
+    {getLicenseBadge(ProgressPackageJson)}
 </div>
 
 Checkboxes allow the user to toggle an option on or off.<br />

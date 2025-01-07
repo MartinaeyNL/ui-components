@@ -13,6 +13,15 @@
           "members": [
             {
               "kind": "field",
+              "name": "ICON_TAG_NAME",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "protected",
+              "default": "\"ui-icon\""
+            },
+            {
+              "kind": "field",
               "name": "label",
               "type": {
                 "text": "string | undefined"
@@ -524,1636 +533,6 @@
           "declaration": {
             "name": "BadgeComponent",
             "module": "packages/components/ui-badge/src/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-icon/src/icon.component.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "IconComponent",
-          "members": [
-            {
-              "kind": "field",
-              "name": "DEFAULT_ICONSET",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "public",
-              "static": true,
-              "default": "\"bi\""
-            },
-            {
-              "kind": "field",
-              "name": "icon",
-              "type": {
-                "text": "string | undefined"
-              },
-              "privacy": "public",
-              "attribute": "icon"
-            },
-            {
-              "kind": "field",
-              "name": "set",
-              "type": {
-                "text": "string | undefined"
-              },
-              "privacy": "public",
-              "attribute": "set"
-            },
-            {
-              "kind": "field",
-              "name": "rotation",
-              "type": {
-                "text": "number | undefined"
-              },
-              "privacy": "public",
-              "attribute": "rotation"
-            },
-            {
-              "kind": "field",
-              "name": "_iconElem",
-              "type": {
-                "text": "HTMLElement | undefined"
-              },
-              "privacy": "protected"
-            },
-            {
-              "kind": "field",
-              "name": "_loadedIcon",
-              "type": {
-                "text": "string | undefined"
-              },
-              "privacy": "protected"
-            },
-            {
-              "kind": "method",
-              "name": "getClasses",
-              "return": {
-                "type": {
-                  "text": "{ [name: string]: boolean }"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_getIconTemplate",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "Promise<TemplateResult>"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "iconName",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "iconSet",
-                  "default": "IconComponent.DEFAULT_ICONSET"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_doIconExitTransition",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
-                }
-              },
-              "description": "Function that adds a CSS class to \"fade out\" the icon. The promise resolves after 100ms."
-            },
-            {
-              "kind": "method",
-              "name": "_doIconEnterTransition",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
-                }
-              },
-              "description": "Function that removes the CSS class that \"faded out\" the icon.\r\nSo it basically sets is back to the original state. The promise resolves after 100ms."
-            },
-            {
-              "kind": "field",
-              "name": "size",
-              "type": {
-                "text": "UiSize"
-              },
-              "privacy": "public",
-              "attribute": "size",
-              "expandedType": {
-                "text": "'default' | 'small' | 'medium' | 'large' | 'xlarge'"
-              },
-              "inheritedFrom": {
-                "name": "ResizableUiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "UiVariant"
-              },
-              "privacy": "public",
-              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
-              "attribute": "variant",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "primary",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "primary",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "success",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "success",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "neutral",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "neutral",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "danger",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "danger",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "dark",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "dark",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "disabled",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "readonly",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_variantOverride",
-              "type": {
-                "text": "UiVariant | undefined"
-              },
-              "privacy": "protected",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "getVariant",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "UiVariant"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isPrimary",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isSuccess",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isNeutral",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isDanger",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_isSlotEmpty",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "nodes",
-                  "type": {
-                    "text": "Array<Node>"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "icon",
-              "type": {
-                "text": "string | undefined"
-              },
-              "fieldName": "icon"
-            },
-            {
-              "name": "set",
-              "type": {
-                "text": "string | undefined"
-              },
-              "fieldName": "set"
-            },
-            {
-              "name": "rotation",
-              "type": {
-                "text": "number | undefined"
-              },
-              "fieldName": "rotation"
-            },
-            {
-              "name": "size",
-              "type": {
-                "text": "UiSize"
-              },
-              "fieldName": "size",
-              "expandedType": {
-                "text": "'default' | 'small' | 'medium' | 'large' | 'xlarge'"
-              },
-              "inheritedFrom": {
-                "name": "ResizableUiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "variant",
-              "type": {
-                "text": "UiVariant"
-              },
-              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
-              "fieldName": "variant",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "primary",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "primary",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "success",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "success",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "neutral",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "neutral",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "danger",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "danger",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "dark",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "dark",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "disabled",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "readonly",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "ResizableUiComponent",
-            "package": "@martinaeynl/ui-component-utils"
-          },
-          "tagName": "ui-icon",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "IconComponent",
-            "module": "packages/components/ui-icon/src/icon.component.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "ui-icon",
-          "declaration": {
-            "name": "IconComponent",
-            "module": "packages/components/ui-icon/src/icon.component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-icon/src/icon.styles.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "packages/components/ui-icon/src/icon.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-icon/src/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "IconComponent",
-            "module": "packages/components/ui-icon/src/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-checkbox/src/checkbox.component.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CheckboxComponent",
-          "members": [
-            {
-              "kind": "field",
-              "name": "checkbox",
-              "type": {
-                "text": "HTMLElement | undefined"
-              },
-              "privacy": "public"
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "UiVariant"
-              },
-              "privacy": "public",
-              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
-              "attribute": "variant",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "primary",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "primary",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "success",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "success",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "neutral",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "neutral",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "danger",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "danger",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "dark",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "dark",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "disabled",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "readonly",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_variantOverride",
-              "type": {
-                "text": "UiVariant | undefined"
-              },
-              "privacy": "protected",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "getClasses",
-              "return": {
-                "type": {
-                  "text": "{ [name: string]: boolean }"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "getVariant",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "UiVariant"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isPrimary",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isSuccess",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isNeutral",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isDanger",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_isSlotEmpty",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "nodes",
-                  "type": {
-                    "text": "Array<Node>"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "description": "Text alongside the checkbox"
-            },
-            {
-              "name": "required",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Mark the checkbox as required to be checked by the user."
-            },
-            {
-              "name": "error-message",
-              "type": {
-                "text": "string"
-              },
-              "description": "Sets the error message upon failure. (such as the required attribute)"
-            },
-            {
-              "name": "helper-text",
-              "type": {
-                "text": "string"
-              },
-              "description": "Sets the helper text below the checkbox."
-            },
-            {
-              "name": "active",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Set when the checkbox is activated with mouse, touch or the keyboard."
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Set when the checkbox is checked."
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "disabled",
-              "description": "Set when the checkbox is disabled.",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Sets when the checkbox is in the indeterminate state."
-            },
-            {
-              "name": "variant",
-              "type": {
-                "text": "UiVariant"
-              },
-              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
-              "fieldName": "variant",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "primary",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "primary",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "success",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "success",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "neutral",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "neutral",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "danger",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "danger",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "dark",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "dark",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "readonly",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "UiComponent",
-            "package": "@martinaeynl/ui-component-utils"
-          },
-          "tagName": "ui-checkbox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CheckboxComponent",
-          "declaration": {
-            "name": "CheckboxComponent",
-            "module": "packages/components/ui-checkbox/src/checkbox.component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-checkbox/src/checkbox.styles.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "packages/components/ui-checkbox/src/checkbox.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-checkbox/src/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "ui-checkbox",
-          "declaration": {
-            "name": "CheckboxComponent",
-            "module": "/packages/components/ui-checkbox/src/checkbox.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CheckboxComponent",
-            "module": "packages/components/ui-checkbox/src/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "PopoverComponent",
-          "members": [
-            {
-              "kind": "field",
-              "name": "active",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "active"
-            },
-            {
-              "kind": "field",
-              "name": "placement",
-              "type": {
-                "text": "UiPlacement"
-              },
-              "privacy": "public",
-              "attribute": "placement",
-              "expandedType": {
-                "text": "'auto' | 'top' | 'right' | 'bottom' | 'left'"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "placementOptions",
-              "type": {
-                "text": "any | undefined"
-              },
-              "privacy": "public",
-              "attribute": "placementOptions"
-            },
-            {
-              "kind": "field",
-              "name": "sync",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "description": "Synchronizes the width of the popover with the anchor",
-              "attribute": "sync"
-            },
-            {
-              "kind": "field",
-              "name": "gap",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "gap"
-            },
-            {
-              "kind": "field",
-              "name": "filled",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "filled"
-            },
-            {
-              "kind": "field",
-              "name": "_popoverAnchor",
-              "type": {
-                "text": "HTMLElement | undefined"
-              },
-              "privacy": "protected"
-            },
-            {
-              "kind": "field",
-              "name": "_popoverElem",
-              "type": {
-                "text": "HTMLElement | undefined"
-              },
-              "privacy": "protected"
-            },
-            {
-              "kind": "field",
-              "name": "cleanup",
-              "type": {
-                "text": "any"
-              },
-              "privacy": "protected"
-            },
-            {
-              "kind": "method",
-              "name": "getClasses",
-              "return": {
-                "type": {
-                  "text": "{ [name: string]: boolean }"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_getContentClasses",
-              "privacy": "protected"
-            },
-            {
-              "kind": "method",
-              "name": "_onAnchorChange",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_onContentChange",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_onAnchorClick",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "ev",
-                  "type": {
-                    "text": "PointerEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "updatePlacement",
-              "privacy": "public",
-              "description": "Function that adjusts the placement using the floating-ui dependency.\r\nMost of the code is shown as an example within their documentation."
-            },
-            {
-              "kind": "method",
-              "name": "open",
-              "privacy": "public"
-            },
-            {
-              "kind": "method",
-              "name": "close",
-              "privacy": "public"
-            },
-            {
-              "kind": "method",
-              "name": "toggle",
-              "privacy": "public",
-              "parameters": [
-                {
-                  "name": "state",
-                  "optional": true,
-                  "type": {
-                    "text": "boolean"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "UiVariant"
-              },
-              "privacy": "public",
-              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
-              "attribute": "variant",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "primary",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "primary",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "success",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "success",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "neutral",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "neutral",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "danger",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "danger",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "dark",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "dark",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "disabled",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "readonly",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_variantOverride",
-              "type": {
-                "text": "UiVariant | undefined"
-              },
-              "privacy": "protected",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "getVariant",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "UiVariant"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isPrimary",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isSuccess",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isNeutral",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isDanger",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_isSlotEmpty",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "nodes",
-                  "type": {
-                    "text": "Array<Node>"
-                  }
-                }
-              ],
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            }
-          ],
-          "events": [
-            {
-              "name": "toggle",
-              "type": {
-                "text": "CustomEvent"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "active",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "active"
-            },
-            {
-              "name": "placement",
-              "type": {
-                "text": "UiPlacement"
-              },
-              "fieldName": "placement",
-              "expandedType": {
-                "text": "'auto' | 'top' | 'right' | 'bottom' | 'left'"
-              }
-            },
-            {
-              "name": "placementOptions",
-              "type": {
-                "text": "any | undefined"
-              },
-              "fieldName": "placementOptions"
-            },
-            {
-              "name": "sync",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Synchronizes the width of the popover with the anchor",
-              "fieldName": "sync"
-            },
-            {
-              "name": "gap",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "gap"
-            },
-            {
-              "name": "filled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "filled"
-            },
-            {
-              "name": "variant",
-              "type": {
-                "text": "UiVariant"
-              },
-              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
-              "fieldName": "variant",
-              "expandedType": {
-                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
-              },
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "primary",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "primary",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "success",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "success",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "neutral",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "neutral",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "danger",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "danger",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "dark",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "dark",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "disabled",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            },
-            {
-              "name": "readonly",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "readonly",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "UiComponent",
-            "package": "@martinaeynl/ui-component-utils"
-          },
-          "tagName": "ui-popover",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "PopoverComponent",
-          "declaration": {
-            "name": "PopoverComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "ui-popover",
-          "declaration": {
-            "name": "PopoverComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-popover/src/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "PopoverComponent",
-            "module": "packages/components/ui-popover/src/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-popover/src/popover.styles.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "packages/components/ui-popover/src/popover.styles.ts"
           }
         }
       ]
@@ -2763,72 +1142,1075 @@
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts",
+      "path": "packages/components/ui-checkbox/src/checkbox.component.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "ProgressComponent",
+          "name": "CheckboxComponent",
           "members": [
             {
               "kind": "field",
-              "name": "test",
+              "name": "checkbox",
               "type": {
-                "text": "string"
+                "text": "HTMLElement | undefined"
+              },
+              "privacy": "public"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
               },
               "privacy": "public",
-              "default": "\"test\"",
-              "attribute": "test"
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "attribute": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_variantOverride",
+              "type": {
+                "text": "UiVariant | undefined"
+              },
+              "privacy": "protected",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getClasses",
+              "return": {
+                "type": {
+                  "text": "{ [name: string]: boolean }"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getVariant",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "UiVariant"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isPrimary",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isSuccess",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isNeutral",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isDanger",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_isSlotEmpty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "Array<Node>"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
             }
           ],
           "attributes": [
             {
-              "name": "test",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "default": "\"test\"",
-              "fieldName": "test"
+              "description": "Text alongside the checkbox"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Mark the checkbox as required to be checked by the user."
+            },
+            {
+              "name": "error-message",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets the error message upon failure. (such as the required attribute)"
+            },
+            {
+              "name": "helper-text",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets the helper text below the checkbox."
+            },
+            {
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Set when the checkbox is activated with mouse, touch or the keyboard."
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Set when the checkbox is checked."
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled",
+              "description": "Set when the checkbox is disabled.",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets when the checkbox is in the indeterminate state."
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "fieldName": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "SlProgressBar",
-            "package": "@shoelace-style/shoelace/dist/components/progress-bar/progress-bar.js"
+            "name": "UiComponent",
+            "package": "@martinaeynl/ui-component-utils"
           },
-          "tagName": "ui-progress",
+          "tagName": "ui-checkbox",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "ProgressComponent",
+          "name": "CheckboxComponent",
           "declaration": {
-            "name": "ProgressComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "ui-progress",
-          "declaration": {
-            "name": "ProgressComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
+            "name": "CheckboxComponent",
+            "module": "packages/components/ui-checkbox/src/checkbox.component.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/ui-progress/src/index.ts",
+      "path": "packages/components/ui-checkbox/src/checkbox.styles.ts",
       "declarations": [],
       "exports": [
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "ProgressComponent",
-            "module": "packages/components/ui-progress/src/index.ts"
+            "module": "packages/components/ui-checkbox/src/checkbox.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-checkbox/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-checkbox",
+          "declaration": {
+            "name": "CheckboxComponent",
+            "module": "/packages/components/ui-checkbox/src/checkbox.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CheckboxComponent",
+            "module": "packages/components/ui-checkbox/src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/combobox.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ComboboxComponent",
+          "members": [],
+          "superclass": {
+            "name": "ComboBox",
+            "package": "@vaadin/combo-box/vaadin-lit-combo-box.js"
+          },
+          "tagName": "ui-combobox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ComboboxComponent",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/combobox.component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-combobox",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/combobox.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/combobox.styles.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "packages/components/ui-combobox/src/combobox.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-icon/src/icon.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "IconComponent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "DEFAULT_ICONSET",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "public",
+              "static": true,
+              "default": "\"bi\""
+            },
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string | undefined"
+              },
+              "privacy": "public",
+              "attribute": "icon"
+            },
+            {
+              "kind": "field",
+              "name": "set",
+              "type": {
+                "text": "string | undefined"
+              },
+              "privacy": "public",
+              "attribute": "set"
+            },
+            {
+              "kind": "field",
+              "name": "rotation",
+              "type": {
+                "text": "number | undefined"
+              },
+              "privacy": "public",
+              "attribute": "rotation"
+            },
+            {
+              "kind": "field",
+              "name": "_iconElem",
+              "type": {
+                "text": "HTMLElement | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_loadedIcon",
+              "type": {
+                "text": "string | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "getClasses",
+              "return": {
+                "type": {
+                  "text": "{ [name: string]: boolean }"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_getIconTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<TemplateResult>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "iconName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "iconSet",
+                  "default": "IconComponent.DEFAULT_ICONSET"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_doIconExitTransition",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              },
+              "description": "Function that adds a CSS class to \"fade out\" the icon. The promise resolves after 100ms."
+            },
+            {
+              "kind": "method",
+              "name": "_doIconEnterTransition",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              },
+              "description": "Function that removes the CSS class that \"faded out\" the icon.\r\nSo it basically sets is back to the original state. The promise resolves after 100ms."
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "UiSize"
+              },
+              "privacy": "public",
+              "attribute": "size",
+              "expandedType": {
+                "text": "'default' | 'small' | 'medium' | 'large' | 'xlarge'"
+              },
+              "inheritedFrom": {
+                "name": "ResizableUiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "privacy": "public",
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "attribute": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_variantOverride",
+              "type": {
+                "text": "UiVariant | undefined"
+              },
+              "privacy": "protected",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getVariant",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "UiVariant"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isPrimary",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isSuccess",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isNeutral",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isDanger",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_isSlotEmpty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "Array<Node>"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "icon"
+            },
+            {
+              "name": "set",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "set"
+            },
+            {
+              "name": "rotation",
+              "type": {
+                "text": "number | undefined"
+              },
+              "fieldName": "rotation"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "UiSize"
+              },
+              "fieldName": "size",
+              "expandedType": {
+                "text": "'default' | 'small' | 'medium' | 'large' | 'xlarge'"
+              },
+              "inheritedFrom": {
+                "name": "ResizableUiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "fieldName": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ResizableUiComponent",
+            "package": "@martinaeynl/ui-component-utils"
+          },
+          "tagName": "ui-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "IconComponent",
+            "module": "packages/components/ui-icon/src/icon.component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-icon",
+          "declaration": {
+            "name": "IconComponent",
+            "module": "packages/components/ui-icon/src/icon.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-icon/src/icon.styles.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "packages/components/ui-icon/src/icon.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-icon/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "IconComponent",
+            "module": "packages/components/ui-icon/src/index.ts"
           }
         }
       ]
@@ -3982,6 +3364,698 @@
           "name": "default",
           "declaration": {
             "module": "packages/components/ui-map/src/map.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PopoverComponent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "active"
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "UiPlacement"
+              },
+              "privacy": "public",
+              "attribute": "placement",
+              "expandedType": {
+                "text": "'auto' | 'top' | 'right' | 'bottom' | 'left'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placementOptions",
+              "type": {
+                "text": "any | undefined"
+              },
+              "privacy": "public",
+              "attribute": "placementOptions"
+            },
+            {
+              "kind": "field",
+              "name": "sync",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "description": "Synchronizes the width of the popover with the anchor",
+              "attribute": "sync"
+            },
+            {
+              "kind": "field",
+              "name": "gap",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "gap"
+            },
+            {
+              "kind": "field",
+              "name": "filled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "filled"
+            },
+            {
+              "kind": "field",
+              "name": "_popoverAnchor",
+              "type": {
+                "text": "HTMLElement | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_popoverElem",
+              "type": {
+                "text": "HTMLElement | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "cleanup",
+              "type": {
+                "text": "any"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "getClasses",
+              "return": {
+                "type": {
+                  "text": "{ [name: string]: boolean }"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_getContentClasses",
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "_onAnchorChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onContentChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onAnchorClick",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "PointerEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "updatePlacement",
+              "privacy": "public",
+              "description": "Function that adjusts the placement using the floating-ui dependency.\r\nMost of the code is shown as an example within their documentation."
+            },
+            {
+              "kind": "method",
+              "name": "open",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "close",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "toggle",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "state",
+                  "optional": true,
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "privacy": "public",
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "attribute": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_variantOverride",
+              "type": {
+                "text": "UiVariant | undefined"
+              },
+              "privacy": "protected",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getVariant",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "UiVariant"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isPrimary",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isSuccess",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isNeutral",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isDanger",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_isSlotEmpty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "Array<Node>"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "toggle",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "active"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "UiPlacement"
+              },
+              "fieldName": "placement",
+              "expandedType": {
+                "text": "'auto' | 'top' | 'right' | 'bottom' | 'left'"
+              }
+            },
+            {
+              "name": "placementOptions",
+              "type": {
+                "text": "any | undefined"
+              },
+              "fieldName": "placementOptions"
+            },
+            {
+              "name": "sync",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Synchronizes the width of the popover with the anchor",
+              "fieldName": "sync"
+            },
+            {
+              "name": "gap",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "gap"
+            },
+            {
+              "name": "filled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "filled"
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "fieldName": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "UiComponent",
+            "package": "@martinaeynl/ui-component-utils"
+          },
+          "tagName": "ui-popover",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PopoverComponent",
+          "declaration": {
+            "name": "PopoverComponent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-popover",
+          "declaration": {
+            "name": "PopoverComponent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-popover/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "PopoverComponent",
+            "module": "packages/components/ui-popover/src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-popover/src/popover.styles.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "packages/components/ui-popover/src/popover.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ProgressComponent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "test",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "public",
+              "default": "\"test\"",
+              "attribute": "test"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "test",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"test\"",
+              "fieldName": "test"
+            }
+          ],
+          "superclass": {
+            "name": "SlProgressBar",
+            "package": "@shoelace-style/shoelace/dist/components/progress-bar/progress-bar.js"
+          },
+          "tagName": "ui-progress",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProgressComponent",
+          "declaration": {
+            "name": "ProgressComponent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-progress",
+          "declaration": {
+            "name": "ProgressComponent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-progress/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ProgressComponent",
+            "module": "packages/components/ui-progress/src/index.ts"
           }
         }
       ]
