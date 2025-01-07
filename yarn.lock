@@ -620,7 +620,7 @@ __metadata:
     "@iconify/utils": "npm:^2.1.24"
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
-    iconify-icon: "npm:^2.2.0"
+    iconify-icon: "npm:^2.3.0"
     lit: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
@@ -4836,12 +4836,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iconify-icon@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "iconify-icon@npm:2.2.0"
+"iconify-icon@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "iconify-icon@npm:2.3.0"
   dependencies:
     "@iconify/types": "npm:^2.0.0"
-  checksum: 10c0/41331d37d12094986f1fc3f2ef8dbb0e41e7be9c298cbab5c39078df2645d63c4548e0c78adf499db8d99c34682027c411f9a78b51f2e876126413c172abf5e3
+  checksum: 10c0/9fdae67e7257cce31b6bea0a671512de67c64ae13710c21c3159d033d84ce0dfe792f223011b56de9e83796ee8745b62eb76fea419d78f593f430e3fa9b309f1
   languageName: node
   linkType: hard
 

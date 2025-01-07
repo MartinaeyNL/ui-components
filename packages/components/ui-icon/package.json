@@ -27,7 +27,7 @@
     "@iconify/utils": "^2.1.24",
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
-    "iconify-icon": "^2.2.0",
+    "iconify-icon": "^2.3.0",
     "lit": "^3.2.1"
   },
   "devDependencies": {
