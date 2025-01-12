@@ -1,34 +1,7 @@
-import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
-
-import * as SelectStories from '../../stories/select.stories';
+import {Meta} from "@storybook/blocks";
+import {UiAutoDocs} from "../../util/autodocs.mdx";
+import * as ComponentStory from "../../../../../packages/components/ui-select/component.stories.js";
 
 <Meta title="Components/Select" />
 
-<Title>Select</Title>
-<Subtitle of={SelectStories}></Subtitle>
-
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-select"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-select?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
-</div>
-
-Buttons communicate actions that users can take.<br />
-They are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.
-
-<Canvas of={SelectStories.Primary} />
-
-### Sizes
-
-Use the `size` attribute to configure a select menu’s size. Default: `medium`<br />
-
-<Canvas of={SelectStories.SizeExample} />
-
-
-## API Specification
-
-<ArgTypes of={SelectStories} />
-
+<UiAutoDocs story={ComponentStory}  options={{displayName: "Select"}} />

@@ -1,18 +1,17 @@
-import type {Meta, StoryObj} from "@storybook/web-components";
 import "@martinaeynl/ui-components-combobox";
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 
 const helpers = getWcStorybookHelpers("ui-combobox");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: "Playground/Combobox/ui-combobox",
     component: "ui-combobox",
     args: {
         ...helpers.args,
     },
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
     },
     parameters: {
         docs: {
@@ -25,9 +24,8 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args),
     args: {
         label: "Combobox",

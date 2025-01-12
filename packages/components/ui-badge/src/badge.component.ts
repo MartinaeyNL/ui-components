@@ -8,6 +8,10 @@ import {html, PropertyValues} from "lit";
 // @ts-ignore
 import getBadgeStyles from "./badge.styles";
 
+/**
+ * Buttons communicate actions that users can take.<br />
+ * They are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.
+ */
 @customElement("ui-badge")
 export default class BadgeComponent extends UiComponent {
 

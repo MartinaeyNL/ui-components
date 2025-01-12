@@ -1,43 +1,7 @@
-import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
-import * as ComboboxStories from "../../stories/combobox.stories";
-import {
-    getBundleReportCollapsible,
-    getNPMVersionBadge,
-    getLicenseBadge,
-    getAccessibilityBadge
-} from "../../util/mdx-utils.mdx";
-import ComboboxReportHtml from '../../../../../packages/components/ui-combobox/dist/report.html';
-import ComboboxReportJson from "../../../../../packages/components/ui-combobox/dist/stats.json";
-import ComboboxPackageJson from "../../../../../packages/components/ui-combobox/package.json";
-import {getPackageTotalSizeKb} from "../../util/component-utils";
+import {Meta} from "@storybook/blocks";
+import {UiAutoDocs} from "../../util/autodocs.mdx";
+import * as ComponentStory from "../../../../../packages/components/ui-combobox/component.stories.js";
 
 <Meta title="Components/Combobox" />
 
-<Title>Combobox</Title>
-<Subtitle of={ComboboxStories}></Subtitle>
-
-<div className="badge-section">
-    {getNPMVersionBadge(ComboboxPackageJson)}
-    {getLicenseBadge(ComboboxPackageJson)}
-    {getAccessibilityBadge("vaadin-WCAG2.1-AA")}
-</div>
-
-WIP<br />
-
-> This combobox component uses the [Vaadin Web Components](https://github.com/vaadin/web-components) library.<br />
-> For the full documentation, check their website here: [https://vaadin.com/docs/latest/components/combobox](https://vaadin.com/docs/latest/components/combobox)
-
-<Canvas of={ComboboxStories.Primary} />
-
-## Documentation
-
-<div className="details-section">
-    {getBundleReportCollapsible(1,
-        <ui-badge label={getPackageTotalSizeKb(ComboboxReportJson) + " KB"}></ui-badge>,
-        <iframe className="details-content" loading={"lazy"} srcDoc={ComboboxReportHtml}></iframe>
-    )}
-</div>
-
-## API Specification
-
-<ArgTypes of={ComboboxStories} />
+<UiAutoDocs story={ComponentStory}  options={{displayName: "Combobox"}} />

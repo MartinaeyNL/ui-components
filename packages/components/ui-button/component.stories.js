@@ -1,19 +1,28 @@
-import type {Meta, StoryObj} from '@storybook/web-components';
-import "@martinaeynl/ui-components-button";
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
+import "@martinaeynl/ui-components-button";
 import "@martinaeynl/ui-components-icon";
 import {html} from "lit";
+import {getComponentDocs, getHTMLAttributeDocs} from "../util";
+import componentReportHtml from './dist/report.html';
+import componentReportJson from "./dist/stats.json";
+import componentPackageJson from "./package.json";
 
-const helpers = getWcStorybookHelpers("ui-button");
+export const helpers = getWcStorybookHelpers("ui-button");
+export const docs = getComponentDocs("ui-button");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
-    title: 'Playground/Button/ui-button',
-    component: 'ui-button',
+export const packageJson = componentPackageJson;
+export const reportJson = componentReportJson;
+export const reportHtml = componentReportHtml;
+
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
+    title: "Playground/Button/ui-button",
+    component: "ui-button",
+    excludeStories: ['helpers', 'docs', 'packageJson', 'reportJson', 'reportHtml', 'examples'],
     args: helpers.args,
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
         variant: {
             control: 'select',
             options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
@@ -37,16 +46,18 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args),
     args: {
         title: "Button"
     }
 };
 
-export const VariantExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const VariantExample = {
+    title: "Variants",
+    summary: getHTMLAttributeDocs(docs, "variant")?.summary,
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -63,7 +74,10 @@ export const VariantExample: Story = {
     ]
 };
 
-export const OutlinedExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const OutlinedExample = {
+  summary: getHTMLAttributeDocs(docs, "outlined")?.summary,
+    title: "Outlined",
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -80,7 +94,10 @@ export const OutlinedExample: Story = {
     ]
 };
 
-export const SizeExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const SizeExample = {
+    title: "Sizes",
+    summary: getHTMLAttributeDocs(docs, "size")?.summary,
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -97,7 +114,9 @@ export const SizeExample: Story = {
     ]
 };
 
-export const IconExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const IconExample = {
+    title: "Icons",
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0], html`<ui-icon icon="download" slot="prefix"></ui-icon>`)}
@@ -116,5 +135,6 @@ export const IconExample: Story = {
     ]
 };
 
+export const examples = [Primary, VariantExample, OutlinedExample, SizeExample, IconExample];
 
 export default meta;

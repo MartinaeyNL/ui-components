@@ -1,4 +1,3 @@
-import type {Meta, StoryObj} from '@storybook/web-components';
 import "@martinaeynl/ui-components-checkbox";
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {html} from "lit";
@@ -6,8 +5,8 @@ import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 
 const helpers = getWcStorybookHelpers("ui-checkbox");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: "Playground/Checkbox/ui-checkbox",
     component: "ui-checkbox",
     args: {
@@ -18,7 +17,7 @@ const meta: Meta = {
         required: false
     },
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
         active: { table: { defaultValue: { summary: false }}},
         checked: { table: { defaultValue: { summary: false }}},
         indeterminate: { table: { defaultValue: { summary: false }}},
@@ -35,16 +34,16 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args),
     args: {
         label: "Checkbox"
     }
 };
 
-export const VariantExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const VariantExample = {
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -61,7 +60,8 @@ export const VariantExample: Story = {
     ]
 };
 
-export const DisabledExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const DisabledExample = {
     render: (args) => helpers.template(args),
     args: {
         label: "Disabled checkbox",
@@ -69,7 +69,8 @@ export const DisabledExample: Story = {
     }
 };
 
-export const ReadonlyExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const ReadonlyExample = {
     render: (args) => helpers.template(args),
     args: {
         label: "Readonly checkbox",
@@ -77,7 +78,8 @@ export const ReadonlyExample: Story = {
     }
 };
 
-export const RequiredExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const RequiredExample = {
     render: (args) => helpers.template(args),
     args: {
         label: "Accept the terms and conditions",
@@ -86,7 +88,8 @@ export const RequiredExample: Story = {
     }
 };
 
-export const HelperTextExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const HelperTextExample = {
     render: (args) => helpers.template(args),
     args: {
         label: "Label",
@@ -94,7 +97,8 @@ export const HelperTextExample: Story = {
     }
 };
 
-export const IndeterminateExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const IndeterminateExample = {
     render: (args) => helpers.template(args),
     args: {
         label: "Indeterminate",

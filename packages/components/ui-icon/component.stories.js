@@ -1,4 +1,3 @@
-import type {Meta, StoryObj} from '@storybook/web-components';
 import "@martinaeynl/ui-components-icon";
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
@@ -6,13 +5,13 @@ import {html} from "lit";
 
 const helpers = getWcStorybookHelpers("ui-icon");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: 'Playground/Icon/ui-icon',
     component: 'ui-icon',
     args: helpers.args,
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
         variant: {
             control: 'select',
             options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
@@ -29,9 +28,8 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').Meta } */
+export const Primary = {
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -50,7 +48,8 @@ export const Primary: Story = {
     ],
 };
 
-export const VariantExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const VariantExample = {
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -68,7 +67,8 @@ export const VariantExample: Story = {
     ]
 }
 
-export const SizeExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const SizeExample = {
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -85,7 +85,8 @@ export const SizeExample: Story = {
     ]
 }
 
-export const SetExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const SetExample = {
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}

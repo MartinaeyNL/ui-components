@@ -1,23 +1,30 @@
-import type {Meta, StoryObj} from '@storybook/web-components';
 import "@martinaeynl/ui-components-badge";
 import "@martinaeynl/ui-components-icon";
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {html} from "lit";
 import {UiVariant} from "@martinaeynl/ui-component-models";
-import {getComponentDocs} from "../util/component-utils";
+import {getHTMLAttributeDocs, getComponentDocs, getClassMemberDocs} from "../util";
+import componentReportHtml from './dist/report.html';
+import componentReportJson from "./dist/stats.json";
+import componentPackageJson from "./package.json";
 
 export const helpers = getWcStorybookHelpers("ui-badge");
 export const docs = getComponentDocs("ui-badge");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+export const packageJson = componentPackageJson;
+export const reportJson = componentReportJson;
+export const reportHtml = componentReportHtml;
+
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: "Playground/Badge/ui-badge",
     component: "ui-badge",
+    excludeStories: ['helpers', 'docs', 'packageJson', 'reportJson', 'reportHtml', 'examples'],
     args: {
         ...helpers.args,
     },
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
     },
     parameters: {
         docs: {
@@ -30,16 +37,18 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args),
     args: {
         label: "Badge"
     }
 };
 
-export const VariantExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const VariantExample = {
+    title: "Variants",
+    summary: getHTMLAttributeDocs(docs, "variant")?.summary,
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -56,7 +65,10 @@ export const VariantExample: Story = {
     ]
 };
 
-export const IconWithTextExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const IconWithTextExample = {
+    title: "Icon with text",
+    summary: getClassMemberDocs(docs, "_prefixSlot")?.summary,
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0], html`<ui-icon icon="stopwatch" slot="prefix"></ui-icon>`)}
@@ -69,7 +81,10 @@ export const IconWithTextExample: Story = {
     ]
 };
 
-export const IconOnlyExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const IconOnlyExample = {
+    title: "Icon Only",
+    summary: "You can leave out the `label` to only show an icon inside the badge.",
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0], html`<ui-icon icon="check-lg"></ui-icon>`)}
@@ -82,7 +97,10 @@ export const IconOnlyExample: Story = {
     ]
 };
 
-export const SmallExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const SmallExample = {
+    title: "Small version",
+    summary: getHTMLAttributeDocs(docs, "small")?.summary,
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -99,7 +117,10 @@ export const SmallExample: Story = {
     ]
 };
 
-export const FilledExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const FilledExample = {
+    title: "Filled",
+    summary: getHTMLAttributeDocs(docs, "filled")?.summary,
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -116,7 +137,10 @@ export const FilledExample: Story = {
     ]
 };
 
-export const PillExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const PillExample = {
+    title: "Pill",
+    summary: getHTMLAttributeDocs(docs, "pill")?.summary,
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -132,5 +156,7 @@ export const PillExample: Story = {
         {label: "Danger", pill: true, variant: UiVariant.DANGER}
     ]
 };
+
+export const examples = [Primary, VariantExample, IconWithTextExample, IconOnlyExample, SmallExample, FilledExample, PillExample];
 
 export default meta;
