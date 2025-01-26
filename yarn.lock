@@ -688,7 +688,7 @@ __metadata:
     "@custom-elements-manifest/analyzer": "npm:^0.10.4"
     "@microsoft/api-extractor": "npm:^7.48.1"
     "@rsbuild/core": "npm:^1.1.13"
-    "@rsdoctor/cli": "npm:^0.4.12"
+    "@rsdoctor/cli": "npm:^0.4.13"
     "@rsdoctor/rspack-plugin": "npm:^0.4.12"
     "@types/node": "npm:^22.10.2"
     cem-plugin-expanded-types: "npm:^1.3.3"
@@ -932,14 +932,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rsdoctor/cli@npm:^0.4.12":
-  version: 0.4.12
-  resolution: "@rsdoctor/cli@npm:0.4.12"
+"@rsdoctor/cli@npm:^0.4.13":
+  version: 0.4.13
+  resolution: "@rsdoctor/cli@npm:0.4.13"
   dependencies:
-    "@rsdoctor/client": "npm:0.4.12"
-    "@rsdoctor/sdk": "npm:0.4.12"
-    "@rsdoctor/types": "npm:0.4.12"
-    "@rsdoctor/utils": "npm:0.4.12"
+    "@rsdoctor/client": "npm:0.4.13"
+    "@rsdoctor/sdk": "npm:0.4.13"
+    "@rsdoctor/types": "npm:0.4.13"
+    "@rsdoctor/utils": "npm:0.4.13"
     axios: "npm:^1.7.9"
     ora: "npm:^5.4.1"
     picocolors: "npm:^1.1.1"
@@ -947,7 +947,7 @@ __metadata:
     yargs: "npm:17.7.2"
   bin:
     rsdoctor: bin/rsdoctor
-  checksum: 10c0/43d1a69a5dd951b4b00db782a54f8ca47c89b613b6f476e18a2dbccb003491f9896b49cb57f60561643e2c92cd97e0bc32beeab29b47292af06bc9ce47429f84
+  checksum: 10c0/d765019744b4cfd17771b91a2c14ba8a9c10c06671b15a156c5b351f88eb0dae505ba65d813f6b926b1a0e5a6c2574ac87b100d92dc18f077411f527108af70d
   languageName: node
   linkType: hard
 
@@ -955,6 +955,13 @@ __metadata:
   version: 0.4.12
   resolution: "@rsdoctor/client@npm:0.4.12"
   checksum: 10c0/2b5ba62ac3400e5cd866a5d10ebbf860cc64f19410400a80c6a28a6890bcb6d001ddc63a449b7d43cd4f0cd1362240b283ab4c4bc91b2f9f5bdb26eb52a33d76
+  languageName: node
+  linkType: hard
+
+"@rsdoctor/client@npm:0.4.13":
+  version: 0.4.13
+  resolution: "@rsdoctor/client@npm:0.4.13"
+  checksum: 10c0/9c6e436d3aa26c2e83f334d97e00f8024eedbd538705d27c2f292d6e0bbc344a1ae3c3086323dd187e717d796f48eead15efe928bb669b242ddd08bd9ad89977
   languageName: node
   linkType: hard
 
@@ -989,6 +996,19 @@ __metadata:
     socket.io: "npm:4.8.1"
     source-map: "npm:^0.7.4"
   checksum: 10c0/51c7b5e9236b138f4071be8ec065b7b2cb10a20d4fdff476d8f6c843144262ccbcdaa84b60753b64f5de6b9f8e689474a056e4dda2ad843b2737abbabea94824
+  languageName: node
+  linkType: hard
+
+"@rsdoctor/graph@npm:0.4.13":
+  version: 0.4.13
+  resolution: "@rsdoctor/graph@npm:0.4.13"
+  dependencies:
+    "@rsdoctor/types": "npm:0.4.13"
+    "@rsdoctor/utils": "npm:0.4.13"
+    lodash.unionby: "npm:^4.8.0"
+    socket.io: "npm:4.8.1"
+    source-map: "npm:^0.7.4"
+  checksum: 10c0/bb9a7dd9f8b0319571011e288a3f7f3ed32c4156da531b62d4cbbe311c1c6a25d070208c3c6428c7363dd81a24d73ec4ba49a718ab1a32aacdd4dfad90276664
   languageName: node
   linkType: hard
 
@@ -1032,6 +1052,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rsdoctor/sdk@npm:0.4.13":
+  version: 0.4.13
+  resolution: "@rsdoctor/sdk@npm:0.4.13"
+  dependencies:
+    "@rsdoctor/client": "npm:0.4.13"
+    "@rsdoctor/graph": "npm:0.4.13"
+    "@rsdoctor/types": "npm:0.4.13"
+    "@rsdoctor/utils": "npm:0.4.13"
+    "@types/fs-extra": "npm:^11.0.4"
+    body-parser: "npm:1.20.3"
+    cors: "npm:2.8.5"
+    dayjs: "npm:1.11.13"
+    fs-extra: "npm:^11.1.1"
+    json-cycle: "npm:^1.5.0"
+    lodash: "npm:^4.17.21"
+    open: "npm:^8.4.2"
+    serve-static: "npm:1.16.2"
+    socket.io: "npm:4.8.1"
+    source-map: "npm:^0.7.4"
+    tapable: "npm:2.2.1"
+  checksum: 10c0/a8e01add467ad173bac61193b95f24d7c23cd3cabc8444c18dfcf060c8a29ac6d9f67fa26c564b68722eaea79169f42af4ed971c5dc6ac0ca2ebcb06d4cff2b1
+  languageName: node
+  linkType: hard
+
 "@rsdoctor/types@npm:0.4.12":
   version: 0.4.12
   resolution: "@rsdoctor/types@npm:0.4.12"
@@ -1047,6 +1091,24 @@ __metadata:
     "@rspack/core":
       optional: true
   checksum: 10c0/7a1aaedb6156af73cae2c5926010d1a66e9a44cfc9c76ae909a21fbe68229bdc226816182afd275b8e6963753c0a953c619901e83dccc7f95e98b1fdd51f3c07
+  languageName: node
+  linkType: hard
+
+"@rsdoctor/types@npm:0.4.13":
+  version: 0.4.13
+  resolution: "@rsdoctor/types@npm:0.4.13"
+  dependencies:
+    "@types/connect": "npm:3.4.38"
+    "@types/estree": "npm:1.0.5"
+    "@types/tapable": "npm:2.2.7"
+    source-map: "npm:^0.7.4"
+  peerDependencies:
+    "@rspack/core": "*"
+    webpack: 5.x
+  peerDependenciesMeta:
+    "@rspack/core":
+      optional: true
+  checksum: 10c0/2f1952193c2a4206c54939d0f1c43b88ba31d6badc37900b988f422e4210fce499b1f7123ecaae144a33a0f15667d3193ed8835ed6e1d6fa9317af588bcab645
   languageName: node
   linkType: hard
 
@@ -1073,6 +1135,31 @@ __metadata:
     rslog: "npm:^1.2.3"
     strip-ansi: "npm:^6.0.1"
   checksum: 10c0/049857326e5b0c4edbf0eff848d3fda983be674ac5bd8793df1cc3fc91c2e71e41c85a1ccd8f590a2e807a3138d25127d3226f64d69e326d09e4b5a10ccda2e4
+  languageName: node
+  linkType: hard
+
+"@rsdoctor/utils@npm:0.4.13":
+  version: 0.4.13
+  resolution: "@rsdoctor/utils@npm:0.4.13"
+  dependencies:
+    "@babel/code-frame": "npm:7.25.7"
+    "@rsdoctor/types": "npm:0.4.13"
+    "@types/estree": "npm:1.0.5"
+    acorn: "npm:^8.10.0"
+    acorn-import-assertions: "npm:1.9.0"
+    acorn-walk: "npm:8.3.4"
+    chalk: "npm:^4.1.2"
+    connect: "npm:3.7.0"
+    deep-eql: "npm:4.1.4"
+    envinfo: "npm:7.14.0"
+    filesize: "npm:^10.1.6"
+    fs-extra: "npm:^11.1.1"
+    get-port: "npm:5.1.1"
+    json-stream-stringify: "npm:3.0.1"
+    lines-and-columns: "npm:2.0.4"
+    rslog: "npm:^1.2.3"
+    strip-ansi: "npm:^6.0.1"
+  checksum: 10c0/08903f98461af03464c89c2ea7d931525bcaaf2c1d6db6b6a45b9a35e684247cf0785289530584c4a0c886fc1ac6011d8c663d14e8c96db2cfecbba3fcf0d087
   languageName: node
   linkType: hard
 
@@ -5347,6 +5434,13 @@ __metadata:
   version: 4.3.0
   resolution: "lodash.camelcase@npm:4.3.0"
   checksum: 10c0/fcba15d21a458076dd309fce6b1b4bf611d84a0ec252cb92447c948c533ac250b95d2e00955801ebc367e5af5ed288b996d75d37d2035260a937008e14eaf432
+  languageName: node
+  linkType: hard
+
+"lodash.unionby@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "lodash.unionby@npm:4.8.0"
+  checksum: 10c0/7928be21cffcbd3ce5c89c6a0725c991693d415dcf887b104b37e443c3c95d3dab3f6f78d59de8cdce70650319eb17fcf4e8b580ead30439ec1e5a9e8df005b1
   languageName: node
   linkType: hard
 
