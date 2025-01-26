@@ -1,4 +1,3 @@
-import type {Meta, StoryObj} from "@storybook/web-components";
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 import "@martinaeynl/ui-components-select";
@@ -6,13 +5,13 @@ import {html} from "lit";
 
 const helpers = getWcStorybookHelpers("ui-select");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: "Playground/Select/ui-select",
     component: "ui-select",
     args: helpers.args,
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
         variant: {
             control: "select",
             options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
@@ -32,22 +31,22 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
 const getSelectOptionsTemplate = () => html`
     <ui-select-option value="option-1" label="option-1-with-an-extra-long-title"></ui-select-option>
     <ui-select-option value="option-2"></ui-select-option>
     <ui-select-option value="option-3"></ui-select-option>
 `;
 
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args, getSelectOptionsTemplate()),
     args: {
         title: "Select one"
     }
 };
 
-export const SizeExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const SizeExample = {
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0], getSelectOptionsTemplate())}

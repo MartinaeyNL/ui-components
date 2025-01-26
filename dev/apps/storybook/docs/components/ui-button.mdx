@@ -1,75 +1,8 @@
-import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
-import {
-    getBundleReportCollapsible,
-    getLicenseBadge,
-    getNPMVersionBadge
-} from "../../util/mdx-utils.mdx";
-import * as ButtonStories from '../../stories/button.stories';
-import ButtonReportHtml from '../../../../../packages/components/ui-button/dist/report.html';
-import ButtonReportJson from "../../../../../packages/components/ui-button/dist/stats.json";
-import ButtonPackageJson from "../../../../../packages/components/ui-button/package.json";
-import {getPackageTotalSizeKb} from "../../util/component-utils";
+import {Meta} from "@storybook/blocks";
+import {UiAutoDocs} from "../../util/autodocs.mdx";
+import * as ComponentStory from "../../../../../packages/components/ui-button/component.stories.js";
 
 <Meta title="Components/Button" />
 
-<Title>Button</Title>
-<Subtitle of={ButtonStories}></Subtitle>
-
-<div className="badge-section">
-    {getNPMVersionBadge(ButtonPackageJson)}
-    {getLicenseBadge(ButtonPackageJson)}
-</div>
-
-Buttons communicate actions that users can take.<br />
-They are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.
-
-<Canvas of={ButtonStories.Primary} />
-
-
-## Examples
-
-<br />
-
-### Variants
-
-Use the `variant` attribute to set the button’s variant / color. Default: `primary`<br />
-To override the color for an individual button, use the `--ui-button-color` CSS variable.
-
-<Canvas of={ButtonStories.VariantExample} />
-
-### Outlined
-
-Use the `outlined` attribute to set toggle between a filled and outlined variant. Default: `false`<br />
-
-<Canvas of={ButtonStories.OutlinedExample} />
-
-### Sizes
-
-Use the `size` attribute to configure a button’s size. Default: `medium`<br />
-
-<Canvas of={ButtonStories.SizeExample} />
-
-### Icons
-
-To add an icon to buttons, place an `<ui-icon>` element in the slot of the button.<br />
-You can configure the location using the `slot` attribute, such as `slot="prefix"`.
-
-<Canvas of={ButtonStories.IconExample} />
-
-<br />
-
-## Documentation
-
-<div className="details-section">
-    {getBundleReportCollapsible(1,
-        <ui-badge label={getPackageTotalSizeKb(ButtonReportJson) + " KB"}></ui-badge>,
-        <iframe className="details-content" loading={"lazy"} srcDoc={ButtonReportHtml}></iframe>
-    )}
-</div>
-
-<br />
-
-## API Specification
-
-<ArgTypes of={ButtonStories} />
+<UiAutoDocs story={ComponentStory}  options={{displayName: "Button"}} />
 

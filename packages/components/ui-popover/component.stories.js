@@ -1,4 +1,3 @@
-import type {Args, Meta, StoryObj} from '@storybook/web-components';
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 import "@martinaeynl/ui-components-popover";
@@ -9,13 +8,13 @@ import {PopoverComponent} from "@martinaeynl/ui-components-popover";
 
 const helpers = getWcStorybookHelpers("ui-popover");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: 'Playground/Popover/ui-popover',
     component: 'ui-popover',
     args: helpers.args,
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
         variant: {
             control: 'select',
             options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
@@ -35,9 +34,8 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => {
         /*return html`
             <ui-popover title="Popover" placement="bottom">
@@ -53,7 +51,8 @@ export const Primary: Story = {
     }
 };
 
-export const PlacementExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const PlacementExample = {
     render: (args) => {
         return html`
             <div style="height: 150px; display: flex; justify-content: center; align-items: center; gap: 12px;">
@@ -78,7 +77,8 @@ export const PlacementExample: Story = {
     }
 };
 
-export const SyncExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const SyncExample = {
     render: (args) => {
         return html`
             <div style="height: 150px; display: flex; justify-content: center; align-items: center; gap: 12px;">
@@ -95,7 +95,7 @@ export const SyncExample: Story = {
     }
 };
 
-function getPopoverWrapperTemplate(content: (slotContent?: TemplateResult) => TemplateResult): TemplateResult {
+function getPopoverWrapperTemplate(content) {
     /*const onButtonClick = (event: PointerEvent) => {
         const parentElem = (event.target as HTMLElement).parentElement as HTMLElement;
         const elem = parentElem.querySelector('ui-popover') as PopoverComponent;

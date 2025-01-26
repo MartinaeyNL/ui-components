@@ -8,7 +8,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "",
+          "description": "Buttons communicate actions that users can take.<br />\r\nThey are typically placed throughout your UI, in places like: dialogs, modal windows, forms, cards or toolbars.",
           "name": "BadgeComponent",
           "members": [
             {
@@ -335,7 +335,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -573,6 +573,7 @@
               },
               "privacy": "public",
               "default": "false",
+              "summary": "Use the `outlined` attribute draw outlined buttons with transparent backgrounds. Default: `false`",
               "attribute": "outlined"
             },
             {
@@ -583,17 +584,8 @@
               },
               "privacy": "public",
               "default": "false",
+              "summary": "Use the `rounded` attribute to apply rounded edges on the horizontal axis. Default: `false`",
               "attribute": "rounded"
-            },
-            {
-              "kind": "field",
-              "name": "static",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "default": "false",
-              "attribute": "static"
             },
             {
               "kind": "field",
@@ -607,7 +599,7 @@
               "kind": "field",
               "name": "_prefixSlot",
               "type": {
-                "text": "Array<Node> | undefined"
+                "text": "Array<HTMLElement> | undefined"
               },
               "privacy": "protected"
             },
@@ -615,7 +607,7 @@
               "kind": "field",
               "name": "_defaultSlot",
               "type": {
-                "text": "Array<Node> | undefined"
+                "text": "Array<HTMLElement> | undefined"
               },
               "privacy": "protected"
             },
@@ -623,7 +615,7 @@
               "kind": "field",
               "name": "_suffixSlot",
               "type": {
-                "text": "Array<Node> | undefined"
+                "text": "Array<HTMLElement> | undefined"
               },
               "privacy": "protected"
             },
@@ -670,6 +662,16 @@
             },
             {
               "kind": "method",
+              "name": "_getPrefixSlotTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
               "name": "_getPrefixContent",
               "privacy": "protected",
               "return": {
@@ -680,11 +682,31 @@
             },
             {
               "kind": "method",
+              "name": "_getLabelSlotTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
               "name": "_getLabelContent",
               "privacy": "protected",
               "return": {
                 "type": {
                   "text": "Promise<TemplateResult | undefined>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_getSuffixSlotTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
                 }
               }
             },
@@ -927,7 +949,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -952,6 +974,7 @@
                 "text": "boolean"
               },
               "default": "false",
+              "summary": "Use the `outlined` attribute draw outlined buttons with transparent backgrounds. Default: `false`",
               "fieldName": "outlined"
             },
             {
@@ -960,15 +983,8 @@
                 "text": "boolean"
               },
               "default": "false",
+              "summary": "Use the `rounded` attribute to apply rounded edges on the horizontal axis. Default: `false`",
               "fieldName": "rounded"
-            },
-            {
-              "name": "static",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "static"
             },
             {
               "name": "size",
@@ -1383,7 +1399,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -2013,7 +2029,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -2514,7 +2530,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -3146,7 +3162,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -3763,7 +3779,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -4382,7 +4398,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -4811,7 +4827,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -5320,7 +5336,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -5756,7 +5772,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ]
@@ -6080,7 +6096,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],
@@ -6542,7 +6558,7 @@
                 {
                   "name": "nodes",
                   "type": {
-                    "text": "Array<Node>"
+                    "text": "Array<any>"
                   }
                 }
               ],

@@ -1,73 +1,7 @@
-import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
-import * as MapStories from "../../stories/map.stories";
-import * as MapMarkerStories from "../../stories/map-marker.stories";
-import {getBundleReportCollapsible, getLicenseBadge, getNPMVersionBadge} from "../../util/mdx-utils.mdx";
-import MapReportHtml from '../../../../../packages/components/ui-map/dist/report.html';
-import MapReportJson from "../../../../../packages/components/ui-map/dist/stats.json";
-import MapPackageJson from "../../../../../packages/components/ui-map/package.json";
-import {getPackageTotalSizeKb} from "../../util/component-utils";
+import {Meta} from "@storybook/blocks";
+import {UiAutoDocs} from "../../util/autodocs.mdx";
+import * as ComponentStory from "../../../../../packages/components/ui-map/map.stories.js";
 
 <Meta title="Components/Map" />
 
-<Title>Map</Title>
-<Subtitle of={MapStories}></Subtitle>
-
-<div className="badge-section">
-    {getNPMVersionBadge(MapPackageJson)}
-    {getLicenseBadge(MapPackageJson)}
-</div>
-
-Map is a component for displaying geographical maps from various sources.<br />
-It supports multiple layers, tiled and full-image sources, adding markers, and interaction through events.<br />
-
-
-<Canvas of={MapStories.Primary} />
-
-
-## Examples
-
-<br />
-
-### Coordinates / zoom
-
-With the `lat` and `lng` attributes, you can adjust the coordinates that is centered on the map.<br />
-The `zoom` attribute (a value between 1 and 20) configures the default zoom; `1` is world-view, and `20` street level.
-
-<Canvas of={MapStories.CenterZoomExample} />
-
-### Map Style / options
-
-Using the `mapStyle` attribute, you can provide a URL to a MapLibre `style.json` specification file.<br />
-The specification of this JSON file can be found [here](https://maplibre.org/maplibre-style-spec/).<br />
-
-Default: `https://demotiles.maplibre.org/style.json`
-
-<Canvas of={MapStories.MapStyleExample} />
-
-<br />
-
-## Using markers with `ui-map-marker`
-
-WIP
-
-<Canvas of={MapMarkerStories.Primary} />
-
-<Canvas of={MapStories.MapMarkerExample} />
-
-<br />
-
-## Documentation
-
-<div className="details-section">
-    {getBundleReportCollapsible(1,
-        <ui-badge label={getPackageTotalSizeKb(MapReportJson) + " KB"}></ui-badge>,
-        <iframe className="details-content" loading={"lazy"} srcDoc={MapReportHtml}></iframe>
-    )}
-</div>
-
-<br />
-
-## API Specification
-
-<ArgTypes of={MapStories} />
-
+<UiAutoDocs story={ComponentStory}  options={{displayName: "Map"}} />
