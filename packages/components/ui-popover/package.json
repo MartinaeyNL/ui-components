@@ -31,5 +31,8 @@
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
     "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "wc-storybook-helpers": "^2.0.4"
   }
 }

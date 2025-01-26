@@ -31,5 +31,8 @@
     "@martinaeynl/ui-component-utils": "workspace:*",
     "@shoelace-style/shoelace": "^2.19.1",
     "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "wc-storybook-helpers": "^2.0.4"
   }
 }

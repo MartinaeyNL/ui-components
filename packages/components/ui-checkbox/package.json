@@ -31,5 +31,8 @@
     "@martinaeynl/ui-component-utils": "workspace:*",
     "@vaadin/checkbox": "^24.5.5",
     "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "wc-storybook-helpers": "^2.0.4"
   }
 }
