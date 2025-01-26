@@ -32,5 +32,8 @@
     "@martinaeynl/ui-components-icon": "workspace:*",
     "@vaadin/combo-box": "^24.6.0",
     "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "wc-storybook-helpers": "^2.0.4"
   }
 }

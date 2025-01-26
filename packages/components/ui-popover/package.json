@@ -30,6 +30,7 @@
     "@floating-ui/dom": "^1.6.5",
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
+    "@martinaeynl/ui-components-button": "workspace:*",
     "lit": "^3.2.1"
   },
   "devDependencies": {

@@ -612,6 +612,7 @@ __metadata:
     "@martinaeynl/ui-components-icon": "workspace:*"
     "@vaadin/combo-box": "npm:^24.6.0"
     lit: "npm:^3.2.1"
+    wc-storybook-helpers: "npm:^2.0.4"
   languageName: unknown
   linkType: soft
 
@@ -648,6 +649,7 @@ __metadata:
     "@floating-ui/dom": "npm:^1.6.5"
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-component-utils": "workspace:*"
+    "@martinaeynl/ui-components-button": "workspace:*"
     lit: "npm:^3.2.1"
     wc-storybook-helpers: "npm:^2.0.4"
   languageName: unknown
