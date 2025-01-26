@@ -110,7 +110,7 @@ export abstract class UiComponent extends LitElement {
         return this.getVariant() === UiVariant.DANGER;
     }
 
-    protected _isSlotEmpty(nodes: Array<Node>): boolean {
+    protected _isSlotEmpty(nodes: Array<any>): boolean {
         return nodes.length === 0;
     }
 }

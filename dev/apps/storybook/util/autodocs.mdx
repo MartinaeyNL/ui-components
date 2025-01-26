@@ -1,0 +1,65 @@
+import {getAccessibilityBadge, getBundleReportCollapsible, getDescription, getLicenseBadge, getNPMVersionBadge} from "./utils.mdx";
+import {Title, Subtitle, Canvas, Markdown, ArgTypes} from "@storybook/blocks";
+import {getPackageTotalSizeKb} from "./util";
+
+export function UiAutoDocs(props) {
+
+    // Process the MDX element props/attributes
+    const story = props?.story;
+    const options = props?.options;
+
+    const componentDocs = story.docs;
+    const examples = story.examples;
+    return <div>
+
+        <Title>{options.displayName || componentDocs.tagName || "Title"}</Title>
+        <Subtitle of={story}></Subtitle>
+
+        {/* List of badges */}
+        <div className="badge-section">
+            {story.packageJson && !options.hideNpm ? getNPMVersionBadge(story.packageJson) : null}
+            {story.packageJson && !options.hideLicense ? getLicenseBadge(story.packageJson) : null}
+            {story.accessibility && !options.hideAccessibility ? getAccessibilityBadge(story.accessibility) : null}
+        </div>
+
+        {/* Description of the component / story */}
+        {componentDocs ? getDescription(componentDocs) : null}
+
+        {/* Primary example / sandbox */}
+        <Canvas of={story.Primary}/>
+
+        {/* Examples section */}
+        {examples?.length ? <div id="examples-section">
+            <Markdown>## Examples</Markdown>
+            {examples.map((s, index) => <div key={("Example" + index)}>
+                <Markdown>{"### " + (s.title || ("Example " + index))}</Markdown>
+                {s.summary ? <Markdown>{s.summary}</Markdown> : null}
+                <Canvas of={s}></Canvas>
+            </div>)}
+
+        </div> : null}
+
+        <br/>
+
+        {/* Documentation section */}
+        {!options.hideDocs ? <div id="documentation-section">
+            <Markdown>## Documentation</Markdown>
+            {story.reportJson && story.reportHtml ? <div className="details-container">
+                {getBundleReportCollapsible(1,
+                    <span style={{
+                        paddingLeft: "16px",
+                        color: "gray"
+                    }}>{getPackageTotalSizeKb(story.reportJson) + " KB"}</span>,
+                    <iframe className="details-content" loading={"lazy"} srcDoc={story.reportHtml}></iframe>
+                )}
+            </div> : null}
+        </div> : null}
+
+        <br/>
+
+        {/* Attributes & Properties section */}
+        <Markdown>## API Specification</Markdown>
+        <ArgTypes of={story}/>
+
+    </div>
+}

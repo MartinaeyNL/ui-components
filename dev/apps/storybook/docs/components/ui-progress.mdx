@@ -1,48 +1,7 @@
-import {ArgTypes, Canvas, Controls, Meta, Subtitle, Title} from '@storybook/blocks';
-import * as ProgressStories from "../../stories/progress.stories";
-import {getBundleReportCollapsible, getLicenseBadge, getNPMVersionBadge} from "../../util/mdx-utils.mdx";
-import {getPackageTotalSizeKb} from "../../util/component-utils";
-import ProgressReportHtml from '../../../../../packages/components/ui-progress/dist/report.html';
-import ProgressReportJson from "../../../../../packages/components/ui-progress/dist/stats.json";
-import ProgressPackageJson from "../../../../../packages/components/ui-progress/package.json";
+import {Meta} from "@storybook/blocks";
+import {UiAutoDocs} from "../../util/autodocs.mdx";
+import * as ComponentStory from "../../../../../packages/components/ui-progress/component.stories.js";
 
 <Meta title="Components/Progress" />
 
-<Title>Progress</Title>
-<Subtitle of={ProgressStories}></Subtitle>
-
-<div className="badge-section">
-    {getNPMVersionBadge(ProgressPackageJson)}
-    {getLicenseBadge(ProgressPackageJson)}
-</div>
-
-Checkboxes allow the user to toggle an option on or off.<br />
-Utilizes the [Shoelace](https://shoelace.style/components/progress-bar) library.
-
-<Canvas of={ProgressStories.Primary} />
-
-## Examples
-
-### Variants
-
-Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`<br />
-
-<Canvas of={ProgressStories.VariantExample} />
-
-<br />
-
-## Documentation
-
-<div className="details-section">
-    {getBundleReportCollapsible(1,
-        <ui-badge label={getPackageTotalSizeKb(ProgressReportJson) + " KB"}></ui-badge>,
-        <iframe className="details-content" loading={"lazy"} srcDoc={ProgressReportHtml}></iframe>
-    )}
-</div>
-
-<br />
-
-## API Specification
-
-<ArgTypes of={ProgressStories} />
-
+<UiAutoDocs story={ComponentStory}  options={{displayName: "Progress"}} />

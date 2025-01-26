@@ -1,4 +1,3 @@
-import type {Meta, StoryObj} from '@storybook/web-components';
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {html} from "lit";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
@@ -7,13 +6,13 @@ import "@martinaeynl/ui-components-progress";
 
 const helpers = getWcStorybookHelpers("ui-progress");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: "Playground/Progress/ui-progress",
     component: "ui-progress",
     args: helpers.args,
     argTypes: {
-        ...(helpers.argTypes as any)
+        ...helpers.argTypes
     },
     parameters: {
         docs: {
@@ -26,16 +25,16 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args),
     args: {
         value: 10
     }
 };
 
-export const VariantExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const VariantExample = {
     render: (args) => html`
         <div style="display: flex; gap: 12px;">
             ${helpers.template(args[0])}
@@ -52,7 +51,8 @@ export const VariantExample: Story = {
     ]
 };
 
-export const DisabledExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const DisabledExample = {
     render: (args) => helpers.template(args),
     args: {
         title: "Disabled checkbox",
@@ -60,7 +60,8 @@ export const DisabledExample: Story = {
     }
 };
 
-export const ReadonlyExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const ReadonlyExample = {
     render: (args) => helpers.template(args),
     args: {
         title: "Readonly checkbox",
