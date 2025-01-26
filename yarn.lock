@@ -699,6 +699,7 @@ __metadata:
     rimraf: "npm:^6.0.1"
     rsbuild-plugin-dts: "npm:^0.2.2"
     typescript: "npm:^5.7.2"
+    wc-storybook-helpers: "npm:^2.0.4"
     webpack: "npm:^5.97.1"
     webpack-bundle-analyzer: "npm:^4.10.2"
     webpack-cli: "npm:^6.0.1"
@@ -734,7 +735,6 @@ __metadata:
     html-loader: "npm:^5.1.0"
     lit: "npm:3.2.1"
     storybook: "npm:^8.4.7"
-    wc-storybook-helpers: "npm:^2.0.4"
   languageName: unknown
   linkType: soft
 
