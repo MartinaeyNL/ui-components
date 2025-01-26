@@ -1,4 +1,4 @@
-import {customElement, property, query, queryAssignedNodes} from "lit/decorators.js";
+import {customElement, property, query, queryAssignedElements} from "lit/decorators.js";
 import {UiComponent} from "@martinaeynl/ui-component-utils";
 import {badge} from "@vaadin/vaadin-lumo-styles/badge.js";
 import {classMap} from "lit/directives/class-map.js";
@@ -51,17 +51,17 @@ export default class BadgeComponent extends UiComponent {
     /**
      * @summary You can use slotted elements to add icons before (or after) the label.
      */
-    @queryAssignedNodes({slot: "prefix"})
-    protected _prefixSlot!: Array<Node>;
+    @queryAssignedElements({slot: "prefix"})
+    protected _prefixSlot!: Array<HTMLElement>;
 
-    @queryAssignedNodes({slot: undefined})
-    protected _defaultSlot!: Array<Node>;
+    @queryAssignedElements({slot: undefined})
+    protected _defaultSlot!: Array<HTMLElement>;
 
     /**
      * @summary You can use slotted elements to add icons before (or after) the label.
      */
-    @queryAssignedNodes({slot: "suffix"})
-    protected _suffixSlot!: Array<Node>;
+    @queryAssignedElements({slot: "suffix"})
+    protected _suffixSlot!: Array<HTMLElement>;
 
     static get observedAttributes() {
         return [...super.observedAttributes];
@@ -80,9 +80,7 @@ export default class BadgeComponent extends UiComponent {
 
         // Apply "Icon only" badge styling, if ui-icon the only slot
         if (this._isSlotEmpty(this._prefixSlot) && this._isSlotEmpty(this._suffixSlot) && !this._isSlotEmpty(this._defaultSlot)) {
-
-            const slotElem = this._defaultSlot[0] as HTMLElement;
-            if (this.badge && slotElem.tagName.toLowerCase() === this.ICON_TAG_NAME) {
+            if (this.badge && this._defaultSlot[0]?.tagName.toLowerCase() === this.ICON_TAG_NAME) {
                 this.badge.classList.add("ui-badge-icon");
             }
         }

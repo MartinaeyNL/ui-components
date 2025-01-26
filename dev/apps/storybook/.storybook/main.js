@@ -26,12 +26,11 @@ const config = {
     options: {},
   },
   webpackFinal: async (config) => {
-    console.log(getAbsolutePath("@martinaeynl/ui-components-badge"));
     config.module.rules.push({ test: /\.html$/i, use: 'html-loader' })
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@martinaeynl/ui-components-badge': getAbsolutePath("@martinaeynl/ui-components-badge"), // TODO: Fix this
-    }
+    config.resolve.modules = [
+      ...config.resolve.modules,
+      getAbsolutePath("@martinaeynl/ui-components-badge") // TODO: Fix this
+    ];
     return config;
   }
 };

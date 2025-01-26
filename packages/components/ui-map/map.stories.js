@@ -59,4 +59,6 @@ export const MapMarkerExample = {
     `)
 }
 
+export const examples = [CenterZoomExample, MapStyleExample, MapMarkerExample];
+
 export default meta;

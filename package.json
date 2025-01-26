@@ -17,7 +17,8 @@
     "publish": "yarn workspaces foreach --exclude @martinaeynl/ui-components --exclude @martinaeynl/ui-docs-storybook --all --topological-dev npm publish --tolerate-republish",
     "storybook": "node scripts/storybook.js",
     "storybookOnly": "yarn workspace @martinaeynl/ui-docs-storybook run storybook",
-    "watch": "yarn workspaces foreach --all -j unlimited -p -i run watch"
+    "watch": "yarn workspaces foreach --all -j unlimited -p -i run watch",
+    "watchComponents": "yarn workspaces foreach --exclude @martinaeynl/ui-components --exclude @martinaeynl/ui-docs-storybook --topological-dev --all run watch"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.10.4",

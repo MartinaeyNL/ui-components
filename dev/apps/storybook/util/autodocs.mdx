@@ -9,7 +9,7 @@ export function UiAutoDocs(props) {
     const options = props?.options;
 
     const componentDocs = story.docs;
-    const examples = story.examples?.slice(1);
+    const examples = story.examples;
     return <div>
 
         <Title>{options.displayName || componentDocs.tagName || "Title"}</Title>

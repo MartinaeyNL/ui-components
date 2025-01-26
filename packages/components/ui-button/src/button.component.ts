@@ -1,5 +1,5 @@
 import {html, PropertyValues, TemplateResult} from "lit";
-import {customElement, property, query, queryAssignedNodes} from "lit/decorators.js";
+import {customElement, property, query, queryAssignedElements} from "lit/decorators.js";
 import {ResizableUiComponent, UiComponent} from "@martinaeynl/ui-component-utils";
 import {UiSize} from "@martinaeynl/ui-component-models";
 import {classMap} from "lit/directives/class-map.js";
@@ -14,28 +14,31 @@ export class ButtonComponent extends ResizableUiComponent {
     protected ICON_TAG_NAME = "ui-icon";
 
     @property({type: String})
-    public title: string = "Button";
+    public title = "Button";
 
+    /**
+     * @summary Use the `outlined` attribute draw outlined buttons with transparent backgrounds. Default: `false`
+     */
     @property({type: Boolean})
     public outlined = false;
 
+    /**
+     * @summary Use the `rounded` attribute to apply rounded edges on the horizontal axis. Default: `false`
+     */
     @property({type: Boolean})
     public rounded = false;
-
-    @property({type: Boolean})
-    public static = false;
 
     @query('button')
     protected _buttonElem?: HTMLButtonElement;
 
-    @queryAssignedNodes({slot: "prefix"})
-    protected _prefixSlot?: Array<Node>;
+    @queryAssignedElements({slot: "prefix"})
+    protected _prefixSlot?: Array<HTMLElement>;
 
-    @queryAssignedNodes({slot: undefined})
-    protected _defaultSlot?: Array<Node>;
+    @queryAssignedElements({slot: undefined})
+    protected _defaultSlot?: Array<HTMLElement>;
 
-    @queryAssignedNodes({slot: "suffix"})
-    protected _suffixSlot?: Array<Node>;
+    @queryAssignedElements({slot: "suffix"})
+    protected _suffixSlot?: Array<HTMLElement>;
 
     static get styles() {
         return [...super.styles, getButtonStyles()];
@@ -45,7 +48,7 @@ export class ButtonComponent extends ResizableUiComponent {
         if(this._prefixSlot?.length) {
 
             if(this._prefixSlot.length === 1) {
-                const tagName = (this._prefixSlot[0] as HTMLElement).tagName.toLowerCase();
+                const tagName = this._prefixSlot[0]?.tagName.toLowerCase();
                 if(tagName === this.ICON_TAG_NAME) {
                     this._buttonElem?.classList.add("ui-button--prefixed-icon");
                 }
@@ -58,15 +61,14 @@ export class ButtonComponent extends ResizableUiComponent {
         const classes = this.getClasses();
         return html`
             <button class=${classMap(classes)}>
-                <slot name="prefix" @slotchange="${this._onPrefixSlotChange}">${until(this._getPrefixContent())}</slot>
-                <slot>${until(this._getLabelContent())}</slot>
-                <slot name="suffix" @slotchange="${this._onSuffixSlotChange}">${until(this._getSuffixContent())}</slot>
+                ${until(this._getPrefixContent(), this._getPrefixSlotTemplate())}
+                ${until(this._getLabelContent(), this._getLabelSlotTemplate())}
+                ${until(this._getSuffixContent(), this._getSuffixSlotTemplate())}
             </button>
         `;
     }
 
     getClasses(): {[name: string]: boolean} {
-        console.log(this._prefixSlot);
         const classes: {[name: string]: boolean} = {
             'ui-button': true,
             'ui-button--disabled': this.disabled,
@@ -117,10 +119,9 @@ export class ButtonComponent extends ResizableUiComponent {
 
         if(suffixSlot?.length === 1) {
             this._buttonElem?.classList.add("ui-button--suffixed");
-            const elem = suffixSlot[0] as HTMLElement;
 
-            if(elem.tagName.toLowerCase() === this.ICON_TAG_NAME) {
-                const iconElem = elem as ResizableUiComponent;
+            if(suffixSlot[0]?.tagName.toLowerCase() === this.ICON_TAG_NAME) {
+                const iconElem = suffixSlot[0] as ResizableUiComponent;
                 this._buttonElem?.classList.add("ui-button--suffixed-icon");
                 iconElem.size = this.size === UiSize.XLARGE ? UiSize.MEDIUM : UiSize.SMALL;
                 iconElem.variant = this.variant;
@@ -129,29 +130,37 @@ export class ButtonComponent extends ResizableUiComponent {
         }
     }
 
-
+    protected _getPrefixSlotTemplate(): TemplateResult {
+        return html`<slot name="prefix" @slotchange="${this._onPrefixSlotChange}"></slot>`;
+    }
 
     protected async _getPrefixContent(): Promise<TemplateResult | undefined> {
         await this.updateComplete;
         if(this._prefixSlot?.length) {
-            console.log(this._prefixSlot);
-            return;
+            return this._getPrefixSlotTemplate();
         }
+    }
+
+    protected _getLabelSlotTemplate(): TemplateResult {
+        return html`<slot></slot>`;
     }
 
     protected async _getLabelContent(): Promise<TemplateResult | undefined> {
         await this.updateComplete;
-        console.log("Default slot is", this._defaultSlot);
         if(this._defaultSlot?.length) {
-            return;
+            return this._getLabelSlotTemplate();
         }
-        return html`${this.title}`;
+        return html`<span>${this.title}</span>`;
+    }
+
+    protected _getSuffixSlotTemplate(): TemplateResult {
+        return html`<slot name="suffix" @slotchange="${this._onSuffixSlotChange}"></slot>`;
     }
 
     protected async _getSuffixContent(): Promise<TemplateResult | undefined> {
         await this.updateComplete;
         if(this._suffixSlot?.length) {
-            return;
+            return this._getSuffixSlotTemplate();
         }
     }
 }
