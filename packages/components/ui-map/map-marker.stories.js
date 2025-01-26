@@ -1,12 +1,10 @@
-import type {Meta, StoryObj} from '@storybook/web-components';
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import "@martinaeynl/ui-components-map";
-import {html} from "lit";
 
 const helpers = getWcStorybookHelpers("ui-map-marker");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: "Playground/Map/ui-map-marker",
     component: "ui-map-marker",
     args: helpers.args,
@@ -21,9 +19,8 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args)
 };
 

@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/web-components';
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import {UiSize, UiVariant} from "@martinaeynl/ui-component-models";
 import "@martinaeynl/ui-components-table";
@@ -6,13 +5,13 @@ import {html} from "lit";
 
 const helpers = getWcStorybookHelpers("ui-table");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: 'Playground/Table/ui-table',
     component: 'ui-table',
     args: helpers.args,
     argTypes: {
-        ...(helpers.argTypes as any),
+        ...helpers.argTypes,
         variant: {
             control: 'select',
             options: [UiVariant.DEFAULT, UiVariant.PRIMARY, UiVariant.SUCCESS, UiVariant.NEUTRAL, UiVariant.DANGER]
@@ -35,9 +34,8 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args),
     args: {
         title: "Button",
@@ -46,7 +44,8 @@ export const Primary: Story = {
     },
 };
 
-export const SizeExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const SizeExample = {
     render: (args) => html`
         <div style="display: flex; flex-direction: column; gap: 12px;">
             <div style="display: flex; gap: 36px; align-items: center;">

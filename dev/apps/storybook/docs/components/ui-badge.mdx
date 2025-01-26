@@ -1,80 +1,8 @@
-import {ArgTypes, Canvas, Controls, Markdown, Meta, Subtitle, Title} from '@storybook/blocks';
-import * as BadgeStories from "../../stories/badge.stories";
-import {
-    getComponentAttribute,
-    getComponentMember,
-    getPackageTotalSizeKb
-} from "../../util/component-utils";
-import {
-    getAccessibilityBadge,
-    getBundleReportCollapsible,
-    getLicenseBadge,
-    getNPMVersionBadge
-} from "../../util/mdx-utils.mdx";
-import BadgeReportHtml from '../../../../../packages/components/ui-badge/dist/report.html';
-import BadgeReportJson from "../../../../../packages/components/ui-badge/dist/stats.json";
-import BadgePackageJson from "../../../../../packages/components/ui-badge/package.json";
+import {Meta} from "@storybook/blocks";
+import {UiAutoDocs} from "../../util/autodocs.mdx";
+import * as ComponentStory from "../../../../../packages/components/ui-badge/component.stories.js";
 
 <Meta title="Components/Badge" />
 
-<Title>Badge</Title>
-<Subtitle of={BadgeStories}></Subtitle>
-
-<div className="badge-section">
-    {getNPMVersionBadge(BadgePackageJson)}
-    {getLicenseBadge(BadgePackageJson)}
-    {getAccessibilityBadge("vaadin-WCAG2.1-AA")}
-</div>
-
-Insert text here<br />
-
-<Canvas of={BadgeStories.Primary} />
-
-## Examples
-
-### Variants
-
-<Markdown>{getComponentAttribute(BadgeStories.docs, "variant")?.summary}</Markdown>
-<Canvas of={BadgeStories.VariantExample} />
-
-### Icon with text
-
-<Markdown>{getComponentMember(BadgeStories.docs, "_prefixSlot")?.summary}</Markdown>
-<Canvas of={BadgeStories.IconWithTextExample} />
-
-### Icon only
-
-You can leave out the label to only show an icon inside the badge.<br />
-
-<Canvas of={BadgeStories.IconOnlyExample} />
-
-### Small version
-
-<Markdown>{getComponentAttribute(BadgeStories.docs, "small")?.summary}</Markdown>
-<Canvas of={BadgeStories.SmallExample} />
-
-### Filled
-
-<Markdown>{getComponentAttribute(BadgeStories.docs, "filled")?.summary}</Markdown>
-<Canvas of={BadgeStories.FilledExample} />
-
-### Pill
-
-<Markdown>{getComponentAttribute(BadgeStories.docs, "pill")?.summary}</Markdown>
-<Canvas of={BadgeStories.PillExample} />
-
-## Documentation
-
-<div className="details-section">
-    {getBundleReportCollapsible(1,
-        <ui-badge label={getPackageTotalSizeKb(BadgeReportJson) + " KB"}></ui-badge>,
-        <iframe className="details-content" loading={"lazy"} srcDoc={BadgeReportHtml}></iframe>
-    )}
-</div>
-
-<br />
-
-## API Specification
-
-<ArgTypes of={BadgeStories} />
+<UiAutoDocs story={ComponentStory}  options={{displayName: "Badge"}} />
 

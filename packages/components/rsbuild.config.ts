@@ -17,6 +17,13 @@ export default defineConfig({
             version: "legacy"
         }
     },
+    tools: {
+        rspack: {
+            module: {
+                rules: [{ test: /\.html$/i, use: 'html-loader' }]
+            }
+        }
+    },
     environments: {
 
         // Specific config for NPM, making it a smaller bundle

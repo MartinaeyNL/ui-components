@@ -694,6 +694,8 @@ __metadata:
     cem-plugin-expanded-types: "npm:^1.3.3"
     concurrently: "npm:^9.1.0"
     cross-env: "npm:^7.0.0"
+    custom-elements-manifest-inheritance: "npm:^1.1.1"
+    html-loader: "npm:^5.1.0"
     rimraf: "npm:^6.0.1"
     rsbuild-plugin-dts: "npm:^0.2.2"
     typescript: "npm:^5.7.2"
@@ -3603,6 +3605,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"custom-elements-manifest-inheritance@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "custom-elements-manifest-inheritance@npm:1.1.1"
+  dependencies:
+    prettier: "npm:^2.8.0"
+  checksum: 10c0/929d6afb3173dd5ef0f8d0fa56fcb99cb4a1e8417003a236c10261e8796e46e4d6cbf4e1bc19c23153336f1c3268f354572866a3489db1ccd6b1e39b62fc9cdb
+  languageName: node
+  linkType: hard
+
 "custom-elements-manifest@npm:1.0.0":
   version: 1.0.0
   resolution: "custom-elements-manifest@npm:1.0.0"
@@ -6251,6 +6262,15 @@ __metadata:
   version: 2.0.0
   resolution: "potpack@npm:2.0.0"
   checksum: 10c0/8df693484486535b95586a624c5abf3fd7bebad161b1c10c10d86562c870fe1c90703b862a19020b1d1c2f3fbd6cea1e9d699c6eca6ded4b5792873a992c81e1
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.8.0":
+  version: 2.8.8
+  resolution: "prettier@npm:2.8.8"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 10c0/463ea8f9a0946cd5b828d8cf27bd8b567345cf02f56562d5ecde198b91f47a76b7ac9eae0facd247ace70e927143af6135e8cf411986b8cb8478784a4d6d724a
   languageName: node
   linkType: hard
 

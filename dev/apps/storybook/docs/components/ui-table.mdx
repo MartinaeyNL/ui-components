@@ -1,54 +1,7 @@
-import {ArgTypes, Canvas, Meta, Subtitle, Title} from '@storybook/blocks';
-import * as TableStories from '../../stories/table.stories';
-import {getPackageTotalSizeKb} from "../../util/component-utils";
-import {getBundleReportCollapsible} from "../../util/mdx-utils.mdx";
-import TableReportHtml from '../../../../../packages/components/ui-table/dist/report.html';
-import TableReportJson from "../../../../../packages/components/ui-table/dist/stats.json";
+import {Meta} from "@storybook/blocks";
+import {UiAutoDocs} from "../../util/autodocs.mdx";
+import * as ComponentStory from "../../../../../packages/components/ui-table/component.stories.js";
 
 <Meta title="Components/Table" />
 
-<Title>Table</Title>
-<Subtitle of={TableStories}></Subtitle>
-
-<div style={{display: "flex", gap: 6}}>
-    <a href={"https://npmjs.com/package/@martinaeynl/ui-components-table"}>
-        <img src="https://badgen.net/npm/v/@martinaeynl/ui-components-table?scale=1.2" alt={"NPM version"}></img>
-    </a>
-    <a href={"https://github.com/martinaeynl/ui-components"}>
-        <img src="https://badgen.net/github/license/martinaeynl/ui-components?scale=1.2" alt={"License"}></img>
-    </a>
-</div>
-
-Data tables display information in a grid-like format of rows and columns.<br />
-They organize information in a way that’s easy to scan so that users can look for patterns and develop insights from data.
-
-<Canvas of={TableStories.Primary} />
-
-
-## Examples
-
-<br />
-
-### Sizes
-
-Use the `size` attribute to configure a table’s size. Default: `medium`<br />
-
-<Canvas of={TableStories.SizeExample} />
-
-<br />
-
-## Documentation
-
-<div className="details-section">
-    {getBundleReportCollapsible(1,
-        <ui-badge label={getPackageTotalSizeKb(TableReportJson) + " KB"}></ui-badge>,
-        <iframe className="details-content" loading={"lazy"} srcDoc={TableReportHtml}></iframe>
-    )}
-</div>
-
-<br />
-
-## API Specification
-
-<ArgTypes of={TableStories} />
-
+<UiAutoDocs story={ComponentStory}  options={{displayName: "Table"}} />

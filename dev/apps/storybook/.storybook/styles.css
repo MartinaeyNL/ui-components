@@ -32,7 +32,7 @@
     gap: 4px;
 }
 
-.details-section {
+.details-container {
     margin: 16px 0 !important;
     display: flex;
     flex-direction: column;
