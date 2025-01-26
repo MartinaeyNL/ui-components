@@ -9,8 +9,10 @@
   "main": "dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "customElements": "./dist/custom-elements.json",
   "exports": {
     ".": "./dist/index.js",
+    "./*.stories.js": "./*.stories.js",
     "./*": "./dist/*"
   },
   "files": [
@@ -18,6 +20,7 @@
     "dist/*.js.map"
   ],
   "scripts": {
+    "analyze": "cem analyze --config ../custom-elements-manifest.config.js",
     "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
     "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",
     "watch": "rsbuild build --config ../rsbuild.config.ts -w",
@@ -27,7 +30,7 @@
     "@iconify/utils": "^2.1.24",
     "@martinaeynl/ui-component-models": "workspace:*",
     "@martinaeynl/ui-component-utils": "workspace:*",
-    "iconify-icon": "^2.2.0",
+    "iconify-icon": "^2.3.0",
     "lit": "^3.2.1"
   },
   "devDependencies": {

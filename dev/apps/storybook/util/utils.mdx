@@ -1,4 +1,4 @@
-import "@martinaeynl/ui-components-badge";
+import {Markdown} from "@storybook/blocks";
 
 export function getNPMVersionBadge(packageJson) {
     return <a href={`https://npmjs.com/package/${packageJson.name}`}>
@@ -23,6 +23,10 @@ export function getAccessibilityBadge(type) {
     return <a href={url}>
         <img alt="Accessibility" src={`https://badgen.net/badge/Accessibility/${text}?scale=1.2&color=green`}></img>
     </a>
+}
+
+export function getDescription(docs) {
+    return docs.description ? <Markdown id="description">{docs.description}</Markdown> : <p id="description"><i>The description for {docs.tagName || "this component"} could not be found.</i></p>
 }
 
 export function getCollapsibleElement(index, title, titleSuffix, content) {

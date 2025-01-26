@@ -8,8 +8,11 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "customElements": "./dist/custom-elements.json",
   "exports": {
     ".": "./dist/index.js",
+    "./*.stories.js": "./*.stories.js",
     "./*": "./dist/*"
   },
   "files": [
@@ -17,6 +20,7 @@
     "dist/*.js.map"
   ],
   "scripts": {
+    "analyze": "cem analyze --config ../custom-elements-manifest.config.js",
     "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
     "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",
     "watch": "rsbuild build --config ../rsbuild.config.ts -w",

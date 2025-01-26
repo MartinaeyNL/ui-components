@@ -12,8 +12,7 @@ function getAbsolutePath(value, file = "package.json") {
 const config = {
   stories: [
     "../docs/**/*.mdx",
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../../../../packages/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   addons: [
     getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
@@ -28,6 +27,10 @@ const config = {
   },
   webpackFinal: async (config) => {
     config.module.rules.push({ test: /\.html$/i, use: 'html-loader' })
+    config.resolve.modules = [
+      ...config.resolve.modules,
+      getAbsolutePath("@martinaeynl/ui-components-badge") // TODO: Fix this
+    ];
     return config;
   }
 };

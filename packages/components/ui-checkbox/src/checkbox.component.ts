@@ -22,10 +22,10 @@ import getCheckboxStyles from "./checkbox.styles";
 export class CheckboxComponent extends UiComponent {
 
     @query("vaadin-checkbox")
-    public checkbox?: HTMLElement;
+    public readonly checkbox?: HTMLElement;
 
     static get observedAttributes() {
-        return [...super.observedAttributes, 'label', 'required', 'error-message', 'helper-text', 'active', 'checked', 'disabled', 'indeterminate'];
+        return [...super.observedAttributes, "label", "required", "error-message", "helper-text", "active", "checked", "disabled", "indeterminate"];
     }
 
     static override get styles() {

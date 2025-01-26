@@ -1,16 +1,15 @@
-import type {Meta, StoryObj} from '@storybook/web-components';
 import {getWcStorybookHelpers} from "wc-storybook-helpers";
 import "@martinaeynl/ui-components-map";
 import {html} from "lit";
 
 const helpers = getWcStorybookHelpers("ui-map");
 
-// This default export determines where your story goes in the story list
-const meta: Meta = {
+/** @type { import('@storybook/web-components').Meta } */
+const meta = {
     title: "Playground/Map/ui-map",
     component: "ui-map",
     args: helpers.args,
-    argTypes: helpers.argTypes as any,
+    argTypes: helpers.argTypes,
     parameters: {
         docs: {
             subtitle: "<ui-map>",
@@ -21,13 +20,13 @@ const meta: Meta = {
     }
 };
 
-type Story = StoryObj;
-
-export const Primary: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const Primary = {
     render: (args) => helpers.template(args)
 };
 
-export const CenterZoomExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const CenterZoomExample = {
     args: {
         lat: 52,
         lng: 5,
@@ -36,7 +35,8 @@ export const CenterZoomExample: Story = {
     render: (args) => helpers.template(args)
 };
 
-export const MapStyleExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const MapStyleExample = {
     args: {
         lat: 47.26,
         lng: 11.39,
@@ -46,7 +46,8 @@ export const MapStyleExample: Story = {
     render: (args) => helpers.template(args)
 };
 
-export const MapMarkerExample: Story = {
+/** @type { import('@storybook/web-components').StoryObj } */
+export const MapMarkerExample = {
     args: {
         lat: 52,
         lng: 5,
@@ -57,5 +58,7 @@ export const MapMarkerExample: Story = {
         <ui-map-marker lat="5" lng="52" custom>custom</ui-map-marker>
     `)
 }
+
+export const examples = [CenterZoomExample, MapStyleExample, MapMarkerExample];
 
 export default meta;
