@@ -29,7 +29,7 @@ const config = {
     config.module.rules.push({ test: /\.html$/i, use: 'html-loader' })
     config.resolve.modules = [
       ...config.resolve.modules,
-      getAbsolutePath("@martinaeynl/ui-components-badge") // TODO: Fix this
+      /*getAbsolutePath("@martinaeynl/ui-components-badge")*/ // TODO: Fix this
     ];
     return config;
   }
