@@ -37,6 +37,7 @@ export default () => css`
         
         /* Grayscale colors */
         --ui-grayscale-0: white;
+        --ui-grayscale-10: hsl(var(--gray-0-hsl));
         --ui-grayscale-25: hsl(var(--gray-1-hsl));
         --ui-grayscale-50: hsl(var(--gray-2-hsl));
         --ui-grayscale-100: hsl(var(--gray-4-hsl));

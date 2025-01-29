@@ -692,6 +692,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@martinaeynl/ui-components-tree-menu@workspace:packages/components/ui-tree-menu":
+  version: 0.0.0-use.local
+  resolution: "@martinaeynl/ui-components-tree-menu@workspace:packages/components/ui-tree-menu"
+  dependencies:
+    "@martinaeynl/ui-component-models": "workspace:*"
+    "@martinaeynl/ui-component-utils": "workspace:*"
+    lit: "npm:^3.2.1"
+    wc-storybook-helpers: "npm:^2.0.4"
+  languageName: unknown
+  linkType: soft
+
 "@martinaeynl/ui-components@workspace:.":
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-components@workspace:."
