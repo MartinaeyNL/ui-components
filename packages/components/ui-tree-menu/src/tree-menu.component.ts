@@ -43,6 +43,8 @@ export class TreeMenuComponent extends UiComponent {
     @queryAll("ui-tree-group")
     protected _uiGroups?: NodeListOf<TreeGroupComponent>;
 
+    protected _lastSelectedNode?: TreeNodeComponent;
+
     static get styles() {
         return [...super.styles, getTreeMenuStyles()];
     }
@@ -103,19 +105,35 @@ export class TreeMenuComponent extends UiComponent {
     protected _onTreeGroupClick(ev: PointerEvent) {
         const elem = ev.currentTarget as TreeNodeComponent;
         const group = elem.parentElement as TreeGroupComponent;
-        const previousState = elem.selected;
         switch (this.selection) {
             case TreeMenuSelection.LEAF: {
-                return;
+                return; // Group node cannot be selected when in leaf
             }
             case TreeMenuSelection.MULTI: {
+
+                // Shift selects all nodes between the previous selected, and this one.
+                if(ev.shiftKey && this._lastSelectedNode) {
+                    const nodes = Array.from(this._uiNodes || []);
+                    const parentNode = group.getGroupNode();
+                    if(parentNode) {
+                        const indexOfClickedNode = nodes.indexOf(parentNode);
+                        const indexOfPreviousNode = nodes.indexOf(this._lastSelectedNode);
+                        this._selectNodesBetween(nodes, indexOfClickedNode, indexOfPreviousNode);
+                        return;
+                    }
+                // Ctrl multi selects without deselecting the previous one.
+                } else if(ev.ctrlKey) {
+                    group.select();
+                    return;
+                }
+                // Otherwise, select node like normal
                 this._deselectAllNodes();
-                previousState ? group.deselectAll() : group.selectAll();
+                group.select();
                 return;
             }
             case TreeMenuSelection.SINGLE: {
                 this._deselectAllNodes();
-                previousState ? group.deselect() : group.select();
+                group.select();
                 return;
             }
         }
@@ -200,7 +218,34 @@ export class TreeMenuComponent extends UiComponent {
     protected _onTreeNodeClick(ev: PointerEvent) {
         const node = ev.currentTarget as TreeNodeComponent;
         if (node) {
-            this._selectNode(node);
+            switch (this.selection) {
+                case TreeMenuSelection.MULTI: {
+
+                    // Shift selects all nodes between the previous selected, and this one.
+                    if(ev.shiftKey && this._lastSelectedNode) {
+                        const nodes = Array.from(this._uiNodes || []);
+                        const prevIndex = nodes.indexOf(this._lastSelectedNode);
+                        const clickedIndex = nodes.indexOf(node);
+                        if (prevIndex > -1 && clickedIndex > -1) {
+                            this._selectNodesBetween(nodes, prevIndex, clickedIndex);
+                            return;
+                        }
+                    // Ctrl multi selects without deselecting the previous one.
+                    } else if(ev.ctrlKey) {
+                        this._selectNode(node);
+                        return;
+                    }
+                    // Otherwise select the node like normal
+                    this._deselectAllNodes();
+                    this._selectNode(node);
+                    return;
+                }
+                default: {
+                    this._deselectAllNodes();
+                    this._selectNode(node);
+                    return;
+                }
+            }
         }
     }
 
@@ -213,16 +258,21 @@ export class TreeMenuComponent extends UiComponent {
     }
 
     protected _selectNode(node: TreeNodeComponent) {
+        node.selected = true;
+        this._lastSelectedNode = node;
+    }
 
-        // If SINGLE or LEAF, deselect all other nodes
-        if (this.selection === TreeMenuSelection.SINGLE || this.selection === TreeMenuSelection.LEAF) {
-            this._deselectAllNodes();
-        }
-        // If MULTI, the selected state should be toggled. Otherwise, it's always set to TRUE.
-        if (this.selection === TreeMenuSelection.MULTI) {
-            node.selected = !node.selected;
+    protected _selectNodesBetween(nodes: TreeNodeComponent[], index1: number, index2: number) {
+        if(index1 < index2) {
+            for(let x = index1; x <= index2; x++) {
+                if(nodes[x]) nodes[x].selected = true;
+            }
+        } else if(index1 > index2) {
+            for(let x = index2; x <= index1; x++) {
+                if(nodes[x]) nodes[x].selected = true;
+            }
         } else {
-            node.selected = true;
+            return;
         }
     }
 
