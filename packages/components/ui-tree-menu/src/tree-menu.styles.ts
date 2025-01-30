@@ -10,4 +10,12 @@ export default () => css`
         padding: 0;
         margin: 0;
     }
+
+    ui-tree-group > ui-tree-node > * {
+        pointer-events: none;
+    }
+    
+    ui-tree-group > ui-tree-node.drophover {
+        background: var(--ui-grayscale-50);
+    }
 `;

@@ -59,4 +59,23 @@ export const HierarchyExample = {
   }
 };
 
+/** @type { import('@storybook/web-components').Story } */
+export const DraggableExample = {
+  render: (args) => helpers.template(args),
+  args: {
+    draggable: true,
+    nodes: JSON.stringify([
+      { label: "Item 1" },
+      { label: "Item 2" },
+      { label: "Item 3", children: [
+        { label: "Item 4" },
+        { label: "Item 5" },
+        { label: "Item 6", children: [
+          { label: "Item 7" },
+        ]},
+      ]},
+    ])
+  }
+};
+
 export default meta;

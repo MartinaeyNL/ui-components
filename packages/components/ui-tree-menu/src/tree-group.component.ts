@@ -20,10 +20,6 @@ const getStyles = () => css`
         margin: 0;
     }
     
-    ::slotted(*:not([slot="parent"])) {
-        --ui-tree-node-padding: 6px 12px 6px 48px
-    }
-    
     ::slotted(*[slot="parent"]) {
         cursor: pointer;
     }
@@ -34,7 +30,7 @@ const getStyles = () => css`
         display: flex;
         align-items: center;
         aspect-ratio: 1/1.25;
-        padding-left: 8px;
+        padding-left: 6px;
     }
 
     :host(:not([readonly])) > #chevron {
@@ -70,10 +66,10 @@ export class TreeGroupComponent extends UiComponent {
     protected _parentNodes?: Array<TreeNodeComponent>;
 
     /** A click event listener on the component, used for selecting, expanding, and collapsing the group */
-    protected _slotClickListener = (_e: MouseEvent) => this.leaf ? this._onExpandToggle() : null;
+    protected _slotClickListener = (e: MouseEvent) => this.leaf ? this._onExpandToggle(e) : null;
 
     /** A click event listener on the chevron, used for expanding/collapsing the group */
-    protected _chevronClickListener = (_e: MouseEvent) => this._onExpandToggle();
+    protected _chevronClickListener = (e: MouseEvent) => this._onExpandToggle(e);
 
     static get styles() {
         return [getStyles()];
@@ -139,7 +135,7 @@ export class TreeGroupComponent extends UiComponent {
             ${when(!this.readonly, () => this._getIconTemplate(this.expanded))}
             <slot name="parent"></slot>
             <ol ?hidden=${!this.expanded}>
-                <slot></slot>
+                <slot @slotchange=${this._onSlotChange}></slot>
             </ol>
         `;
     }
@@ -162,7 +158,44 @@ export class TreeGroupComponent extends UiComponent {
      * Function that expands/collapses the group, changing the visibility of the child nodes.
      * @protected
      */
-    protected _onExpandToggle() {
+    protected _onExpandToggle(_ev: MouseEvent) {
         this.expanded = !this.expanded;
+    }
+
+    /**
+     * Event listener for 'slotchange' of the default slot.
+     * Normally triggers when <ui-tree-node> elements are added or removed.
+     * @protected
+     */
+    protected _onSlotChange(_ev: Event) {
+        this._applyIndentToChildren();
+    }
+
+    /**
+     * Function that applies CSS to TreeNode based on the group indentation.
+     * It loops through all parent elements, and detects the amount of ui-tree-group elements it is in.
+     * The more nested in the tree, the more lefthanded padding is applied.
+     * @param children Node elements to apply padding to.
+     * @protected
+     */
+    protected _applyIndentToChildren(children = this.getChildNodes()) {
+        const countGroups = (elem: HTMLElement | null) => {
+            let count = 0;
+            while(elem) {
+                if(elem.tagName.toLowerCase() === "ui-tree-group") {
+                    count++;
+                }
+                elem = elem.parentElement;
+            }
+            return count;
+        };
+        children.forEach(child => {
+            let groupAmount = countGroups(child);
+            if(child.slot === "parent") {
+                groupAmount--; // Parent slot is the group itself, so remove 1
+            }
+            // Apply indent as padding to the node
+            child.style.setProperty("--ui-tree-node-indent", `${24 + (groupAmount * 12)}px`);
+        });
     }
 }

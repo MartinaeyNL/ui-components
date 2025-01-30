@@ -9,7 +9,7 @@ const styles = css`
     :host {
         width: 100%;
         height: var(--ui-tree-node-height, 44px);
-        padding: var(--ui-tree-node-padding, 6px 12px 6px 24px);
+        padding: 6px 12px 6px var(--ui-tree-node-indent, 24px);
         background: var(--ui-tree-node-background, transparent);
         border-left: 4px solid transparent;
         display: flex;
@@ -47,7 +47,7 @@ const styles = css`
  * @slot suffix - Appends elements to the right hand side of the node.
  *
  * @cssprop --ui-tree-node-height - Controls the height of the node
- * @cssprop --ui-tree-node-padding - Controls the padding of the node
+ * @cssprop --ui-tree-node-indent - Controls the left padding of the node
  *
  * @cssprop --ui-tree-node-background - Sets the default background
  * @cssprop --ui-tree-node-background--hovered - Sets the background while hovering
