@@ -18,6 +18,7 @@ export const reportJson = componentReportJson;
 const meta = {
   title: "Playground/Checkbox/ui-checkbox",
   component: "ui-checkbox",
+  excludeStories: ['helpers', 'docs', 'packageJson', 'reportJson', 'reportHtml', 'examples'],
   args: {
     ...helpers.args,
     active: false,

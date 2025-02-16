@@ -1,0 +1,38 @@
+{
+  "name": "@martinaeynl/ui-components-tree-menu",
+  "version": "0.0.1",
+  "description": "Tree Menu UI component",
+  "repository": "https://github.com/martinaeynl/ui-components",
+  "homepage": "https://martinaeynl.github.io/ui-components",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "customElements": "./dist/custom-elements.json",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*.stories.js": "./*.stories.js",
+    "./*": "./dist/*"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.js.map"
+  ],
+  "scripts": {
+    "analyze": "cem analyze --config ../custom-elements-manifest.config.js",
+    "build": "rsbuild build --config ../rsbuild.config.ts --env-mode production",
+    "doctor": "rsdoctor analyze --profile ./dist/.rsdoctor/manifest.json",
+    "watch": "rsbuild build --config ../rsbuild.config.ts -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@martinaeynl/ui-component-models": "workspace:*",
+    "@martinaeynl/ui-component-utils": "workspace:*",
+    "@martinaeynl/ui-components-icon": "workspace:*",
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "wc-storybook-helpers": "^2.0.4"
+  }
+}

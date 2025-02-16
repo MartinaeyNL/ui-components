@@ -1,8 +1,8 @@
 import customElements from "../../docs/custom-elements.json";
 
 export function getComponentDocs(tagName: string, customElementsJson = customElements) {
-    const module =  (customElementsJson.modules as any[]).find(m => m.declarations[0]?.tagName === tagName);
-    return module.declarations[0];
+    const module = (customElementsJson.modules as any[]).find(m => m.declarations?.[0]?.tagName === tagName);
+    return module?.declarations?.[0];
 }
 
 export function getHTMLAttributeDocs(docs: any, attrName: string) {

@@ -67,7 +67,7 @@
               "kind": "field",
               "name": "_prefixSlot",
               "type": {
-                "text": "Array<Node>"
+                "text": "Array<HTMLElement>"
               },
               "privacy": "protected",
               "summary": "You can use slotted elements to add icons before (or after) the label."
@@ -76,7 +76,7 @@
               "kind": "field",
               "name": "_defaultSlot",
               "type": {
-                "text": "Array<Node>"
+                "text": "Array<HTMLElement>"
               },
               "privacy": "protected"
             },
@@ -84,7 +84,7 @@
               "kind": "field",
               "name": "_suffixSlot",
               "type": {
-                "text": "Array<Node>"
+                "text": "Array<HTMLElement>"
               },
               "privacy": "protected",
               "summary": "You can use slotted elements to add icons before (or after) the label."
@@ -1158,6 +1158,71 @@
     },
     {
       "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/combobox.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ComboboxComponent",
+          "members": [],
+          "superclass": {
+            "name": "ComboBox",
+            "package": "@vaadin/combo-box/vaadin-lit-combo-box.js"
+          },
+          "tagName": "ui-combobox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ComboboxComponent",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/combobox.component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-combobox",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/combobox.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/combobox.styles.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "packages/components/ui-combobox/src/combobox.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "packages/components/ui-checkbox/src/checkbox.component.ts",
       "declarations": [
         {
@@ -1171,7 +1236,8 @@
               "type": {
                 "text": "HTMLElement | undefined"
               },
-              "privacy": "public"
+              "privacy": "public",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -1618,71 +1684,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/ui-combobox/src/combobox.component.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "ComboboxComponent",
-          "members": [],
-          "superclass": {
-            "name": "ComboBox",
-            "package": "@vaadin/combo-box/vaadin-lit-combo-box.js"
-          },
-          "tagName": "ui-combobox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ComboboxComponent",
-          "declaration": {
-            "name": "ComboboxComponent",
-            "module": "packages/components/ui-combobox/src/combobox.component.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "ui-combobox",
-          "declaration": {
-            "name": "ComboboxComponent",
-            "module": "packages/components/ui-combobox/src/combobox.component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-combobox/src/combobox.styles.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "packages/components/ui-combobox/src/combobox.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-combobox/src/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "ComboboxComponent",
-            "module": "packages/components/ui-combobox/src/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "packages/components/ui-icon/src/icon.component.ts",
       "declarations": [
         {
@@ -1726,6 +1727,16 @@
               },
               "privacy": "public",
               "attribute": "rotation"
+            },
+            {
+              "kind": "field",
+              "name": "static",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "static"
             },
             {
               "kind": "field",
@@ -2062,6 +2073,14 @@
               "fieldName": "rotation"
             },
             {
+              "name": "static",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "static"
+            },
+            {
               "name": "size",
               "type": {
                 "text": "UiSize"
@@ -2233,21 +2252,21 @@
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map-marker.styles.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map-marker.styles.ts",
       "declarations": [],
       "exports": [
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map-marker.styles.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map-marker.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map-marker.component.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map-marker.component.ts",
       "declarations": [
         {
           "kind": "class",
@@ -2679,7 +2698,7 @@
           "name": "MapMarkerComponent",
           "declaration": {
             "name": "MapMarkerComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map-marker.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map-marker.component.ts"
           }
         },
         {
@@ -2687,14 +2706,14 @@
           "name": "ui-map-marker",
           "declaration": {
             "name": "MapMarkerComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map-marker.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map-marker.component.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map.component.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map.component.ts",
       "declarations": [
         {
           "kind": "class",
@@ -3326,7 +3345,7 @@
           "name": "MapComponent",
           "declaration": {
             "name": "MapComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map.component.ts"
           }
         },
         {
@@ -3334,7 +3353,7 @@
           "name": "ui-map",
           "declaration": {
             "name": "MapComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-map/src/map.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-map/src/map.component.ts"
           }
         }
       ]
@@ -3386,7 +3405,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-popover/src/popover.component.ts",
       "declarations": [
         {
           "kind": "class",
@@ -3962,7 +3981,7 @@
           "name": "PopoverComponent",
           "declaration": {
             "name": "PopoverComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
           }
         },
         {
@@ -3970,7 +3989,7 @@
           "name": "ui-popover",
           "declaration": {
             "name": "PopoverComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-popover/src/popover.component.ts"
           }
         }
       ]
@@ -4006,7 +4025,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-progress/src/progress.component.ts",
       "declarations": [
         {
           "kind": "class",
@@ -4048,7 +4067,7 @@
           "name": "ProgressComponent",
           "declaration": {
             "name": "ProgressComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
           }
         },
         {
@@ -4056,7 +4075,7 @@
           "name": "ui-progress",
           "declaration": {
             "name": "ProgressComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-progress/src/progress.component.ts"
           }
         }
       ]
@@ -4078,7 +4097,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select.component.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select.component.ts",
       "declarations": [
         {
           "kind": "class",
@@ -4546,7 +4565,7 @@
           "name": "SelectComponent",
           "declaration": {
             "name": "SelectComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select.component.ts"
           }
         },
         {
@@ -4554,28 +4573,28 @@
           "name": "ui-select",
           "declaration": {
             "name": "SelectComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select.component.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select-option.styles.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select-option.styles.ts",
       "declarations": [],
       "exports": [
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select-option.styles.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select-option.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select-option.component.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select-option.component.ts",
       "declarations": [
         {
           "kind": "class",
@@ -4967,7 +4986,7 @@
           "name": "SelectOptionComponent",
           "declaration": {
             "name": "SelectOptionComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select-option.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select-option.component.ts"
           }
         },
         {
@@ -4975,7 +4994,7 @@
           "name": "ui-select-option",
           "declaration": {
             "name": "SelectOptionComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-select/src/select-option.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-select/src/select-option.component.ts"
           }
         }
       ]
@@ -5027,7 +5046,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-table/src/table.component.ts",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-table/src/table.component.ts",
       "declarations": [
         {
           "kind": "class",
@@ -5485,7 +5504,7 @@
           "name": "TableComponent",
           "declaration": {
             "name": "TableComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-table/src/table.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-table/src/table.component.ts"
           }
         },
         {
@@ -5493,7 +5512,7 @@
           "name": "ui-table",
           "declaration": {
             "name": "TableComponent",
-            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-V1/ui-components/packages/components/ui-table/src/table.component.ts"
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-table/src/table.component.ts"
           }
         }
       ]
@@ -5587,6 +5606,1816 @@
           "name": "default",
           "declaration": {
             "module": "packages/components/ui-table/src/table.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-node.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TreeNodeComponent",
+          "cssProperties": [
+            {
+              "description": "Controls the height of the node",
+              "name": "--ui-tree-node-height"
+            },
+            {
+              "description": "Controls the left padding of the node",
+              "name": "--ui-tree-node-indent"
+            },
+            {
+              "description": "Sets the default background",
+              "name": "--ui-tree-node-background"
+            },
+            {
+              "description": "Sets the background while hovering",
+              "name": "--ui-tree-node-background--hovered"
+            },
+            {
+              "description": "Sets the background when selected",
+              "name": "--ui-tree-node-background--selected"
+            },
+            {
+              "description": "Sets the primary color of the node when selected",
+              "name": "--ui-tree-node-color--selected"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Appends elements to the left hand side of the node, commonly used for icons.",
+              "name": "prefix"
+            },
+            {
+              "description": "Default slot for the main content, commonly used for text.",
+              "name": ""
+            },
+            {
+              "description": "Appends elements to the right hand side of the node.",
+              "name": "suffix"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "readonly",
+              "description": "HTML attribute that only applies CSS, showing this node cannot be interacted with.",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "description": "HTML attribute that only applies CSS, marking the node as 'selected'.",
+              "attribute": "selected",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "privacy": "public",
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "attribute": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_variantOverride",
+              "type": {
+                "text": "UiVariant | undefined"
+              },
+              "privacy": "protected",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getClasses",
+              "return": {
+                "type": {
+                  "text": "{ [name: string]: boolean }"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getVariant",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "UiVariant"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isPrimary",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isSuccess",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isNeutral",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isDanger",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_isSlotEmpty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "Array<any>"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly",
+              "description": "HTML attribute that only applies CSS, showing this node cannot be interacted with.",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "HTML attribute that only applies CSS, marking the node as 'selected'.",
+              "fieldName": "selected"
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "fieldName": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "UiComponent",
+            "package": "@martinaeynl/ui-component-utils"
+          },
+          "tagName": "ui-tree-node",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TreeNodeComponent",
+          "declaration": {
+            "name": "TreeNodeComponent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-node.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-group.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TreeGroupComponent",
+          "cssParts": [
+            {
+              "description": "The chevron icon element for expanding/collapsing the group.",
+              "name": "chevron"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Default slot for child nodes within the group",
+              "name": ""
+            },
+            {
+              "description": "Slot for inserting a parent node",
+              "name": "parent"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "description": "Determines the visibility of child nodes.\nSetting this to `false` hides them, and acts as a 'collapsed' state.",
+              "attribute": "expanded",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "leaf",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "readonly": true,
+              "default": "false",
+              "description": "Only allows child nodes to be selected, making the expander (parent node) readonly.\nIf this is set to false, only the chevron icon can be used to collapse/expand the list.",
+              "attribute": "leaf"
+            },
+            {
+              "kind": "field",
+              "name": "_childNodes",
+              "type": {
+                "text": "Array<HTMLLIElement> | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_parentNodes",
+              "type": {
+                "text": "Array<TreeNodeComponent> | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_slotClickListener",
+              "privacy": "protected",
+              "description": "A click event listener on the component, used for selecting, expanding, and collapsing the group"
+            },
+            {
+              "kind": "field",
+              "name": "_chevronClickListener",
+              "privacy": "protected",
+              "description": "A click event listener on the chevron, used for expanding/collapsing the group"
+            },
+            {
+              "kind": "method",
+              "name": "select",
+              "privacy": "public",
+              "description": "Selects the group (parent) node."
+            },
+            {
+              "kind": "method",
+              "name": "selectAll",
+              "privacy": "public",
+              "description": "Selects the group node itself, and all children nodes within that group."
+            },
+            {
+              "kind": "method",
+              "name": "deselect",
+              "privacy": "public",
+              "description": "Deselects the group (parent) node."
+            },
+            {
+              "kind": "method",
+              "name": "deselectAll",
+              "privacy": "public",
+              "description": "Deselects the group node itself, and all children nodes within that group."
+            },
+            {
+              "kind": "method",
+              "name": "getGroupNode",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "TreeNodeComponent | undefined"
+                }
+              },
+              "description": "Returns the group (parent) node (TreeNodeComponent) using a query selector."
+            },
+            {
+              "kind": "method",
+              "name": "getChildNodes",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "TreeNodeComponent[]"
+                }
+              },
+              "description": "Returns a list of all children nodes (TreeNodeComponent) within the group, using a query selector."
+            },
+            {
+              "kind": "method",
+              "name": "_getIconTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "expanded",
+                  "default": "false",
+                  "description": "State of the group"
+                }
+              ],
+              "description": "Returns an HTML template that represents the icon for this group."
+            },
+            {
+              "kind": "method",
+              "name": "_onExpandToggle",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "_ev",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "description": "Function that expands/collapses the group, changing the visibility of the child nodes."
+            },
+            {
+              "kind": "method",
+              "name": "_onSlotChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "_ev",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Event listener for 'slotchange' of the default slot.\nNormally triggers when <ui-tree-node> elements are added or removed."
+            },
+            {
+              "kind": "method",
+              "name": "_applyIndentToChildren",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "children",
+                  "default": "this.getChildNodes()",
+                  "description": "Node elements to apply padding to."
+                }
+              ],
+              "description": "Function that applies CSS to TreeNode based on the group indentation.\nIt loops through all parent elements, and detects the amount of ui-tree-group elements it is in.\nThe more nested in the tree, the more lefthanded padding is applied."
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "privacy": "public",
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "attribute": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_variantOverride",
+              "type": {
+                "text": "UiVariant | undefined"
+              },
+              "privacy": "protected",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getClasses",
+              "return": {
+                "type": {
+                  "text": "{ [name: string]: boolean }"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getVariant",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "UiVariant"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isPrimary",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isSuccess",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isNeutral",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isDanger",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_isSlotEmpty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "Array<any>"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determines the visibility of child nodes.\nSetting this to `false` hides them, and acts as a 'collapsed' state.",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "leaf",
+              "type": {
+                "text": "boolean"
+              },
+              "readonly": true,
+              "default": "false",
+              "description": "Only allows child nodes to be selected, making the expander (parent node) readonly.\nIf this is set to false, only the chevron icon can be used to collapse/expand the list.",
+              "fieldName": "leaf"
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "fieldName": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "UiComponent",
+            "package": "@martinaeynl/ui-component-utils"
+          },
+          "tagName": "ui-tree-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TreeGroupComponent",
+          "declaration": {
+            "name": "TreeGroupComponent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-group.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-menu.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "UiTreeSelectEvent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "NAME",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "public",
+              "static": true,
+              "readonly": true,
+              "default": "\"ui-tree-select\""
+            }
+          ],
+          "superclass": {
+            "name": "CustomEvent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-menu.component.ts"
+          }
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TreeMenuComponent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "nodes",
+              "type": {
+                "text": "TreeNode[]"
+              },
+              "privacy": "public",
+              "default": "[]",
+              "description": "List of node items in the menu.\nUses the TreeNode format for rendering the TreeNodeComponent elements.",
+              "attribute": "nodes"
+            },
+            {
+              "kind": "field",
+              "name": "selection",
+              "type": {
+                "text": "TreeMenuSelection"
+              },
+              "privacy": "public",
+              "readonly": true,
+              "attribute": "selection",
+              "expandedType": {
+                "text": "'single' | 'multi' | 'leaf'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "draggable",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "draggable"
+            },
+            {
+              "kind": "field",
+              "name": "_uiNodes",
+              "type": {
+                "text": "NodeListOf<TreeNodeComponent> | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_uiGroups",
+              "type": {
+                "text": "NodeListOf<TreeGroupComponent> | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_lastSelectedNode",
+              "type": {
+                "text": "TreeNodeComponent | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "_getTreeTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "TreeNode[]"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getNodeTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "node",
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getGroupNodeTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "node",
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onTreeGroupClick",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "PointerEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragEnterGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragOverGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragLeaveGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragDropGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                },
+                {
+                  "name": "groupNode",
+                  "optional": true,
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_moveNodeToGroup",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TreeNode[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodeToMove",
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                },
+                {
+                  "name": "groupNode",
+                  "optional": true,
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                },
+                {
+                  "name": "treeNodes",
+                  "default": "this.nodes"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getSingleNodeTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "node",
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onTreeNodeClick",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "PointerEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragStart",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                },
+                {
+                  "name": "node",
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_selectNode",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "node",
+                  "type": {
+                    "text": "TreeNodeComponent"
+                  }
+                },
+                {
+                  "name": "notify",
+                  "default": "true"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_selectNodesBetween",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "TreeNodeComponent[]"
+                  }
+                },
+                {
+                  "name": "index1",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "index2",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_notifyNodesSelect",
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "_deselectAllNodes",
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "_getErrorTemplate",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "privacy": "public",
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "attribute": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_variantOverride",
+              "type": {
+                "text": "UiVariant | undefined"
+              },
+              "privacy": "protected",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger' | undefined"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getClasses",
+              "return": {
+                "type": {
+                  "text": "{ [name: string]: boolean }"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getVariant",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "UiVariant"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isPrimary",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isSuccess",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isNeutral",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isDanger",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_isSlotEmpty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "Array<any>"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            },
+            {
+              "type": {
+                "text": "UiTreeSelectEvent"
+              }
+            },
+            {
+              "name": "selectedNodes",
+              "type": {
+                "text": "UiTreeSelectEvent"
+              }
+            },
+            {
+              "description": "\"Triggers upon selecting a node, and dispatches a list of the nodes selected\"",
+              "name": "ui-tree-select"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "nodes",
+              "type": {
+                "text": "TreeNode[]"
+              },
+              "default": "[]",
+              "description": "List of node items in the menu.\nUses the TreeNode format for rendering the TreeNodeComponent elements.",
+              "fieldName": "nodes"
+            },
+            {
+              "name": "selection",
+              "type": {
+                "text": "TreeMenuSelection"
+              },
+              "readonly": true,
+              "fieldName": "selection",
+              "expandedType": {
+                "text": "'single' | 'multi' | 'leaf'"
+              }
+            },
+            {
+              "name": "draggable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "draggable"
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "UiVariant"
+              },
+              "summary": "Use the `variant` attribute to set the checkboxes variant / color. Default: `primary`",
+              "fieldName": "variant",
+              "expandedType": {
+                "text": "'default' | 'primary' | 'success' | 'neutral' | 'danger'"
+              },
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "primary",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "success",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "neutral",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "neutral",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "danger",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "danger",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "dark",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "dark",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "UiComponent",
+            "package": "@martinaeynl/ui-component-utils"
+          },
+          "tagName": "ui-tree-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "UiTreeSelectEvent",
+          "declaration": {
+            "name": "UiTreeSelectEvent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-menu.component.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TreeMenuComponent",
+          "declaration": {
+            "name": "TreeMenuComponent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-menu.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-tree-menu/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-tree-menu",
+          "declaration": {
+            "name": "TreeMenuComponent",
+            "module": "/packages/components/ui-tree-menu/src/tree-menu.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-tree-node",
+          "declaration": {
+            "name": "TreeNodeComponent",
+            "module": "/packages/components/ui-tree-menu/src/tree-node.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-tree-group",
+          "declaration": {
+            "name": "TreeGroupComponent",
+            "module": "/packages/components/ui-tree-menu/src/tree-group.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "TreeMenuComponent",
+            "module": "packages/components/ui-tree-menu/src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-tree-menu/src/tree-menu.styles.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "packages/components/ui-tree-menu/src/tree-menu.styles.ts"
           }
         }
       ]

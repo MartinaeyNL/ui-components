@@ -22,6 +22,9 @@ export default class IconComponent extends ResizableUiComponent {
     @property({type: Number})
     public rotation?: number;
 
+    @property({type: Boolean})
+    public static = false;
+
     @query(".ui-icon")
     protected _iconElem?: HTMLElement;
 
@@ -77,7 +80,7 @@ export default class IconComponent extends ResizableUiComponent {
      * Function that adds a CSS class to "fade out" the icon. The promise resolves after 100ms.
      */
     protected async _doIconExitTransition(): Promise<void> {
-        if(this._iconElem) {
+        if(this._iconElem && !this.static) {
             await new Promise(resolve => setTimeout(resolve, 100));
         }
     }
@@ -89,7 +92,9 @@ export default class IconComponent extends ResizableUiComponent {
     protected async _doIconEnterTransition(): Promise<void> {
         if(this._iconElem) {
             this._iconElem.classList.remove("ui-icon--invisible");
-            await new Promise(resolve => setTimeout(resolve, 100));
+            if(!this.static) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
         }
     }
 }
