@@ -28,6 +28,9 @@ const meta = {
         language: "html",
         format: "html"
       }
+    },
+    actions: {
+      handles: [...helpers.events, 'change'],
     }
   }
 };

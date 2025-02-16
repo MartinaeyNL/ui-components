@@ -1158,6 +1158,71 @@
     },
     {
       "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/combobox.component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ComboboxComponent",
+          "members": [],
+          "superclass": {
+            "name": "ComboBox",
+            "package": "@vaadin/combo-box/vaadin-lit-combo-box.js"
+          },
+          "tagName": "ui-combobox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ComboboxComponent",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/combobox.component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-combobox",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/combobox.component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/combobox.styles.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "packages/components/ui-combobox/src/combobox.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/components/ui-combobox/src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ComboboxComponent",
+            "module": "packages/components/ui-combobox/src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "packages/components/ui-checkbox/src/checkbox.component.ts",
       "declarations": [
         {
@@ -1613,71 +1678,6 @@
           "declaration": {
             "name": "CheckboxComponent",
             "module": "packages/components/ui-checkbox/src/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-combobox/src/combobox.component.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "ComboboxComponent",
-          "members": [],
-          "superclass": {
-            "name": "ComboBox",
-            "package": "@vaadin/combo-box/vaadin-lit-combo-box.js"
-          },
-          "tagName": "ui-combobox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ComboboxComponent",
-          "declaration": {
-            "name": "ComboboxComponent",
-            "module": "packages/components/ui-combobox/src/combobox.component.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "ui-combobox",
-          "declaration": {
-            "name": "ComboboxComponent",
-            "module": "packages/components/ui-combobox/src/combobox.component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-combobox/src/combobox.styles.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "packages/components/ui-combobox/src/combobox.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/ui-combobox/src/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "ComboboxComponent",
-            "module": "packages/components/ui-combobox/src/index.ts"
           }
         }
       ]
@@ -5624,8 +5624,8 @@
               "name": "--ui-tree-node-height"
             },
             {
-              "description": "Controls the padding of the node",
-              "name": "--ui-tree-node-padding"
+              "description": "Controls the left padding of the node",
+              "name": "--ui-tree-node-indent"
             },
             {
               "description": "Sets the default background",
@@ -6184,7 +6184,42 @@
               "kind": "method",
               "name": "_onExpandToggle",
               "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "_ev",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
               "description": "Function that expands/collapses the group, changing the visibility of the child nodes."
+            },
+            {
+              "kind": "method",
+              "name": "_onSlotChange",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "_ev",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Event listener for 'slotchange' of the default slot.\nNormally triggers when <ui-tree-node> elements are added or removed."
+            },
+            {
+              "kind": "method",
+              "name": "_applyIndentToChildren",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "children",
+                  "default": "this.getChildNodes()",
+                  "description": "Node elements to apply padding to."
+                }
+              ],
+              "description": "Function that applies CSS to TreeNode based on the group indentation.\nIt loops through all parent elements, and detects the amount of ui-tree-group elements it is in.\nThe more nested in the tree, the more lefthanded padding is applied."
             },
             {
               "kind": "field",
@@ -6568,6 +6603,28 @@
         {
           "kind": "class",
           "description": "",
+          "name": "UiTreeSelectEvent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "NAME",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "public",
+              "static": true,
+              "readonly": true,
+              "default": "\"ui-tree-select\""
+            }
+          ],
+          "superclass": {
+            "name": "CustomEvent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-menu.component.ts"
+          }
+        },
+        {
+          "kind": "class",
+          "description": "",
           "name": "TreeMenuComponent",
           "members": [
             {
@@ -6596,18 +6653,13 @@
             },
             {
               "kind": "field",
-              "name": "readonly",
+              "name": "draggable",
               "type": {
                 "text": "boolean"
               },
               "privacy": "public",
               "default": "false",
-              "attribute": "readonly",
-              "description": "Whether the tree menu should be readonly. (not interacted with)",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
+              "attribute": "draggable"
             },
             {
               "kind": "field",
@@ -6622,6 +6674,14 @@
               "name": "_uiGroups",
               "type": {
                 "text": "NodeListOf<TreeGroupComponent> | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_lastSelectedNode",
+              "type": {
+                "text": "TreeNodeComponent | undefined"
               },
               "privacy": "protected"
             },
@@ -6694,6 +6754,94 @@
             },
             {
               "kind": "method",
+              "name": "_onDragEnterGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragOverGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragLeaveGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDragDropGroup",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                },
+                {
+                  "name": "groupNode",
+                  "optional": true,
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_moveNodeToGroup",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TreeNode[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "nodeToMove",
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                },
+                {
+                  "name": "groupNode",
+                  "optional": true,
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                },
+                {
+                  "name": "treeNodes",
+                  "default": "this.nodes"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_getSingleNodeTemplate",
               "privacy": "protected",
               "return": {
@@ -6725,6 +6873,25 @@
             },
             {
               "kind": "method",
+              "name": "_onDragStart",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "ev",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                },
+                {
+                  "name": "node",
+                  "type": {
+                    "text": "TreeNode"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_selectNode",
               "privacy": "protected",
               "parameters": [
@@ -6733,8 +6900,42 @@
                   "type": {
                     "text": "TreeNodeComponent"
                   }
+                },
+                {
+                  "name": "notify",
+                  "default": "true"
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "_selectNodesBetween",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "nodes",
+                  "type": {
+                    "text": "TreeNodeComponent[]"
+                  }
+                },
+                {
+                  "name": "index1",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "index2",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_notifyNodesSelect",
+              "privacy": "protected"
             },
             {
               "kind": "method",
@@ -6847,6 +7048,20 @@
               "privacy": "public",
               "default": "false",
               "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "default": "false",
+              "attribute": "readonly",
               "inheritedFrom": {
                 "name": "UiComponent",
                 "module": "packages/util/ui-component/src/index.ts"
@@ -6973,6 +7188,29 @@
               }
             }
           ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            },
+            {
+              "type": {
+                "text": "UiTreeSelectEvent"
+              }
+            },
+            {
+              "name": "selectedNodes",
+              "type": {
+                "text": "UiTreeSelectEvent"
+              }
+            },
+            {
+              "description": "\"Triggers upon selecting a node, and dispatches a list of the nodes selected\"",
+              "name": "ui-tree-select"
+            }
+          ],
           "attributes": [
             {
               "name": "nodes",
@@ -6995,17 +7233,12 @@
               }
             },
             {
-              "name": "readonly",
+              "name": "draggable",
               "type": {
                 "text": "boolean"
               },
               "default": "false",
-              "fieldName": "readonly",
-              "description": "Whether the tree menu should be readonly. (not interacted with)",
-              "inheritedFrom": {
-                "name": "UiComponent",
-                "module": "packages/util/ui-component/src/index.ts"
-              }
+              "fieldName": "draggable"
             },
             {
               "name": "variant",
@@ -7093,6 +7326,18 @@
                 "name": "UiComponent",
                 "module": "packages/util/ui-component/src/index.ts"
               }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "UiComponent",
+                "module": "packages/util/ui-component/src/index.ts"
+              }
             }
           ],
           "superclass": {
@@ -7104,6 +7349,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "UiTreeSelectEvent",
+          "declaration": {
+            "name": "UiTreeSelectEvent",
+            "module": "H:/Projects/UI-component-library/MARTINAEY-UI-COMPONENTS-V1/ui-components/packages/components/ui-tree-menu/src/tree-menu.component.ts"
+          }
+        },
         {
           "kind": "js",
           "name": "TreeMenuComponent",

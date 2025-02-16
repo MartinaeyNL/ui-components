@@ -1,5 +1,6 @@
 import {setWcStorybookHelpersConfig} from "wc-storybook-helpers";
 import {setCustomElementsManifest} from "@storybook/web-components";
+import { withActions } from '@storybook/addon-actions/decorator';
 import {themes} from '@storybook/theming';
 import customElements from "../../../../docs/custom-elements.json";
 
@@ -20,6 +21,8 @@ const preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+      expanded: true,
+      sort: 'alpha'
     },
     docs: {
       theme: themes.light,
@@ -30,6 +33,7 @@ const preview = {
       }
     }
   },
+  decorators: [withActions],
   /*tags: ['autodocs'],*/
 };
 
