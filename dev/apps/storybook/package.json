@@ -27,7 +27,7 @@
     "@storybook/test": "^8.4.7",
     "@storybook/theming": "^8.4.7",
     "@storybook/web-components": "^8.4.7",
-    "@storybook/web-components-webpack5": "^8.4.7",
+    "@storybook/web-components-webpack5": "^8.5.6",
     "html-loader": "^5.1.0",
     "lit": "3.2.1",
     "storybook": "^8.4.7"
