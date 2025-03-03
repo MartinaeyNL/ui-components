@@ -26,7 +26,7 @@
     "@rsbuild/core": "^1.1.13",
     "@rsdoctor/cli": "^0.4.13",
     "@rsdoctor/rspack-plugin": "^0.4.12",
-    "@types/node": "^22.10.7",
+    "@types/node": "^22.13.8",
     "cem-plugin-expanded-types": "^1.3.3",
     "concurrently": "^9.1.2",
     "cross-env": "^7.0.0",
