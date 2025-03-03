@@ -78,9 +78,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chromatic-com/storybook@npm:3.2.3":
-  version: 3.2.3
-  resolution: "@chromatic-com/storybook@npm:3.2.3"
+"@chromatic-com/storybook@npm:3.2.5":
+  version: 3.2.5
+  resolution: "@chromatic-com/storybook@npm:3.2.5"
   dependencies:
     chromatic: "npm:^11.15.0"
     filesize: "npm:^10.0.12"
@@ -89,7 +89,7 @@ __metadata:
     strip-ansi: "npm:^7.1.0"
   peerDependencies:
     storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
-  checksum: 10c0/23c59b7d225347d4af8cb6a7596da3417dc3abc2d5036c4ef5cee2852b994a16b5996a1bd1a584bb56e97266d85ce9ae7daeeac296b3060d6b80b14cad10d9d1
+  checksum: 10c0/a8064e433caf8842079a676a9ecc0e423b6599e2549d14f9d69cef19d0a4f527c819c9577975436463925dcc8046278fc2f1f3d2bb2d1c250df14e37b0ae44a4
   languageName: node
   linkType: hard
 
@@ -720,7 +720,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@martinaeynl/ui-docs-storybook@workspace:dev/apps/storybook"
   dependencies:
-    "@chromatic-com/storybook": "npm:3.2.3"
+    "@chromatic-com/storybook": "npm:3.2.5"
     "@martinaeynl/ui-component-models": "workspace:*"
     "@martinaeynl/ui-components-badge": "workspace:*"
     "@martinaeynl/ui-components-button": "workspace:*"
