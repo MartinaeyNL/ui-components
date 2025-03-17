@@ -734,7 +734,7 @@ __metadata:
     "@martinaeynl/ui-components-table": "workspace:*"
     "@storybook/addon-a11y": "npm:^8.4.7"
     "@storybook/addon-essentials": "npm:^8.4.7"
-    "@storybook/addon-links": "npm:^8.4.7"
+    "@storybook/addon-links": "npm:^8.6.6"
     "@storybook/addon-webpack5-compiler-swc": "npm:2.0.0"
     "@storybook/blocks": "npm:^8.4.7"
     "@storybook/manager-api": "npm:^8.4.7"
@@ -1492,20 +1492,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^8.4.7":
-  version: 8.4.7
-  resolution: "@storybook/addon-links@npm:8.4.7"
+"@storybook/addon-links@npm:^8.6.6":
+  version: 8.6.6
+  resolution: "@storybook/addon-links@npm:8.6.6"
   dependencies:
-    "@storybook/csf": "npm:^0.1.11"
     "@storybook/global": "npm:^5.0.0"
     ts-dedent: "npm:^2.0.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^8.4.7
+    storybook: ^8.6.6
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 10c0/475d3231ac6c6531cfa5d01e8816b90cbf51e993c1575fa7bf541540bf76af52d7f1087e929b87d771ce41ae4fd7762df1e25c9d8543200630f8618d85b16520
+  checksum: 10c0/f0ca0aab84c055a10fcb11d3a2799c329b887a5bc8e381d1c0d22c8ad9422288dc001a2dd4a4be1130e31361aee233dc534b80b8d4beb3ba19151c3bbd9b3683
   languageName: node
   linkType: hard
 
